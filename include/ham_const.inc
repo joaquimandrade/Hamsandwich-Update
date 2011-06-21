@@ -492,7 +492,8 @@ enum Ham
 	Ham_FVecVisible,
 
 	
-	Ham_ChangeYaw,
+	Ham_ChangeYaw, /* Need documentation */
+	Ham_HasHumanGibs, /* Need documentation */
 	
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
