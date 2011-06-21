@@ -120,7 +120,6 @@ hook_t hooklist[] =
 	{ V("becomedead",				Void_Void) },
 	{ V("irelationship",				Int_Cbase) },
 	{ V("painsound",				Void_Void) },
-	{ V("resetmaxspeed",				Void_Void) },
 	{ V("reportaistate",				Void_Void) },
 	{ V("monsterinitdead",				Void_Void) },
 	{ V("look",					Void_Int) },
@@ -183,6 +182,7 @@ hook_t hooklist[] =
 	{ V("cstrike_roundrespawn",		Void_Void) },
 	{ V("cstrike_item_candrop",		Int_Void) },
 	{ V("cstrike_item_getmaxspeed",	Float_Void) },
+	{ V("cstrike_resetmaxspeed",	Void_Void) },
 
 	/* Day of Defeat */
 	{ V("dod_roundrespawn",			Void_Void) },

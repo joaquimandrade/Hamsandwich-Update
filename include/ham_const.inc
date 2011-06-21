@@ -500,7 +500,6 @@ enum Ham
 	Ham_BecomeDead, /* Need documentation */
 	Ham_IRelationship, /* Need documentation */
 	Ham_PainSound, /* Need documentation */
-	Ham_ResetMaxSpeed, /* Need documentation */
 	Ham_ReportAIState, /* Need documentation */
 	Ham_MonsterInitDead, /* Need documentation */
 	Ham_Look, /* Need documentation */
@@ -885,6 +884,8 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Item_GetMaxSpeed, this, Float:output);
 	 */
 	Ham_CS_Item_GetMaxSpeed,
+	
+	Ham_CS_ResetMaxSpeed, /* Need documentation */
 
 	/**
 	 * Description:		I assume this spawns players at the start of a new round.
