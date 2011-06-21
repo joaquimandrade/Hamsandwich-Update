@@ -113,7 +113,7 @@ hook_t hooklist[] =
 	{ V("fvisible",					Int_Cbase) },
 	{ V("fvecvisible",				Int_pVector) },
 	{ V("changeyaw",				Float_Int) },
-	{ V("hashumangibs",				Void_Void) },
+	{ V("hashumangibs",				Int_Void) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */
