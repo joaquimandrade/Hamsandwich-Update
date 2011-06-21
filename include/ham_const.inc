@@ -955,6 +955,7 @@ enum Ham
 	Ham_DOD_Item_SetDmgTime,
 	Ham_DOD_Item_DropGren,
 	Ham_DOD_Weapon_IsUseable,
+	Ham_DOD_Weapon_Aim,
 	Ham_DOD_Weapon_flAim,
 	Ham_DOD_Weapon_ChangeFOV,
 	Ham_DOD_Weapon_ZoomOut,

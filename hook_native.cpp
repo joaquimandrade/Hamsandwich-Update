@@ -197,6 +197,7 @@ hook_t hooklist[] =
 	{ V("dod_item_setdmgtime",		Void_Float) },
 	{ V("dod_item_dropgren",		Void_Void) },
 	{ V("dod_weapon_isuseable",		Int_Void) },
+	{ V("dod_weapon_aim",			Void_Float_Cbase_Int) },
 	{ V("dod_weapon_flAim",			Void_Int_Float) },
 	{ V("dod_weapon_changefov",		Void_Int) },
 	{ V("dod_weapon_zoomout",		Void_Void) },
