@@ -114,6 +114,17 @@ hook_t hooklist[] =
 	{ V("fvecvisible",				Int_pVector) },
 	{ V("changeyaw",				Float_Int) },
 	{ V("hashumangibs",				Int_Void) },
+	{ V("hasaliengibs",				Int_Void) },
+	{ V("fademonster",				Void_Void) },
+	{ V("gibmonster",				Void_Void) },
+	{ V("becomedead",				Void_Void) },
+	{ V("irelationship",				Int_Cbase) },
+	{ V("painsound",				Void_Void) },
+	{ V("resetmaxspeed",				Void_Void) },
+	{ V("reportaistate",				Void_Void) },
+	{ V("monsterinitdead",				Void_Void) },
+	{ V("look",					Void_Int) },
+	{ V("bestvisibleenemy",				Cbase_Void) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

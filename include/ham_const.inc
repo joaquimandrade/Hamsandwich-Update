@@ -494,6 +494,17 @@ enum Ham
 	
 	Ham_ChangeYaw, /* Need documentation */
 	Ham_HasHumanGibs, /* Need documentation */
+	Has_AlienGibs, /* Need documentation */
+	Ham_FadeMonster, /* Need documentation */
+	Ham_GibMonster, /* Need documentation */
+	Ham_BecomeDead, /* Need documentation */
+	Ham_IRelationship, /* Need documentation */
+	Ham_PainSound, /* Need documentation */
+	Ham_ResetMaxSpeed, /* Need documentation */
+	Ham_ReportAIState, /* Need documentation */
+	Ham_MonsterInitDead, /* Need documentation */
+	Ham_Look, /* Need documentation */
+	Ham_BestVisibleEnemy, /* Need documentation */
 	
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
