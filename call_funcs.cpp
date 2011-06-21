@@ -343,6 +343,27 @@ cell Call_Void_Int(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Void_Float_Cbase_Int(AMX *amx, cell *params)
+{
+	SETUP(3);
+
+	float f3=amx_ctof(*MF_GetAmxAddr(amx, params[3])); 
+	int id4=*MF_GetAmxAddr(amx, params[4]);
+	int i5=*MF_GetAmxAddr(amx, params[5]);
+	
+	CHECK_ENTITY(id4);
+
+	void *p4=IndexToPrivate(id4);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void *, int, float, void *, int)>(__func)(pv, 0, f3, p4, i5);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, float, void *, int)>(__func)(pv, f3, p4, i5);
+#endif
+
+	return 1;
+}
+
 cell Call_Void_Cbase_Cbase_Int_Float(AMX *amx, cell *params)
 {
 	SETUP(4);
@@ -653,6 +674,31 @@ cell Call_Void_Float_Int(AMX* amx, cell* params)
 #endif
 	return 1;
 }
+
+cell Call_Void_Int_Float(AMX* amx, cell* params)
+{
+	SETUP(2);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, int, float)>(__func)(pv, 0, params[3], amx_ctof2(params[4]));
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, int, float)>(__func)(pv, params[3], amx_ctof2(params[4]));
+#endif
+	return 1;
+}
+
+cell Call_Void_Float(AMX* amx, cell* params)
+{
+	SETUP(1);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, float)>(__func)(pv, 0, amx_ctof2(params[3]));
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, float)>(__func)(pv, amx_ctof2(params[3]));
+#endif
+	return 1;
+}
+
 cell Call_Deprecated(AMX *amx, cell *params)
 {
 	MF_LogError(amx, AMX_ERR_NATIVE, "Ham function is deprecated.");

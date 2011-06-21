@@ -58,6 +58,8 @@ int Create_Int_Entvar_Entvar_Float_Float_Int(AMX *amx, const char *func);
 
 int Create_Void_Int(AMX *amx, const char *func);
 
+int Create_Void_Float_Cbase_Int(AMX *amx, const char *func);
+
 int Create_Void_Cbase_Cbase_Int_Float(AMX *amx, const char *func);
 
 int Create_Void_Entvar_Float_Vector_Trace_Int(AMX *amx, const char *func);
@@ -89,6 +91,10 @@ int Create_Float_Void(AMX *amx, const char *func);
 int Create_Float_Int(AMX *amx, const char *func);
 
 int Create_Void_Float_Int(AMX *amx, const char *func);
+
+int Create_Void_Int_Float(AMX *amx, const char *func);
+
+int Create_Void_Float(AMX *amx, const char *func);
 
 
 int Create_Deprecated(AMX* amx, const char* func);

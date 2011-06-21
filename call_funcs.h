@@ -58,6 +58,8 @@ cell Call_Int_Entvar_Entvar_Float_Float_Int(AMX *amx, cell *params);
 
 cell Call_Void_Int(AMX *amx, cell *params);
 
+cell Call_Void_Float_Cbase_Int(AMX *amx, cell *params);
+
 cell Call_Void_Cbase_Cbase_Int_Float(AMX *amx, cell *params);
 
 cell Call_Void_Entvar_Float_Vector_Trace_Int(AMX *amx, cell *params);
@@ -87,6 +89,10 @@ cell Call_Void_ItemInfo(AMX *amx, cell *params);
 cell Call_Float_Void(AMX *amx, cell *params);
 
 cell Call_Void_Float_Int(AMX* amx, cell* params);
+
+cell Call_Void_Int_Float(AMX* amx, cell* params);
+
+cell Call_Void_Float(AMX* amx, cell* params);
 
 cell Call_Float_Int(AMX* amx, cell* params);
 

@@ -103,6 +103,10 @@ const int PC_Void_Cbase_Cbase_Int_Float = 4;
 void Hook_Void_Cbase_Cbase_Int_Float(Hook *hook, void *pthis, void *cb1, 
 									 void *cb2, int i1, float f1);
 
+const bool RT_Void_Float_Cbase_Int = true;
+const int PC_Void_Float_Cbase_Int = 3;
+void Hook_Void_Float_Cbase_Int(Hook *hook, void *pthis, float f1, void *cb, int i1);
+
 const bool RT_Void_Entvar_Float_Vector_Trace_Int = true;
 const int PC_Void_Entvar_Float_Vector_Trace_Int = 7;
 void Hook_Void_Entvar_Float_Vector_Trace_Int(Hook *hook, void *pthis, 
@@ -181,6 +185,14 @@ float Hook_Float_Int(Hook *hook, void *pthis, int i1);
 const bool RT_Void_Float_Int = true;
 const int PC_Void_Float_Int = 2;
 void Hook_Void_Float_Int(Hook *hook, void *pthis, float f1, int i1);
+
+const bool RT_Void_Int_Float = true;
+const int PC_Void_Int_Float = 2;
+void Hook_Void_Int_Float(Hook *hook, void *pthis, int i1, float f1);
+
+const bool RT_Void_Float = true;
+const int PC_Void_Float = 1;
+void Hook_Void_Float(Hook *hook, void *pthis, float f1);
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

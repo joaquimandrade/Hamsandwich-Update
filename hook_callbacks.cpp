@@ -602,6 +602,35 @@ float Hook_Float_Int(Hook *hook, void *pthis, int i1)
 	return ret;
 }
 
+void Hook_Void_Float_Cbase_Int(Hook *hook, void *pthis, float f1, void *cb, int i1)
+{
+	PUSH_VOID()
+	int iEnt =PrivateToIndex(cb);
+	
+	MAKE_VECTOR()
+	P_FLOAT(f1)
+	P_CBASE(cb, iEnt)
+	P_INT(i1)
+	
+	PRE_START()
+		,f1, iEnt, i1
+	PRE_END()
+	
+	
+#if defined _WIN32
+	reinterpret_cast<void (__fastcall*)(void*, int, float, void *, int)>(hook->func)(pthis, 0, f1, cb, i1);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, float, void *, int)>(hook->func)(pthis, f1, cb, i1);
+#endif
+
+	POST_START()
+		,f1, iEnt, i1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
 void Hook_Void_Cbase_Cbase_Int_Float(Hook *hook, void *pthis, void *cb1, void *cb2, int i1, float f1)
 {
 	PUSH_VOID()
@@ -1032,6 +1061,56 @@ void Hook_Void_Float_Int(Hook* hook, void* pthis, float f1, int i1)
 	KILL_VECTOR()
 	POP()
 }
+
+void Hook_Void_Int_Float(Hook* hook, void* pthis, int i1, float f1)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+	P_INT(i1)
+	P_FLOAT(f1)
+	
+	PRE_START()
+		, i1, f1
+	PRE_END()
+#if defined _WIN32
+	reinterpret_cast<void (__fastcall*)(void*, int, int, float)>(hook->func)(pthis, 0, i1, f1);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, int, float)>(hook->func)(pthis, i1, f1);
+#endif
+
+	POST_START()
+		, i1, f1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+void Hook_Void_Float(Hook* hook, void* pthis, float f1)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+	P_FLOAT(f1)
+	
+	PRE_START()
+		, f1
+	PRE_END()
+#if defined _WIN32
+	reinterpret_cast<void (__fastcall*)(void*, int, float)>(hook->func)(pthis, 0, f1);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, float)>(hook->func)(pthis, f1);
+#endif
+
+	POST_START()
+		, f1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
 void Hook_Deprecated(Hook* hook)
 {
 }
