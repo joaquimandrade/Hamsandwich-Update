@@ -174,6 +174,10 @@ const bool RT_Float_Void = false;
 const int PC_Float_Void = 0;
 float Hook_Float_Void(Hook *hook, void *pthis);
 
+const bool RT_Float_Int = false;
+const int PC_Float_Int = 1;
+float Hook_Float_Int(Hook *hook, void *pthis, int i1);
+
 const bool RT_Void_Float_Int = true;
 const int PC_Void_Float_Int = 2;
 void Hook_Void_Float_Int(Hook *hook, void *pthis, float f1, int i1);

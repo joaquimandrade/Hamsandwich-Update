@@ -573,6 +573,35 @@ void Hook_Void_Int(Hook *hook, void *pthis, int i1)
 	POP()
 }
 
+float Hook_Float_Int(Hook *hook, void *pthis, int i1)
+{
+	float ret=0.0;
+	float origret=0.0;
+	PUSH_FLOAT()
+
+	MAKE_VECTOR()
+	P_INT(i1)
+
+	PRE_START()
+		, i1
+	PRE_END()
+#if defined _WIN32
+	origret=reinterpret_cast<float (__fastcall*)(void*, int, int)>(hook->func)(pthis, 0, i1);
+#elif defined __linux__
+	origret=reinterpret_cast<float (*)(void*, int)>(hook->func)(pthis, i1);
+#endif
+
+	POST_START()
+		,i1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
 void Hook_Void_Cbase_Cbase_Int_Float(Hook *hook, void *pthis, void *cb1, void *cb2, int i1, float f1)
 {
 	PUSH_VOID()

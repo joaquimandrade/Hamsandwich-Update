@@ -455,11 +455,28 @@ cell Call_Cbase_Void(AMX *amx, cell *params)
 	return PrivateToIndex(ret);
 }
 
+cell Call_Float_Int(AMX *amx, cell *params)
+{
+	SETUP(2);
+
+	int i3=*MF_GetAmxAddr(amx, params[3]);
+	
+#ifdef _WIN32
+	float ret=reinterpret_cast<float (__fastcall *)(void *, int, int)>(__func)(pv, 0, i3);
+#elif defined __linux__
+	float ret=reinterpret_cast<float (*)(void *, int)>(__func)(pv, i3);
+#endif
+	*MF_GetAmxAddr(amx, params[4])=amx_ftoc2(ret);
+
+	return 1;	
+}
+
 cell Call_Vector_Void(AMX *amx, cell *params)
 {
 	SETUP(1);
 #ifdef _WIN32
-	Vector ret=reinterpret_cast<Vector (__fastcall *)(void *, int)>(__func)(pv, 0);
+	Vector ret;
+	reinterpret_cast<void (__fastcall *)(void *, int,Vector*)>(__func)(pv, 0,&ret);
 #elif defined __linux__
 	Vector ret=reinterpret_cast<Vector (*)(void *)>(__func)(pv);
 #endif
@@ -482,7 +499,8 @@ cell Call_Vector_pVector(AMX *amx, cell *params)
 	v3.z=fl3[2];
 
 #ifdef _WIN32
-	Vector ret=reinterpret_cast<Vector (__fastcall *)(void *, int, Vector*)>(__func)(pv, 0, &v3);
+	Vector ret;
+	reinterpret_cast<void (__fastcall *)(void *, int, Vector*, Vector*)>(__func)(pv, 0, &ret, &v3);
 #elif defined __linux__
 	Vector ret=reinterpret_cast<Vector (*)(void *, Vector*)>(__func)(pv, &v3);
 #endif
