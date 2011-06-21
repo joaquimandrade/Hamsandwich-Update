@@ -193,8 +193,18 @@ hook_t hooklist[] =
 	{ V("dod_getstate",				Int_Void) },
 	{ V("dod_getstateent",			Int_Cbase) },
 	{ V("dod_item_candrop",			Int_Void) },
+	{ V("dod_item_spawndeploy",		Int_Void) },
+	{ V("dod_item_setdmgtime",		Void_Float) },
+	{ V("dod_item_dropgren",		Void_Void) },
+	{ V("dod_weapon_isuseable",		Int_Void) },
+	{ V("dod_weapon_flAim",			Int_Float) },
+	{ V("dod_weapon_changefov",		Void_Int) },
+	{ V("dod_weapon_zoomout",		Void_Void) },
+	{ V("dod_weapon_zoomin",		Void_Void) },
+	{ V("dod_weapon_getfov",		Int_Void) },
+	{ V("dod_weapon_playeriswatersniping", Int_Void) },
+	{ V("dod_weapon_updatezoomspeed", Void_Void) },
 
-	
 	/* Team Fortress Classic */
 	{ V("tfc_engineeruse",			Int_Cbase) },
 	{ V("tfc_finished",				Void_Void) },

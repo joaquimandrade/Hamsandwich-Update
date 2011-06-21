@@ -950,6 +950,18 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_Item_CanDrop, this);
 	 */
 	Ham_DOD_Item_CanDrop,
+	
+	Ham_DOD_Item_SpawnDeploy,
+	Ham_DOD_Item_SetDmgTime,
+	Ham_DOD_Item_DropGren,
+	Ham_DOD_Weapon_IsUseable,
+	Ham_DOD_Weapon_flAim,
+	Ham_DOD_Weapon_ChangeFOV,
+	Ham_DOD_Weapon_ZoomOut,
+	Ham_DOD_Weapon_ZoomIn,
+	Ham_DOD_Weapon_GetFOV,
+	Ham_DOD_Weapon_IsWaterSniping, /* PlayerIsWaterSniping (had to truncate the name)
+	Ham_DOD_Weapon_UpdateZoomSpeed,
 
 	/**
 	 * Description:		Unsure.
