@@ -161,6 +161,7 @@ enum
 	Ham_CS_Item_CanDrop,
 	Ham_CS_Item_GetMaxSpeed,
 	Ham_CS_ResetMaxSpeed,
+	Ham_CS_Weapon_SendWeaponAnim,
 
 	Ham_DOD_RoundRespawn,
 	Ham_DOD_RoundRespawnEnt,

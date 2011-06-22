@@ -183,6 +183,7 @@ hook_t hooklist[] =
 	{ V("cstrike_item_candrop",		Int_Void) },
 	{ V("cstrike_item_getmaxspeed",	Float_Void) },
 	{ V("cstrike_resetmaxspeed",	Void_Void) },
+	{ V("cstrike_weapon_sendweaponanim",Void_Int_Int) },
 
 	/* Day of Defeat */
 	{ V("dod_roundrespawn",			Void_Void) },
