@@ -118,12 +118,12 @@ hook_t hooklist[] =
 	{ V("fademonster",				Void_Void) },
 	{ V("gibmonster",				Void_Void) },
 	{ V("becomedead",				Void_Void) },
-	{ V("irelationship",				Int_Cbase) },
+	{ V("irelationship",			Int_Cbase) },
 	{ V("painsound",				Void_Void) },
-	{ V("reportaistate",				Void_Void) },
-	{ V("monsterinitdead",				Void_Void) },
-	{ V("look",					Void_Int) },
-	{ V("bestvisibleenemy",				Cbase_Void) },
+	{ V("reportaistate",			Void_Void) },
+	{ V("monsterinitdead",			Void_Void) },
+	{ V("look",						Void_Int) },
+	{ V("bestvisibleenemy",			Cbase_Void) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */
@@ -184,6 +184,7 @@ hook_t hooklist[] =
 	{ V("cstrike_item_getmaxspeed",	Float_Void) },
 	{ V("cstrike_resetmaxspeed",	Void_Void) },
 	{ V("cstrike_weapon_sendweaponanim",Void_Int_Int) },
+	{ V("cstrike_player_ontouchingweapon",Void_Cbase) },
 
 	/* Day of Defeat */
 	{ V("dod_roundrespawn",			Void_Void) },

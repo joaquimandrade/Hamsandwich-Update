@@ -896,6 +896,14 @@ enum Ham
 	Ham_CS_Weapon_SendWeaponAnim,
 
 	/**
+	 * Description:		Whether or not the player is touching a weapon on the ground.
+	 * Forward params:	function(this, entityid);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_CS_Player_OnTouchingWeapon, this, entityid);
+	 */
+	Ham_CS_Player_OnTouchingWeapon,
+
+	/**
 	 * Description:		I assume this spawns players at the start of a new round.
 	 * Forward params:	function(this)
 	 * Return type:		None.
