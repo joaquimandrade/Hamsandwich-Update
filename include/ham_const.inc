@@ -891,7 +891,7 @@ enum Ham
 	 * Description:		Sends an animation event for the weapon. skiplocal is 1 if client is predicting weapon animations.
 	 * Forward params:	function(this, iAnim, skiplocal);
 	 * Return type:		None.
-	 * Execute params:	ExecuteHam(Ham_Weapon_SendWeaponAnim, this, iAnim, skiplocal);
+	 * Execute params:	ExecuteHam(Ham_CS_Weapon_SendWeaponAnim, this, iAnim, skiplocal);
 	 */
 	Ham_CS_Weapon_SendWeaponAnim,
 
