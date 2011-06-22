@@ -494,7 +494,7 @@ enum Ham
 	
 	Ham_ChangeYaw, /* Need documentation */
 	Ham_HasHumanGibs, /* Need documentation */
-	Has_AlienGibs, /* Need documentation */
+	Ham_Has_AlienGibs, /* Need documentation */
 	Ham_FadeMonster, /* Need documentation */
 	Ham_GibMonster, /* Need documentation */
 	Ham_BecomeDead, /* Need documentation */
