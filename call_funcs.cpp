@@ -701,7 +701,7 @@ cell Call_Void_Float(AMX* amx, cell* params)
 
 cell Call_Void_Float_Float_Float_Int(AMX* amx, cell* params)
 {
-	SETUP(1);
+	SETUP(4);
 
 #ifdef _WIN32
 	reinterpret_cast<void (__fastcall *)(void*, int, float, float, float, int)>(__func)(pv, 0, amx_ctof2(params[3]), amx_ctof2(params[4]), amx_ctof2(params[5]), params[6]);
