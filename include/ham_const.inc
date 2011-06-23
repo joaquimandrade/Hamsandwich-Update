@@ -902,6 +902,14 @@ enum Ham
 	Ham_CS_Player_ResetMaxSpeed,
 
 	/**
+	 * Description:		Whether or not the player is a bot.
+	 * Forward params:	function(this);
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_CS_Player_IsBot, this);
+	 */
+	Ham_CS_Player_IsBot,
+
+	/**
 	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)
 	 *				    blindTime is the time you are considered as being blind. (holdTime * 0.33). Used it seems only by CS bots.
 	 * Forward params:	function(this, Float:blindTime, Float:duration, Float:holdTime, int alpha );
