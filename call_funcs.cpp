@@ -699,6 +699,18 @@ cell Call_Void_Float(AMX* amx, cell* params)
 	return 1;
 }
 
+cell Call_Void_Float_Float_Float_Int(AMX* amx, cell* params)
+{
+	SETUP(1);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, float, float, float, int)>(__func)(pv, 0, amx_ctof2(params[3]), amx_ctof2(params[4]), amx_ctof2(params[5]), params[6]);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, float, float, float, int)>(__func)(pv, amx_ctof2(params[3]), amx_ctof2(params[4]), amx_ctof2(params[5]), params[6]);
+#endif
+	return 1;
+}
+
 cell Call_Deprecated(AMX *amx, cell *params)
 {
 	MF_LogError(amx, AMX_ERR_NATIVE, "Ham function is deprecated.");

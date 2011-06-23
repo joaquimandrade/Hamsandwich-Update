@@ -1111,6 +1111,33 @@ void Hook_Void_Float(Hook* hook, void* pthis, float f1)
 	POP()
 }
 
+void Hook_Void_Float_Float_Float_Int(Hook* hook, void* pthis, float f1, float f2, float f3, int i1)
+{
+	PUSH_VOID()
+
+		MAKE_VECTOR()
+		P_FLOAT(f1)
+		P_FLOAT(f2)
+		P_FLOAT(f3)
+		P_INT(i1)
+
+		PRE_START()
+		, f1, f2, f3, i1
+		PRE_END()
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, float, float, float, int)>(hook->func)(pthis, 0, f1, f2, f3, i1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, float, float, float, int)>(hook->func)(pthis, f1, f2, f3, i1);
+#endif
+
+	POST_START()
+		, f1, f2, f3, i1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
 void Hook_Deprecated(Hook* hook)
 {
 }

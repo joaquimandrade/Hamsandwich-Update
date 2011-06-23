@@ -184,6 +184,7 @@ hook_t hooklist[] =
 	{ V("cstrike_item_getmaxspeed",	Float_Void) },
 	{ V("cstrike_resetmaxspeed",	Void_Void) },
 	{ V("cstrike_weapon_sendweaponanim",Void_Int_Int) },
+	{ V("cstrike_player_blind",		Void_Float_Float_Float_Int) },
 	{ V("cstrike_player_ontouchingweapon",Void_Cbase) },
 
 	/* Day of Defeat */

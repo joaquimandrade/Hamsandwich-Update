@@ -896,6 +896,15 @@ enum Ham
 	Ham_CS_Weapon_SendWeaponAnim,
 
 	/**
+	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)
+	 *				    blindTime is the time you are considered as being blind. (holdTime * 0.33). Used it seems only by CS bots.
+	 * Forward params:	function(this, Float:blindTime, Float:duration, Float:holdTime, int alpha );
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_CS_Player_Blind, this, Float:blindTime, Float:duration, Float:holdTime, int alpha );
+	 */
+	Ham_CS_Player_Blind,
+
+	/**
 	 * Description:		Whether or not the player is touching a weapon on the ground.
 	 * Forward params:	function(this, entityid);
 	 * Return type:		None.

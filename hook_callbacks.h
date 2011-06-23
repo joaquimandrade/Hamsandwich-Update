@@ -194,6 +194,10 @@ const bool RT_Void_Float = true;
 const int PC_Void_Float = 1;
 void Hook_Void_Float(Hook *hook, void *pthis, float f1);
 
+const bool RT_Void_Float_Float_Float_Int = false;
+const int PC_Void_Float_Float_Float_Int = 4;
+void Hook_Void_Float_Float_Float_Int(Hook *hook, void *pthis, float f1, float f2, float f3, int i1);
+
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;
 void Hook_Deprecated(Hook* hook);
