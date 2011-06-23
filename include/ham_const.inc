@@ -491,7 +491,7 @@ enum Ham
 	 */
 	Ham_FVecVisible,
 
-	
+	Ham_ShouldFadeOnDeath, /* Need documentation */
 	Ham_ChangeYaw, /* Need documentation. You are damn LAZY ! (test) */
 	Ham_HasHumanGibs, /* Need documentation */
 	Ham_Has_AlienGibs, /* Need documentation */
