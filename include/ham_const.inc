@@ -906,7 +906,7 @@ enum Ham
 	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CS_Player_IsBot, this);
 	 */
-	Ham_CS_Player_IsBot,f
+	Ham_CS_Player_IsBot,
 
 	/**
 	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)
