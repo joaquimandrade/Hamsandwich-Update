@@ -884,8 +884,6 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Item_GetMaxSpeed, this, Float:output);
 	 */
 	Ham_CS_Item_GetMaxSpeed,
-	
-	Ham_CS_ResetMaxSpeed, /* Need documentation */
 
 	/**
 	 * Description:		Sends an animation event for the weapon. skiplocal is 1 if client is predicting weapon animations.
@@ -894,6 +892,14 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Weapon_SendWeaponAnim, this, iAnim, skiplocal);
 	 */
 	Ham_CS_Weapon_SendWeaponAnim,
+
+	/**
+	 * Description:		Resets the player's max speed.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_CS_Player_ResetMaxSpeed, this);
+	 */
+	Ham_CS_Player_ResetMaxSpeed,
 
 	/**
 	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)
