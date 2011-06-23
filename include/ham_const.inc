@@ -491,7 +491,6 @@ enum Ham
 	 */
 	Ham_FVecVisible,
 
-	Ham_ShouldFadeOnDeath, /* Need documentation */
 	Ham_ChangeYaw, /* Need documentation. You are damn LAZY ! (test) */
 	Ham_HasHumanGibs, /* Need documentation */
 	Ham_Has_AlienGibs, /* Need documentation */
@@ -907,7 +906,7 @@ enum Ham
 	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CS_Player_IsBot, this);
 	 */
-	Ham_CS_Player_IsBot,
+	Ham_CS_Player_IsBot,f
 
 	/**
 	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)

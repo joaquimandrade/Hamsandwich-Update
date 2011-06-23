@@ -97,7 +97,6 @@ enum
 	Ham_Illumination,
 	Ham_FVisible,
 	Ham_FVecVisible,
-	Ham_ShouldFadeOnDeath,
 	Ham_ChangeYaw,
 	Ham_HasHumanGibs,
 	Has_AlienGibs, 
