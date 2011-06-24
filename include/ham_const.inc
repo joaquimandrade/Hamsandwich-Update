@@ -909,6 +909,15 @@ enum Ham
 	Ham_CS_Player_IsBot,
 
 	/**
+	 * Description:		Returns a vector that tells the autoaim direction.
+	 *					Set crosshair position to point to enemey if sv_aim is 1.
+	 * Forward params:	function(this, Float:delta)
+	 * Return type:		Vector, byreffed in execute.
+	 * Execute params:	ExecuteHam(Ham_CS_Player_GetAutoaimVector, this, Float:delta, Float:output[3]);
+	 */
+	Ham_CS_Player_GetAutoaimVector,
+
+	/**
 	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)
 	 *				    blindTime is the time you are considered as being blind. (holdTime * 0.33). Used it seems only by CS bots.
 	 * Forward params:	function(this, Float:blindTime, Float:duration, Float:holdTime, int alpha );

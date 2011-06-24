@@ -1138,6 +1138,44 @@ void Hook_Void_Float_Float_Float_Int(Hook* hook, void* pthis, float f1, float f2
 	POP()
 }
 
+#ifdef _WIN32
+void Hook_Vector_Float(Hook *hook, void *pthis, Vector *out, float f1)
+#elif defined __linux__
+void Hook_Vector_Float(Hook *hook, Vector *out, void *pthis, float f1)
+#endif
+{
+	Vector ret;
+	Vector origret;
+
+	PUSH_VECTOR()
+
+	MAKE_VECTOR()
+	P_FLOAT(f1)
+
+	memset(&ret, 0x0, sizeof(Vector));
+	memset(&origret, 0x0, sizeof(Vector));
+
+	PRE_START()
+		, f1
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, Vector *, float)>(hook->func)(pthis, 0, &origret, f1);
+#elif defined __linux__
+		origret=reinterpret_cast<Vector (*)(void *, float)>(hook->func)(pthis, f1);
+#endif
+
+	POST_START()
+		, f1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN_VEC()
+	memcpy(out, &ret, sizeof(Vector));
+
+}
+
 void Hook_Deprecated(Hook* hook)
 {
 }

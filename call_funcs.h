@@ -98,6 +98,8 @@ cell Call_Void_Float_Float_Float_Int(AMX* amx, cell* params);
 
 cell Call_Float_Int(AMX* amx, cell* params);
 
+cell Call_Vector_Float(AMX* amx, cell* params);
+
 cell Call_Deprecated(AMX* amx, cell* params);
 
 #endif

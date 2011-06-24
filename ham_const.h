@@ -163,6 +163,7 @@ enum
 	Ham_CS_Weapon_SendWeaponAnim,
 	Ham_CS_Player_ResetMaxSpeed,
 	Ham_CS_Player_IsBot,
+	Ham_CS_Player_GetAutoaimVector,
 	Ham_CS_Player_Blind,
 	Ham_CS_Player_OnTouchingWeapon,
 

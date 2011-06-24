@@ -198,6 +198,14 @@ const bool RT_Void_Float_Float_Float_Int = false;
 const int PC_Void_Float_Float_Float_Int = 4;
 void Hook_Void_Float_Float_Float_Int(Hook *hook, void *pthis, float f1, float f2, float f3, int i1);
 
+const bool RT_Vector_Float = true;
+const int PC_Vector_Float = 2;
+#ifdef _WIN32
+void Hook_Vector_Float(Hook *hook, void *pthis, Vector *out, float f1);
+#elif defined __linux__
+void Hook_Vector_Float(Hook *hook, Vector *out, void *pthis, float f1);
+#endif
+
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;
 void Hook_Deprecated(Hook* hook);
