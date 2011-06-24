@@ -124,6 +124,7 @@ hook_t hooklist[] =
 	{ V("monsterinitdead",			Void_Void) },
 	{ V("look",						Void_Int) },
 	{ V("bestvisibleenemy",			Cbase_Void) },
+	{ V("finviewcone",				Int_Cbase) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

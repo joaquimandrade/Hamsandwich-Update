@@ -505,6 +505,15 @@ enum Ham
 	Ham_BestVisibleEnemy, /* Need documentation */
 	
 	/**
+	 * Description:		Returns TRUE is the passed ent is in the caller's forward view cone. 
+	 *					The dot product is performed in 2d, making the view cone infinitely tall. 
+	 * Forward params:	function(this, idOther);
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_FInViewCone, this, idOther);
+	 */
+	Ham_FInViewCone,
+	
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	 
