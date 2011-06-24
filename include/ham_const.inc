@@ -39,7 +39,7 @@
 enum Ham
 {
 	/**
-     * Description: 	This is typically called whenever an entity is created. 
+	 * Description: 	This is typically called whenever an entity is created. 
 	 *					It is the virtual equivilent of spawn from the engine.
 	 *					Some mods call this on player spawns too.
 	 * Forward params:	function(this)
@@ -47,9 +47,9 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Spawn, this);
 	 */
 	Ham_Spawn = 0, 
-						
+	
 	/**
-     * Description: 	This is typically called on map change.
+	* Description: 	This is typically called on map change.
 	 *					This will typically precache all assets required by the entity.
 	 * Forward params:	function(this)
 	 * Return type:		None.
@@ -199,7 +199,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_AddPoints, this, points, bool:cangonegative);
 	 */
 	Ham_AddPoints,
-
+	
 	/**
 	 * Description:		Typically adds points to everybody on the entity's team.
 	 * Forward params:	function(this, points, bool:cangonegative);
@@ -279,7 +279,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_StartSneaking, this);
 	 */
 	Ham_StartSneaking,
-
+	
 	/**
 	 * Description:		Not entirely sure what this does.
 	 * Forward params:	function(this)
@@ -354,7 +354,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_IsPlayer, this);
 	 */
 	Ham_IsPlayer,
-
+	
 	/** 
 	 * Description:		Whether or not the entity is a net client.
 	 * Forward params:	function(this);
@@ -362,7 +362,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_IsNetClient, this);
 	 */
 	Ham_IsNetClient,
-
+	
 	/** 
 	 * Description:		Get the entity's team id.
 	 * Forward params:	function(this);
@@ -450,7 +450,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_EyePosition, this, Float:output[3]);
 	 */
 	Ham_EyePosition,
-
+	
 	/**
 	 * Description:		Returns the ear position of the entity.
 	 * Forward params:	function(this);
@@ -490,8 +490,8 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FVecVisible, this, const Float:origin[3]);
 	 */
 	Ham_FVecVisible,
-
-	Ham_ChangeYaw, /* Need documentation. You are damn LAZY ! (test) */
+	
+	Ham_ChangeYaw, /* Need documentation */
 	Ham_HasHumanGibs, /* Need documentation */
 	Ham_Has_AlienGibs, /* Need documentation */
 	Ham_FadeMonster, /* Need documentation */
@@ -512,11 +512,11 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FInViewCone, this, idOther);
 	 */
 	Ham_FInViewCone,
-
+	
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
-	 
+	
 	/**
 	 * Description:		Typically called every frame when a player has jump held.
 	 * Forward params:	function(this)
@@ -524,7 +524,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Player_Jump, this);
 	 */
 	Ham_Player_Jump,
-
+	
 	/**
 	 * Description:		Typically called every frame when a player has duck held.
 	 * Forward params:	function(this)
@@ -540,7 +540,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Player_PreThink, this);
 	 */
 	Ham_Player_PreThink,
-
+	
 	/**
 	 * Description:		Typically called every frame during PlayerPostThink engine call.
 	 * Forward params:	function(this)
@@ -564,7 +564,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Player_ShouldFadeOnDeath, this);
 	 */
 	Ham_Player_ShouldFadeOnDeath,
-
+	
 	/**
 	 * Description:		Called whenever an impulse command is executed.
 	 * Forward param:	function(this)
@@ -592,7 +592,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Item_AddToPlayer, this, idPlayer);
 	 */
 	Ham_Item_AddToPlayer,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, idOriginal);
@@ -696,7 +696,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Item_SecondaryAmmoIndex, this);
 	 */
 	Ham_Item_SecondaryAmmoIndex,
-
+	
 	/**
 	 * Description:		Updates item data for the client.
 	 * Forward params:	function(this, idPlayer)
@@ -733,7 +733,7 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_Weapon_ExtractAmmo, this, idTarget)
 	 */
 	Ham_Weapon_ExtractAmmo,
-
+	
 	/**
 	 * Description:		Gets clip ammo from the target weapon.
 	 * Forward params:	function(this, idTarget)
@@ -757,7 +757,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Weapon_PlayEmptySound, this);
 	 */
 	Ham_Weapon_PlayEmptySound,
-
+	
 	/**
 	 * Description:		Sets the weapon so that it can play empty sound again.
 	 * Forward params:	function(this)
@@ -861,7 +861,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TS_RespawnWait, this);
 	 */
 	Ham_TS_RespawnWait,
-
+	
 	/**
 	 * Description:		This is called on a map reset for most map based entities.
 	 * Forward params:	function(this);
@@ -892,7 +892,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Item_GetMaxSpeed, this, Float:output);
 	 */
 	Ham_CS_Item_GetMaxSpeed,
-
+	
 	/**
 	 * Description:		Sends an animation event for the weapon. skiplocal is 1 if client is predicting weapon animations.
 	 * Forward params:	function(this, iAnim, skiplocal);
@@ -900,7 +900,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Weapon_SendWeaponAnim, this, iAnim, skiplocal);
 	 */
 	Ham_CS_Weapon_SendWeaponAnim,
-
+	
 	/**
 	 * Description:		Resets the player's max speed.
 	 * Forward params:	function(this);
@@ -908,7 +908,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Player_ResetMaxSpeed, this);
 	 */
 	Ham_CS_Player_ResetMaxSpeed,
-
+	
 	/**
 	 * Description:		Whether or not the player is a bot.
 	 * Forward params:	function(this);
@@ -916,7 +916,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Player_IsBot, this);
 	 */
 	Ham_CS_Player_IsBot,
-
+	
 	/**
 	 * Description:		Returns a vector that tells the autoaim direction.
 	 *					Set crosshair position to point to enemey if sv_aim is 1.
@@ -925,16 +925,16 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Player_GetAutoaimVector, this, Float:delta, Float:output[3]);
 	 */
 	Ham_CS_Player_GetAutoaimVector,
-
+	
 	/**
 	 * Description:		Whether or not the player is being flashing. (flashbang grenade explosion)
-	 *				    blindTime is the time you are considered as being blind. (holdTime * 0.33). Used it seems only by CS bots.
+	 *					blindTime is the time you are considered as being blind. (holdTime * 0.33). Used it seems only by CS bots.
 	 * Forward params:	function(this, Float:blindTime, Float:duration, Float:holdTime, int alpha );
 	 * Return type:		None.
 	 * Execute params:	ExecuteHam(Ham_CS_Player_Blind, this, Float:blindTime, Float:duration, Float:holdTime, int alpha );
 	 */
 	Ham_CS_Player_Blind,
-
+	
 	/**
 	 * Description:		Whether or not the player is touching a weapon on the ground.
 	 * Forward params:	function(this, entityid);
@@ -942,7 +942,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Player_OnTouchingWeapon, this, entityid);
 	 */
 	Ham_CS_Player_OnTouchingWeapon,
-
+	
 	/**
 	 * Description:		I assume this spawns players at the start of a new round.
 	 * Forward params:	function(this)
@@ -950,7 +950,7 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_RoundRespawn, this);
 	 */
 	Ham_DOD_RoundRespawn,
-
+	
 	/**
 	 * Description:		I assume this spawns entities (like func_breakables) at the start of a new round.
 	 * Forward params:	function(this)
@@ -1019,7 +1019,7 @@ enum Ham
 	Ham_DOD_Weapon_GetFOV,
 	Ham_DOD_Weapon_IsWaterSniping, /* PlayerIsWaterSniping (had to truncate the name) */
 	Ham_DOD_Weapon_UpdateZoomSpeed,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, iduser)
@@ -1043,7 +1043,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_EmpExplode, this, entityid, Float:floata, Float:floatb)
 	 */
 	Ham_TFC_EmpExplode,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, Float:floata, Float:floatb)
@@ -1084,7 +1084,6 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_Concuss, this, entityid);
 	 */
 	Ham_TFC_Concuss,
-
 	
 	/**
 	 * Description:		Unsure.
@@ -1103,7 +1102,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
 	 */
 	Ham_ESF_TakeDamage2,
-
+	
 	/**
 	 * Description:		Returns how many points each entity is worth.
 	 * Forward params:	function(this)
@@ -1135,8 +1134,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_UpdateOnRemove, this)
 	 */
 	Ham_NS_UpdateOnRemove,
-
-
+	
 	/** Virtual functions added to TS in TS 3 */
 	
 	/**
@@ -1194,8 +1192,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TS_ShouldCollide, this, otherEntity)
 	 */
 	Ham_TS_ShouldCollide,
-
-
+	
 	/**
 	 * DONT USE ME LOL
 	 */
