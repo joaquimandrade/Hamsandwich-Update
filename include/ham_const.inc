@@ -49,7 +49,7 @@ enum Ham
 	Ham_Spawn = 0, 
 	
 	/**
-	* Description: 	This is typically called on map change.
+	 * Description: 	This is typically called on map change.
 	 *					This will typically precache all assets required by the entity.
 	 * Forward params:	function(this)
 	 * Return type:		None.
