@@ -112,7 +112,6 @@ hook_t hooklist[] =
 	{ V("illumination",				Int_Void) },
 	{ V("fvisible",					Int_Cbase) },
 	{ V("fvecvisible",				Int_pVector) },
-	{ V("shouldfadeondeath",		Int_Void) },
 	{ V("changeyaw",				Float_Int) },
 	{ V("hashumangibs",				Int_Void) },
 	{ V("hasaliengibs",				Int_Void) },
