@@ -113,6 +113,7 @@ enum
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,
 	Ham_GetStoppedActivity,
+	Ham_Stop,
 	Ham_GetDeathActivity,
 	Ham_CheckRangeAttack1,
 	Ham_CheckRangeAttack2,
