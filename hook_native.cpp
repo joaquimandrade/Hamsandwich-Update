@@ -126,6 +126,10 @@ hook_t hooklist[] =
 	{ V("bestvisibleenemy",			Cbase_Void) },
 	{ V("finviewcone",				Int_Cbase) },
 	{ V("getdeathactivity",			Int_Void) },
+	{ V("checkrangeattack1",		Int_Float_Float) },
+	{ V("checkrangeattack2",		Int_Float_Float) },
+	{ V("checkmeleeattack1",		Int_Float_Float) },
+	{ V("checkmeleeattack2",		Int_Float_Float) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

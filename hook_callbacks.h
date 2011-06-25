@@ -210,6 +210,10 @@ const bool RT_Void_Float_Cbase = true;
 const int PC_Void_Float_Cbase = 2;
 void Hook_Void_Float_Cbase(Hook *hook, void *pthis, float f1, void *cb);
 
+const bool RT_Int_Float_Float = false;
+const int PC_Int_Float_Float = 2;
+int Hook_Int_Float_Float(Hook *hook, void *pthis, float f1, float f2);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

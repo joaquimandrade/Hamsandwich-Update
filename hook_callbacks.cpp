@@ -1204,6 +1204,38 @@ void Hook_Void_Float_Cbase(Hook *hook, void *pthis, float f1, void *cb)
 	POP()
 }
 
+int Hook_Int_Float_Float(Hook *hook, void *pthis, float f1, float f2)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_FLOAT(f1)
+	P_FLOAT(f2)
+
+	PRE_START()
+		, f1, f2
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, float, float)>(hook->func)(pthis, 0, f1, f2);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, float, float)>(hook->func)(pthis, f1, f2);
+#endif
+
+	POST_START()
+		, f1, f2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+
+	return ret;
+}
 
 void Hook_Deprecated(Hook* hook)
 {

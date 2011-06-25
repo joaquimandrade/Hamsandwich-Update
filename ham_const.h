@@ -111,6 +111,10 @@ enum
 	Ham_BestVisibleEnemy, 
 	Ham_FInViewCone,
 	Ham_GetDeathActivity,
+	Ham_CheckRangeAttack1,
+	Ham_CheckRangeAttack2,
+	Ham_CheckMeleeAttack1,
+	Ham_CheckMeleeAttack2,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
