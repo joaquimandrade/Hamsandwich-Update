@@ -512,6 +512,14 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FInViewCone, this, idOther);
 	 */
 	Ham_FInViewCone,
+
+	/**
+	 * Description:		Determines the best type of death animation to play.
+	 * Forward params:	function(this);
+	 * Return type:		Integer (ACT_* constants, see HLDSK. It might different depending the mod).
+	 * Execute params:	ExecuteHam(Ham_GetDeathActivity, this);
+	 */
+	Ham_GetDeathActivity,
 	
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
