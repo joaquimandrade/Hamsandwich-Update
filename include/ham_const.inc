@@ -544,18 +544,18 @@ enum Ham
 	 *					trying to possess it. If DisregardState is set, the monster will be sucked into the script 
 	 *					no matter what state it is in. ONLY Scripted AI ents should allow this.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
-	 * Forward params:	function(this, bool:disregardMonsterState, interruptLevel);
+	 * Forward params:	function(this, bool:disregardState, interruptLevel);
 	 * Return type:		Integer (Boolean).
-	 * Execute params:	ExecuteHam(Ham_GetDeathActivity, this, bool:disregardMonsterState, interruptLevel );
+	 * Execute params:	ExecuteHam(Ham_CanPlaySequence, this, bool:disregardState, interruptLevel );
 	 */
 	Ham_CanPlaySequence,
 
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
-	 * Forward params:	function(this, bool:DisregardState);
+	 * Forward params:	function(this, bool:disregardState);
 	 * Return type:		Integer (Boolean).
-	 * Execute params:	ExecuteHam(Ham_CanPlaySentence, this, bool:DisregardState );
+	 * Execute params:	ExecuteHam(Ham_CanPlaySentence, this, bool:disregardState );
 	 */
 	Ham_CanPlaySentence,
 
