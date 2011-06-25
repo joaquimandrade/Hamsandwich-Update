@@ -226,6 +226,10 @@ const bool RT_Void_Str_Float_Float_Float = true;
 const int PC_Void_Str_Float_Float_Float = 4;
 void Hook_Void_Str_Float_Float_Float(Hook *hook, void *pthis, const char *sz1, float f1, float f2, float f3);
 
+const bool RT_Void_Str_Float_Float_Float_Int_Cbase = true;
+const int PC_Void_Str_Float_Float_Float_Int_Cbase = 6;
+void Hook_Void_Str_Float_Float_Float_Int_Cbase(Hook *hook, void *pthis, const char *sz1, float f1, float f2, float f3, int i1, void *cb);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

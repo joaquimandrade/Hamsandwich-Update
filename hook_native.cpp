@@ -138,6 +138,7 @@ hook_t hooklist[] =
 	{ V("canplaysequence",			Int_Int_Int) },
 	{ V("canplaysentence",			Int_Int) },
 	{ V("playsentence",				Void_Str_Float_Float_Float) },
+	{ V("PlayScriptedSentence",		Void_Str_Float_Float_Float_Int_Cbase) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

@@ -807,6 +807,31 @@ cell Call_Void_Str_Float_Float_Float(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Void_Str_Float_Float_Float_Int_Cbase(AMX *amx, cell *params)
+{
+	SETUP(4);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	float f4=amx_ftoc2(*MF_GetAmxAddr(amx, params[4]));
+	float f5=amx_ftoc2(*MF_GetAmxAddr(amx, params[5]));
+	float f6=amx_ftoc2(*MF_GetAmxAddr(amx, params[6]));
+	int i7=params[7];
+	int id8=*MF_GetAmxAddr(amx, params[8]);
+
+	CHECK_ENTITY(id8);
+
+	void *p8=IndexToPrivate(id8);
+
+
+#ifdef _WIN32
+	reinterpret_cast<int (__fastcall *)(void*, int, const char *, float, float, float, int, void *)>(__func)(pv, 0, sz3, f4, f5, f6, i7, p8);
+#elif defined __linux__
+	reinterpret_cast<int (*)(void *, const char *, float, float, float, int, void *)>(__func)(pv, sz3, f4, f5, f6, i7, p8);
+#endif
+
+	return 1;
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

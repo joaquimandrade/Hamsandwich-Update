@@ -1334,6 +1334,41 @@ void Hook_Void_Str_Float_Float_Float(Hook *hook, void *pthis, const char *sz1, f
 	POP()
 }
 
+void Hook_Void_Str_Float_Float_Float_Int_Cbase(Hook *hook, void *pthis, const char *sz1, float f1, float f2, float f3, int i1, void *cb)
+{
+	PUSH_VOID()
+
+	String a=sz1;
+	int iEnt=PrivateToIndex(cb);
+
+	MAKE_VECTOR()
+
+		P_STR(a)
+		P_FLOAT(f1)
+		P_FLOAT(f2)
+		P_FLOAT(f3)
+		P_INT(i1)
+		P_CBASE(cb, iEnt)
+
+	PRE_START()
+		,a.c_str(), f1, f2, f3, i1, iEnt
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<int (__fastcall*)(void*, int, const char *, float, float, float, int, void *)>(hook->func)(pthis, 0, a.c_str(), f1, f2, f3, i1, cb);
+#elif defined __linux__
+		reinterpret_cast<int (*)(void*, const char *, float, float, float, int, void *)>(hook->func)(pthis, a.c_str(), f1, f2, f3, i1, cb);
+#endif
+
+	POST_START()
+		,a.c_str(), f1, f2, f3, i1, iEnt
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+
 void Hook_Deprecated(Hook* hook)
 {
 }

@@ -569,6 +569,15 @@ enum Ham
 	Ham_PlaySentence,
 
 	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, const sentence[], Float:duration, Float:volume, Float:attenuation, bool:concurrent, idListener);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_PlaySentence, this, const sentence[], Float:duration, Float:volume, Float:attenuation, bool:concurrent, idListener );
+	 */
+	Ham_PlayScriptedSentence,
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	
