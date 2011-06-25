@@ -521,10 +521,10 @@ enum Ham
 	 */
 	Ham_GetDeathActivity,
 	
-	Ham_CheckRangeAttack1, /* Need documentation, not present in NS and TS */
-	Ham_CheckRangeAttack2, /* Need documentation, not present in NS and TS */
-	Ham_CheckMeleeAttack1, /* Need documentation, not present in NS and TS */
-	Ham_CheckMeleeAttack2, /* Need documentation, not present in NS and TS */
+	Ham_CheckRangeAttack1, /* Need documentation, not present in NS, TS and CS */
+	Ham_CheckRangeAttack2, /* Need documentation, not present in NS, TS and CS */
+	Ham_CheckMeleeAttack1, /* Need documentation, not present in NS, TS and CS */
+	Ham_CheckMeleeAttack2, /* Need documentation, not present in NS, TS and CS */
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
