@@ -121,6 +121,7 @@ enum
 	Ham_CheckMeleeAttack2,
 	Ham_ScheduleChange,
 	Ham_CanPlaySequence,
+	Ham_CanPlaySentence,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,

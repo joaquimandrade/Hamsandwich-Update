@@ -550,6 +550,14 @@ enum Ham
 	 */
 	Ham_CanPlaySequence,
 
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, bool:DisregardState);
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_CanPlaySentence, this, bool:DisregardState );
+	 */
+	Ham_CanPlaySentence,
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
