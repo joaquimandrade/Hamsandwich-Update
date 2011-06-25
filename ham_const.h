@@ -126,6 +126,7 @@ enum
 	Ham_PlayScriptedSentence,
 	Ham_SentenceStop,
 	Ham_GetIdealState,
+	Ham_SetActivity,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,

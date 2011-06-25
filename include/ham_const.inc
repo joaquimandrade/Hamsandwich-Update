@@ -596,6 +596,15 @@ enum Ham
 	Ham_GetIdealState,
 
 	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, newActivity);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SetActivity, this, newActivity);
+	 */
+	Ham_SetActivity,
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	
