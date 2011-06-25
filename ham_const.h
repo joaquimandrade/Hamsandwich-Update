@@ -190,6 +190,7 @@ enum
 	Ham_DOD_Weapon_GetFOV,
 	Ham_DOD_Weapon_IsWaterSniping, 
 	Ham_DOD_Weapon_UpdateZoomSpeed,
+	Ham_DOD_Weapon_Special,
 
 	Ham_TFC_EngineerUse,
 	Ham_TFC_Finished,

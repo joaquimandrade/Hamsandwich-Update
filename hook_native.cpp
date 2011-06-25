@@ -213,6 +213,7 @@ hook_t hooklist[] =
 	{ V("dod_weapon_getfov",		Int_Void) },
 	{ V("dod_weapon_playeriswatersniping", Int_Void) },
 	{ V("dod_weapon_updatezoomspeed", Void_Void) },
+	{ V("dod_weapon_special",		Void_Void) },
 
 	/* Team Fortress Classic */
 	{ V("tfc_engineeruse",			Int_Cbase) },

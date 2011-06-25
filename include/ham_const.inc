@@ -1028,6 +1028,7 @@ enum Ham
 	Ham_DOD_Weapon_GetFOV,
 	Ham_DOD_Weapon_IsWaterSniping, /* PlayerIsWaterSniping (had to truncate the name) */
 	Ham_DOD_Weapon_UpdateZoomSpeed,
+	Ham_DOD_Weapon_Special,
 	
 	/**
 	 * Description:		Unsure.
