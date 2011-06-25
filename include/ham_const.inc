@@ -531,6 +531,7 @@ enum Ham
 	Ham_Move,
 
 	Ham_ShouldAdvanceRoute, /* Need documentation, not present in NS, TS and CS */
+	Ham_GetStoppedActivity, /* Need documentation, not present in NS, TS and CS */
 	Ham_CheckRangeAttack1,  /* Need documentation, not present in NS, TS and CS */
 	Ham_CheckRangeAttack2,  /* Need documentation, not present in NS, TS and CS */
 	Ham_CheckMeleeAttack1,  /* Need documentation, not present in NS, TS and CS */
