@@ -127,6 +127,7 @@ hook_t hooklist[] =
 	{ V("finviewcone",				Int_Cbase) },
 	{ V("getdeathactivity",			Int_Void) },
 	{ V("move",						Void_Float) },
+	{ V("shouldadvanceroute",		Int_Float) },
 	{ V("checkrangeattack1",		Int_Float_Float) },
 	{ V("checkrangeattack2",		Int_Float_Float) },
 	{ V("checkmeleeattack1",		Int_Float_Float) },

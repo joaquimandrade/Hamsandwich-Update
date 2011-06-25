@@ -763,6 +763,19 @@ cell Call_Int_Float_Float(AMX *amx, cell *params)
 #endif
 }
 
+cell Call_Int_Float(AMX *amx, cell *params)
+{
+	SETUP(1);
+
+	float f3=amx_ftoc2(*MF_GetAmxAddr(amx, params[3]));
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, float)>(__func)(pv, 0, f3);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, float)>(__func)(pv, f3);
+#endif
+}
+
 
 
 cell Call_Deprecated(AMX *amx, cell *params)
