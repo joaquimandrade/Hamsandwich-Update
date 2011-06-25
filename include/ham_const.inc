@@ -1030,6 +1030,14 @@ enum Ham
 	Ham_DOD_Weapon_UpdateZoomSpeed,
 	Ham_DOD_Weapon_Special,
 	
+	/** 
+	 * Description:		Get the item name.
+	 * Forward params:	function(this);
+	 * Return type:		String (string length returned and string byref'd in ExecuteHam).
+	 * Execute params:	ExecuteHam(Ham_TFC_DB_GetItemName, this, buffer[], size);
+	 */
+	Ham_TFC_DB_GetItemName,
+
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, iduser)

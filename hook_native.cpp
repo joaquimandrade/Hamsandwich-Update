@@ -216,6 +216,7 @@ hook_t hooklist[] =
 	{ V("dod_weapon_special",		Void_Void) },
 
 	/* Team Fortress Classic */
+	{ V("tfc_dbgetitemname",		Str_Void) },
 	{ V("tfc_engineeruse",			Int_Cbase) },
 	{ V("tfc_finished",				Void_Void) },
 	{ V("tfc_empexplode",			Void_Entvar_Float_Float) },
