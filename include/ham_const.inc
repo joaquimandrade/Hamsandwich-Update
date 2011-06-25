@@ -669,7 +669,7 @@ enum Ham
 	 * Description:		Normally called when an item gets deleted.
 	 * Forward params:	function(this)
 	 * Return type:		None.
-	 * Execute params:	ExecuteHam(Ham_Item_Drop, this);
+	 * Execute params:	ExecuteHam(Ham_Item_Kill, this);
 	 */
 	Ham_Item_Kill,
 	
