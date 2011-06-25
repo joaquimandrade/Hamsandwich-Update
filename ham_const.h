@@ -119,6 +119,7 @@ enum
 	Ham_CheckRangeAttack2,
 	Ham_CheckMeleeAttack1,
 	Ham_CheckMeleeAttack2,
+	Ham_ScheduleChange,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,

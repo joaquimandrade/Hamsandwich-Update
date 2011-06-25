@@ -134,6 +134,7 @@ hook_t hooklist[] =
 	{ V("checkrangeattack2",		Int_Float_Float) },
 	{ V("checkmeleeattack1",		Int_Float_Float) },
 	{ V("checkmeleeattack2",		Int_Float_Float) },
+	{ V("schedulechange",			Void_Void) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */
