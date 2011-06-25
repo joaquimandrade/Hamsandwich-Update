@@ -142,6 +142,7 @@ hook_t hooklist[] =
 	{ V("sentencestop",				Void_Void) },
 	{ V("getidealstate",			Int_Void) },
 	{ V("setactivity",				Void_Int) },
+	{ V("checkenemy",				Int_Cbase) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

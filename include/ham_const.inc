@@ -605,6 +605,16 @@ enum Ham
 	Ham_SetActivity,
 
 	/**
+	 * Description:		Part of the condition collection process gets and stores data and conditions 
+	 *					pertaining to a monster's enemy. Returns TRUE if Enemy LKP was updated.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, idEnemy);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_CheckEnemy, this, idEnemy);
+	 */
+	Ham_CheckEnemy,
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	
