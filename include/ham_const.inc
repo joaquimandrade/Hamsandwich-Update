@@ -587,6 +587,15 @@ enum Ham
 	Ham_SentenceStop,
 
 	/**
+	 * Description:		Surveys the Conditions information available and finds the best new state for a monster.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		Integer. (MONSTERSTATE_* constants. See HLSDK.)
+	 * Execute params:	ExecuteHam(Ham_GetIdealState, this);
+	 */
+	Ham_GetIdealState,
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	
