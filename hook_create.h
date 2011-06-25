@@ -108,6 +108,8 @@ int Create_Int_Float(AMX* amx, const char* func);
 
 int Create_Int_Int_Int(AMX* amx, const char* func);
 
+int Create_Void_Str_Float_Float_Float(AMX* amx, const char* func);
+
 
 int Create_Deprecated(AMX* amx, const char* func);
 

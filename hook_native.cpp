@@ -137,6 +137,7 @@ hook_t hooklist[] =
 	{ V("schedulechange",			Void_Void) },
 	{ V("canplaysequence",			Int_Int_Int) },
 	{ V("canplaysentence",			Int_Int) },
+	{ V("playsentence",				Void_Str_Float_Float_Float) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

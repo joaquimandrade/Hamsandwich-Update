@@ -239,7 +239,6 @@ cell Call_Void_Int_Int(AMX *amx, cell *params)
 
 cell Call_Int_Int_Str_Int(AMX *amx, cell *params)
 {
-	
 	SETUP(3);
 
 	int i3=*MF_GetAmxAddr(amx, params[3]);
@@ -788,6 +787,24 @@ cell Call_Int_Int_Int(AMX *amx, cell *params)
 #elif defined __linux__
 	return reinterpret_cast<int (*)(void *, int, int)>(__func)(pv, i3, i4);
 #endif
+}
+
+cell Call_Void_Str_Float_Float_Float(AMX *amx, cell *params)
+{
+	SETUP(4);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	float f4=amx_ftoc2(*MF_GetAmxAddr(amx, params[4]));
+	float f5=amx_ftoc2(*MF_GetAmxAddr(amx, params[5]));
+	float f6=amx_ftoc2(*MF_GetAmxAddr(amx, params[6]));
+
+#ifdef _WIN32
+	reinterpret_cast<int (__fastcall *)(void*, int, const char *, float, float, float)>(__func)(pv, 0, sz3, f4, f5, f6);
+#elif defined __linux__
+	reinterpret_cast<int (*)(void *, const char *, float, float, float)>(__func)(pv, sz3, f4, f5, f6);
+#endif
+
+	return 1;
 }
 
 

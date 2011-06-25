@@ -122,6 +122,7 @@ enum
 	Ham_ScheduleChange,
 	Ham_CanPlaySequence,
 	Ham_CanPlaySentence,
+	Ham_PlaySentence,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
