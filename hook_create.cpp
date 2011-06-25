@@ -196,6 +196,10 @@ int Create_Vector_Float(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_DONE);
 }
+int Create_Void_Float_Cbase(AMX* amx, const char* func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_CELL, FP_DONE);
+}
 
 int Create_Deprecated(AMX* amx, const char* func)
 {

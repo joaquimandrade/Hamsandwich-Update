@@ -1176,6 +1176,35 @@ void Hook_Vector_Float(Hook *hook, Vector *out, void *pthis, float f1)
 
 }
 
+void Hook_Void_Float_Cbase(Hook *hook, void *pthis, float f1, void *cb)
+{
+	PUSH_VOID()
+	int iEnt =PrivateToIndex(cb);
+
+	MAKE_VECTOR()
+		P_FLOAT(f1)
+		P_CBASE(cb, iEnt)
+
+		PRE_START()
+		,f1, iEnt
+	PRE_END()
+
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, float, void *)>(hook->func)(pthis, 0, f1, cb);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, float, void *)>(hook->func)(pthis, f1, cb);
+#endif
+
+	POST_START()
+		,f1, iEnt
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+
 void Hook_Deprecated(Hook* hook)
 {
 }

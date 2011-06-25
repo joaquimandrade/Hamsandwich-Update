@@ -1021,6 +1021,7 @@ enum Ham
 	Ham_DOD_Weapon_IsUseable,
 	Ham_DOD_Weapon_Aim,
 	Ham_DOD_Weapon_flAim,
+	Ham_DOD_Weapon_RemoveStamina,
 	Ham_DOD_Weapon_ChangeFOV,
 	Ham_DOD_Weapon_ZoomOut,
 	Ham_DOD_Weapon_ZoomIn,

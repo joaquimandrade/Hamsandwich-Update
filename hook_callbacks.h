@@ -206,6 +206,11 @@ void Hook_Vector_Float(Hook *hook, void *pthis, Vector *out, float f1);
 void Hook_Vector_Float(Hook *hook, Vector *out, void *pthis, float f1);
 #endif
 
+const bool RT_Void_Float_Cbase = true;
+const int PC_Void_Float_Cbase = 2;
+void Hook_Void_Float_Cbase(Hook *hook, void *pthis, float f1, void *cb);
+
+
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;
 void Hook_Deprecated(Hook* hook);
