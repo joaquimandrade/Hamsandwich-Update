@@ -520,7 +520,16 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_GetDeathActivity, this);
 	 */
 	Ham_GetDeathActivity,
-	
+
+	/**
+	 * Description:		Takes a single step towards the next ROUTE location.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:interval)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_Move, this, Float:interval);
+	 */
+	Ham_Move,
+
 	Ham_CheckRangeAttack1, /* Need documentation, not present in NS, TS and CS */
 	Ham_CheckRangeAttack2, /* Need documentation, not present in NS, TS and CS */
 	Ham_CheckMeleeAttack1, /* Need documentation, not present in NS, TS and CS */

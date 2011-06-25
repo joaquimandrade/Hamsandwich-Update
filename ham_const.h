@@ -110,6 +110,7 @@ enum
 	Ham_Look, 
 	Ham_BestVisibleEnemy, 
 	Ham_FInViewCone,
+	Ham_Move,
 	Ham_GetDeathActivity,
 	Ham_CheckRangeAttack1,
 	Ham_CheckRangeAttack2,
