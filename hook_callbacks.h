@@ -218,6 +218,10 @@ const bool RT_Int_Float = false;
 const int PC_Int_Float = 1;
 int Hook_Int_Float(Hook *hook, void *pthis, float f1);
 
+const bool RT_Int_Int_Int = false;
+const int PC_Int_Int_Int = 2;
+int Hook_Int_Int_Int(Hook *hook, void *pthis, int i1, int i2);
+
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;
 void Hook_Deprecated(Hook* hook);

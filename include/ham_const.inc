@@ -540,6 +540,18 @@ enum Ham
 	Ham_ScheduleChange,		/* Need documentation, not present in NS, TS and CS */
 
 	/**
+	 * Description:		Determines whether or not the monster can play the scripted sequence or AI sequence that is
+	 *					trying to possess it. If DisregardState is set, the monster will be sucked into the script 
+	 *					no matter what state it is in. ONLY Scripted AI ents should allow this.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, bool:disregardMonsterState, interruptLevel);
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_GetDeathActivity, this, bool:disregardMonsterState, interruptLevel );
+	 */
+	Ham_CanPlaySequence,
+
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	
