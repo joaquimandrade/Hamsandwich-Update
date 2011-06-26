@@ -159,6 +159,9 @@ hook_t hooklist[] =
 	{ V("barnaclevictimbitten",		Void_Entvar) },
 	{ V("barnaclevictimreleased",	Void_Void) },
 	{ V("preschedulethink",			Void_Void) },
+	{ V("deathsound",				Void_Void) },
+	{ V("alertsound",				Void_Void) },
+	{ V("idlesound",				Void_Void) },
 
 	/** Entity specific hooks **/
 

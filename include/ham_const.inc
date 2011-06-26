@@ -815,6 +815,33 @@ enum Ham
 	 */
 	Ham_PrescheduleThink,
 
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_DeathSound, this);
+	 */
+	Ham_DeathSound,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_AlertSound, this);
+	 */
+	Ham_AlertSound,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_IdleSound, this);
+	 */
+	Ham_IdleSound,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
@@ -884,6 +911,7 @@ enum Ham
 	 */
 	Ham_Player_UpdateClientData,
 	
+
 	/**
 	 * Items have all the attributes of normal entities in addition to these.
 	 */

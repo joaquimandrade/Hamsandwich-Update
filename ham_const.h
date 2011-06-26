@@ -143,6 +143,9 @@ enum
 	Ham_BarnacleVictimBitten,
 	Ham_BarnacleVictimReleased,
 	Ham_PrescheduleThink,
+	Ham_DeathSound,
+	Ham_AlertSound,
+	Ham_IdleSound,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
