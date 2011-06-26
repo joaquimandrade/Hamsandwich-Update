@@ -165,6 +165,7 @@ hook_t hooklist[] =
 	{ V("deathsound",				Void_Void) },
 	{ V("alertsound",				Void_Void) },
 	{ V("idlesound",				Void_Void) },
+	{ V("stopfollowing",			Void_Void) },
 
 	/** Entity specific hooks **/
 
@@ -240,7 +241,6 @@ hook_t hooklist[] =
 	{ V("dod_getstate",				Int_Void) },
 	{ V("dod_getstateent",			Int_Cbase) },
 	{ V("dod_setscriptreset",		Void_Void) },
-	{ V("dod_stopfollowing",		Void_Void) },
 	{ V("dod_item_candrop",			Int_Void) },
 	{ V("dod_item_spawndeploy",		Int_Void) },
 	{ V("dod_item_setdmgtime",		Void_Float) },

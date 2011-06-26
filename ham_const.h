@@ -149,6 +149,7 @@ enum
 	Ham_DeathSound,
 	Ham_AlertSound,
 	Ham_IdleSound,
+	Ham_StopFollowing,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
@@ -215,7 +216,6 @@ enum
 	Ham_DOD_GetState,
 	Ham_DOD_GetStateEnt,
 	Ham_DOD_SetScriptReset,
-	Ham_DOD_StopFollowing,
 	Ham_DOD_Item_CanDrop,
 	Ham_DOD_Item_SpawnDeploy,
 	Ham_DOD_Item_SetDmgTime,

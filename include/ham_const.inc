@@ -871,6 +871,14 @@ enum Ham
 	 */
 	Ham_IdleSound,
 
+	/**
+	 * Description:		Unsure.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_StopFollowing, this);
+	 */
+	Ham_StopFollowing,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
@@ -1366,14 +1374,6 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_SetScriptReset, this);
 	 */
 	Ham_DOD_SetScriptReset,
-
-	/**
-	 * Description:		Unsure.
-	 * Forward params:	function(this)
-	 * Return type:		None.
-	 * Execute Params:	ExecuteHam(Ham_DOD_StopFollowing, this);
-	 */
-	Ham_DOD_StopFollowing,
 
 	/**
 	 * Description:		Whether or not a player can drop this item.
