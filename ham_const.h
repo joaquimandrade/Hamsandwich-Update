@@ -99,7 +99,7 @@ enum
 	Ham_FVecVisible,
 	Ham_ChangeYaw,
 	Ham_HasHumanGibs,
-	Has_AlienGibs, 
+	Ham_AlienGibs, 
 	Ham_FadeMonster,
 	Ham_GibMonster,
 	Ham_BecomeDead,
