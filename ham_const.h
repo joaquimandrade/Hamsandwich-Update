@@ -114,6 +114,7 @@ enum
 	Ham_ISoundMask,
 	Ham_HearingSensitivity,
 	Ham_BarnacleVictimBitten,
+	Ham_BarnacleVictimReleased,
 
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,

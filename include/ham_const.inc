@@ -729,6 +729,15 @@ enum Ham
 	 */
 	Ham_BarnacleVictimBitten,
 
+	/**
+	 * Description:		Called by barnacle victims when the host barnacle is killed.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_BarnacleVictimReleased, this);
+	 */
+	Ham_BarnacleVictimReleased,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
