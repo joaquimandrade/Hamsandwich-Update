@@ -156,6 +156,7 @@ hook_t hooklist[] =
 	{ V("fcanactiveidle",			Int_Void) },
 	{ V("isoundmask",				Int_Void) },
 	{ V("hearingsensitivity",		Float_Void) },
+	{ V("barnaclevictimbitten",		Void_Entvar) },
 	
 	/** Entity specific hooks **/
 

@@ -720,6 +720,15 @@ enum Ham
 	 */
 	Ham_HearingSensitivity,
 
+	/**
+	 * Description:		Called by Barnacle victims when the barnacle pulls their head into its mouth.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, idBarnacle);
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_BarnacleVictimBitten, this, idBarnacle);
+	 */
+	Ham_BarnacleVictimBitten,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.

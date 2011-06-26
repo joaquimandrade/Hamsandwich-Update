@@ -113,6 +113,7 @@ enum
 	Ham_FCanActiveIdle,
 	Ham_ISoundMask,
 	Ham_HearingSensitivity,
+	Ham_BarnacleVictimBitten,
 
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,
