@@ -545,6 +545,17 @@ enum Ham
 	Ham_MonsterThink,
 
 	/**
+	 * Description:		After a monster is spawned, it needs to be dropped into the world, checked for mobility problems
+	 *					and put on the proper path, if any. This function does all of those things after the monster spawns.
+	 *					Any initialization that should take place for all monsters goes here.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_MonsterInit, this);
+	 */
+	Ham_MonsterInit,
+
+	/**
 	 * Description:		Takes a single step towards the next ROUTE location.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:interval)

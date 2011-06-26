@@ -114,6 +114,7 @@ enum
 
 	Ham_RunAI,
 	Ham_MonsterThink,
+	Ham_MonsterInit,
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,
 	Ham_GetStoppedActivity,

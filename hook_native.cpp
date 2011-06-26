@@ -130,6 +130,7 @@ hook_t hooklist[] =
 	/* Not supported by Counter-Strike, The Specialists and Natural Selection mods. */
 	{ V("runai",					Void_Void) },
 	{ V("monsterthink",				Void_Void) },
+	{ V("monsterinit",				Void_Void) },
 	{ V("move",						Void_Float) },
 	{ V("shouldadvanceroute",		Int_Float) },
 	{ V("getstoppedactivity",		Int_Void) },
