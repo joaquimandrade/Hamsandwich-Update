@@ -692,6 +692,15 @@ enum Ham
 	 */
 	Ham_FValidateHintType,
 
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_FValidateHintType, this);
+	 */
+	Ham_FCanActiveIdle,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.

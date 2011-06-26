@@ -110,6 +110,7 @@ enum
 	Ham_Look, 
 	Ham_BestVisibleEnemy, 
 	Ham_FInViewCone,
+	Ham_FCanActiveIdle,
 
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,

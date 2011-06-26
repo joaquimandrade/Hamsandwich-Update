@@ -153,6 +153,7 @@ hook_t hooklist[] =
 	{ V("checkammo",				Void_Void) },
 	{ V("ignoreconditions",			Int_Void) },
 	{ V("fvalidatehinttype",		Int_Short) },
+	{ V("fcanactiveidle",			Int_Void) },
 	
 	/** Entity specific hooks **/
 
