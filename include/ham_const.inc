@@ -1389,7 +1389,6 @@ enum Ham
 	 */
 	Ham_TFC_EmpRemove,
 	
-	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, entityid, Float:floata)
@@ -1405,6 +1404,22 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_Concuss, this, entityid);
 	 */
 	Ham_TFC_Concuss,
+
+	/**
+	 * Description:		This entity is exploding, or otherwise needs to inflict damage upon entities within a certain range.
+	 * Forward params:	function(this, inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_TFC_RadiusDamage, this, inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType);
+	 */
+	Ham_TFC_RadiusDamage,
+
+	/**
+	 * Description:		This entity is exploding, or otherwise needs to inflict damage upon entities within a certain range.
+	 * Forward params:	function(this, const Float:source[3], inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_TFC_RadiusDamage2, this, const Float:source[3], inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType);
+	 */
+	Ham_TFC_RadiusDamage2,
 	
 	/**
 	 * Description:		Unsure.

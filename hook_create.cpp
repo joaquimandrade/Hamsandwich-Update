@@ -160,73 +160,100 @@ int Create_Void_Entvar_Float(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_FLOAT, FP_DONE);
 }
+
 int Create_Void_Int_Int_Int(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
 }
+
 int Create_Void_ItemInfo(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
 }
+
 int Create_Float_Void(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_DONE);
 }
+
 int Create_Float_Int(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
 }
+
 int Create_Void_Float_Int(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_CELL, FP_DONE);
 }
+
 int Create_Void_Int_Float(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_FLOAT, FP_DONE);
 }
+
 int Create_Void_Float(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_DONE);
 }
+
 int Create_Void_Float_Float_Float_Int(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_FLOAT, FP_FLOAT, FP_CELL, FP_DONE);
 }
+
 int Create_Vector_Float(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_DONE);
 }
+
 int Create_Void_Float_Cbase(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_CELL, FP_DONE);
 }
+
 int Create_Int_Float_Float(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_FLOAT, FP_DONE);
 }
+
 int Create_Int_Float(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_DONE);
 }
+
 int Create_Int_Int_Int(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
 }
+
 int Create_Void_Str_Float_Float_Float(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_STRING, FP_FLOAT, FP_FLOAT, FP_FLOAT, FP_DONE);
 }
+
 int Create_Void_Str_Float_Float_Float_Int_Cbase(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_STRING, FP_FLOAT, FP_FLOAT, FP_FLOAT, FP_CELL, FP_CELL, FP_DONE);
 }
+
 int Create_Int_Vector_Vector_Float_Float(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_FLOAT, FP_FLOAT, FP_DONE);
 }
+
 int Create_Int_Short(AMX* amx, const char* func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Void_Entvar_Entvar_Float_Int_Int(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_FLOAT, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Void_Vector_Entvar_Entvar_Float_Int_Int(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_CELL, FP_CELL, FP_FLOAT, FP_CELL, FP_CELL, FP_DONE);
 }
 
 int Create_Deprecated(AMX* amx, const char* func)

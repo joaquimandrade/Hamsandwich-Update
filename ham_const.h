@@ -234,6 +234,8 @@ enum
 	Ham_TFC_EmpRemove,
 	Ham_TFC_TakeConcussionBlast,
 	Ham_TFC_Concuss,
+	Ham_TFC_RadiusDamage,
+	Ham_TFC_RadiusDamage2,
 
 	Ham_ESF_IsEnvModel, // Only valid in ESF Open Beta
 	Ham_ESF_TakeDamage2, // Only valid in ESF Open Beta

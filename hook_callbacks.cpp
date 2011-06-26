@@ -1440,6 +1440,76 @@ int Hook_Int_Short(Hook *hook, void *pthis, short s1)
 	return ret;
 }
 
+void Hook_Void_Entvar_Entvar_Float_Int_Int(Hook *hook, void *pthis, entvars_t *inflictor, entvars_t *attacker, float damage, int classignore, int damagebits)
+{
+	PUSH_VOID()
+
+	int iInflictor=EntvarToIndex(inflictor);
+	int iAttacker=EntvarToIndex(attacker);
+
+	MAKE_VECTOR()
+
+	P_ENTVAR(inflictor, iInflictor)
+	P_ENTVAR(attacker, iAttacker)
+	P_FLOAT(damage)
+	P_INT(classignore)
+	P_INT(damagebits)
+
+	PRE_START()
+		,iInflictor, iAttacker, damage, classignore, damagebits
+	PRE_END()
+
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, entvars_t *, entvars_t *, float, int, int)>(hook->func)(pthis, 0, inflictor, attacker, damage, classignore, damagebits);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, entvars_t *, entvars_t *, float, int, int)>(hook->func)(pthis, inflictor, attacker, damage, classignore, damagebits);
+#endif
+
+	POST_START()
+		,iInflictor, iAttacker, damage, classignore, damagebits
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+void Hook_Void_Vector_Entvar_Entvar_Float_Int_Int(Hook *hook, void *pthis, Vector source, entvars_t *inflictor, entvars_t *attacker, float damage, int classignore, int damagebits)
+{
+	PUSH_VOID()
+
+	int iInflictor=EntvarToIndex(inflictor);
+	int iAttacker=EntvarToIndex(attacker);
+
+	MAKE_VECTOR()
+
+	P_VECTOR(source)
+	P_ENTVAR(inflictor, iInflictor)
+	P_ENTVAR(attacker, iAttacker)
+	P_FLOAT(damage)
+	P_INT(classignore)
+	P_INT(damagebits)
+
+	PRE_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&source), 3, false)
+		,iInflictor, iAttacker, damage, classignore, damagebits
+	PRE_END()
+
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, Vector, entvars_t *, entvars_t *, float, int, int)>(hook->func)(pthis, 0, source, inflictor, attacker, damage, classignore, damagebits);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, Vector, entvars_t *, entvars_t *, float, int, int)>(hook->func)(pthis, source, inflictor, attacker, damage, classignore, damagebits);
+#endif
+
+	POST_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&source), 3, false)
+		,iInflictor, iAttacker, damage, classignore, damagebits
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
 
 void Hook_Deprecated(Hook* hook)
 {

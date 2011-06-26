@@ -872,6 +872,62 @@ cell Call_Int_Short(AMX *amx, cell *params)
 #endif
 }
 
+cell Call_Void_Entvar_Entvar_Float_Int_Int(AMX *amx, cell *params)
+{
+	SETUP(5);
+
+	int id3=*MF_GetAmxAddr(amx, params[3]);
+	int id4=*MF_GetAmxAddr(amx, params[4]);
+	float f5=amx_ctof2(*MF_GetAmxAddr(amx, params[5]));
+	int i6=*MF_GetAmxAddr(amx, params[6]);
+	int i7=*MF_GetAmxAddr(amx, params[7]);
+
+	CHECK_ENTITY(id3);
+	CHECK_ENTITY(id4);
+
+	entvars_t *ev3=&(INDEXENT_NEW(id3)->v);
+	entvars_t *ev4=&(INDEXENT_NEW(id4)->v);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void *, int, entvars_t *, entvars_t *, float, int, int)>(__func)(pv, 0, ev3, ev4, f5, i6, i7);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, entvars_t *, entvars_t *, float, int, int)>(__func)(pv, ev3, ev4, f5, i6, i7);
+#endif
+
+	return 1;
+}
+
+cell Call_Void_Vector_Entvar_Entvar_Float_Int_Int(AMX *amx, cell *params)
+{
+	SETUP(6);
+
+	Vector v3;
+
+	float *fl3=(float *)MF_GetAmxAddr(amx, params[3]);
+	v3.x=fl3[0];
+	v3.y=fl3[1];
+	v3.z=fl3[2];
+
+	int id4=*MF_GetAmxAddr(amx, params[4]);
+	int id5=*MF_GetAmxAddr(amx, params[5]);
+	float f6=amx_ctof2(*MF_GetAmxAddr(amx, params[6]));
+	int i7=*MF_GetAmxAddr(amx, params[7]);
+	int i8=*MF_GetAmxAddr(amx, params[8]);
+
+	CHECK_ENTITY(id4);
+	CHECK_ENTITY(id5);
+
+	entvars_t *ev4=&(INDEXENT_NEW(id4)->v);
+	entvars_t *ev5=&(INDEXENT_NEW(id5)->v);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void *, int, Vector, entvars_t *, entvars_t *, float, int, int)>(__func)(pv, 0, v3, ev4, ev5, f6, i7, i8);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, Vector, entvars_t *, entvars_t *, float, int, int)>(__func)(pv, v3, ev4, ev5, f6, i7, i8);
+#endif
+
+	return 1;
+}
 
 
 cell Call_Deprecated(AMX *amx, cell *params)

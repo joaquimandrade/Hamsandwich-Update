@@ -238,6 +238,20 @@ const bool RT_Int_Short = false;
 const int PC_Int_Short = 1;
 int Hook_Int_Short(Hook *hook, void *pthis, short s1);
 
+const bool RT_Void_Entvar_Entvar_Float_Int_Int = true;
+const int PC_Void_Entvar_Entvar_Float_Int_Int = 5;
+void  Hook_Void_Entvar_Entvar_Float_Int_Int(Hook *hook, void *pthis, 
+	entvars_t *inflictor, 
+	entvars_t *attacker, float damage, 
+	int classignore, int damagebits);
+
+const bool RT_Void_Vector_Entvar_Entvar_Float_Int_Int = true;
+const int PC_Void_Vector_Entvar_Entvar_Float_Int_Int = 6;
+void  Hook_Void_Vector_Entvar_Entvar_Float_Int_Int(Hook *hook, void *pthis, 
+	Vector source,
+	entvars_t *inflictor, 
+	entvars_t *attacker, float damage, 
+	int classignore, int damagebits);
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

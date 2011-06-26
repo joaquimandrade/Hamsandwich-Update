@@ -260,6 +260,8 @@ hook_t hooklist[] =
 	{ V("tfc_empremove",			Void_Void) },
 	{ V("tfc_takeconcussionblast",	Void_Entvar_Float) },
 	{ V("tfc_concuss",				Void_Entvar) },
+	{ V("tfc_radiusdamage",			Void_Entvar_Entvar_Float_Int_Int) },
+	{ V("tfc_radiusdamage2",		Void_Vector_Entvar_Entvar_Float_Int_Int) },
 
 	/* Earth's Special Forces */
 	{ V("esf_isenvmodel",			Int_Void) },
