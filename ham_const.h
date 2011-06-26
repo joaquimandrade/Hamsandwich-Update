@@ -135,6 +135,7 @@ enum
 	Ham_CoverRadius,
 	Ham_FCanCheckAttacks,
 	Ham_CheckAmmo,
+	Ham_IgnoreConditions,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,

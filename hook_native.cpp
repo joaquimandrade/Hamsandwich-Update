@@ -151,6 +151,7 @@ hook_t hooklist[] =
 	{ V("coverradius",				Float_Void) },
 	{ V("fcancheckattacks",			Int_Void) },
 	{ V("checkammo",				Void_Void) },
+	{ V("ignoreconditions",			Int_Void) },
 	
 	/** Entity specific hooks **/
 

@@ -672,6 +672,17 @@ enum Ham
 	 */
 	Ham_CheckAmmo,
 
+	/**
+	 * Description:		Before a set of conditions is allowed to interrupt a monster's schedule, this function removes
+	 *					conditions that we have flagged to interrupt the current schedule, but may not want to interrupt
+	 *					the schedule every time. (Pain, for instance)
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_IgnoreConditions, this);
+	 */
+	Ham_IgnoreConditions,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
