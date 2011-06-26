@@ -711,6 +711,15 @@ enum Ham
 	 */
 	Ham_ISoundMask,
 
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_HearingSensitivity, this);
+	 */
+	Ham_HearingSensitivity,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
