@@ -147,6 +147,7 @@ hook_t hooklist[] =
 	{ V("checkenemy",				Int_Cbase) },
 	{ V("setyawspeed",				Void_Void) },
 	{ V("buildnearestroute",		Int_Vector_Vector_Float_Float) },
+	{ V("findcover",				Int_Vector_Vector_Float_Float) },
 	
 	/** Entity specific hooks **/
 

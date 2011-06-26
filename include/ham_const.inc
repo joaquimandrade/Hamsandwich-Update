@@ -626,13 +626,24 @@ enum Ham
 	/**
 	 * Description:		Tries to build a route as close to the target as possible, even if there isn't a path to the final point.
 	 *					If supplied, search will return a node at least as far away as MinDist from vecThreat, but no farther than minDist.
-	 *					if maxDist isn't supplied, it defaults to a reasonable value.
+	 *					If maxDist isn't supplied, it defaults to a reasonable value.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
 	 * Return type:		Integer (Boolean).
 	 * Execute params:	ExecuteHam(Ham_BuildNearestRoute, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
 	 */
 	Ham_BuildNearestRoute,
+
+	/**
+	 * Description:		Tries to find a nearby node that will hide the caller from its enemy. 
+	 *					If supplied, search will return a node at least as far away as MinDist from vecThreat, but no farther than minDist.
+	 *					If maxDist isn't supplied, it defaults to a reasonable value.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_FindCover, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
+	 */
+	Ham_FindCover,
 
 
 	/**
