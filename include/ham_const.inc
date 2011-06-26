@@ -1292,7 +1292,15 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_GetStateEnt, this, idtarget);
 	 */
 	Ham_DOD_GetStateEnt,
-	
+
+	/**
+	 * Description:		Unsure.
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute Params:	ExecuteHam(Ham_DOD_SetScriptReset, this);
+	 */
+	Ham_DOD_SetScriptReset,
+
 	/**
 	 * Description:		Whether or not a player can drop this item.
 	 * Forward params:	function(this)

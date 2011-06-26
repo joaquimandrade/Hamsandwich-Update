@@ -232,6 +232,7 @@ hook_t hooklist[] =
 	{ V("dod_areasendstatus",		Void_Cbase) },
 	{ V("dod_getstate",				Int_Void) },
 	{ V("dod_getstateent",			Int_Cbase) },
+	{ V("dod_setscriptreset",		Void_Void) },
 	{ V("dod_item_candrop",			Int_Void) },
 	{ V("dod_item_spawndeploy",		Int_Void) },
 	{ V("dod_item_setdmgtime",		Void_Float) },
