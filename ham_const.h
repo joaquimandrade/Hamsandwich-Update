@@ -112,6 +112,7 @@ enum
 	Ham_FInViewCone,
 	Ham_GetDeathActivity,
 
+	Ham_RunAI,
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,
 	Ham_GetStoppedActivity,

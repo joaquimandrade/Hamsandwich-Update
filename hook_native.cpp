@@ -127,7 +127,8 @@ hook_t hooklist[] =
 	{ V("finviewcone",				Int_Cbase) },
 	{ V("getdeathactivity",			Int_Void) },
 
-	/* Specific monsters */
+	/* Not supported by Counter-Strike, The Specialists and Natural Selection mods. */
+	{ V("runai",					Void_Void) },
 	{ V("move",						Void_Float) },
 	{ V("shouldadvanceroute",		Int_Float) },
 	{ V("getstoppedactivity",		Int_Void) },

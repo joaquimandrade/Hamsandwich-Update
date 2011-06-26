@@ -527,6 +527,15 @@ enum Ham
 	 */
 
 	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_RunAI, this);
+	 */
+	Ham_RunAI,
+
+	/**
 	 * Description:		Takes a single step towards the next ROUTE location.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:interval)
