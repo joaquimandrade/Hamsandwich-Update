@@ -1368,6 +1368,14 @@ enum Ham
 	Ham_DOD_SetScriptReset,
 
 	/**
+	 * Description:		Unsure.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_StopFollowing, this);
+	 */
+	Ham_DOD_StopFollowing,
+
+	/**
 	 * Description:		Whether or not a player can drop this item.
 	 * Forward params:	function(this)
 	 * Return type:		Integer (boolean).
