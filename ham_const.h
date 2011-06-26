@@ -136,6 +136,7 @@ enum
 	Ham_FCanCheckAttacks,
 	Ham_CheckAmmo,
 	Ham_IgnoreConditions,
+	Ham_FValidateHintType,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,

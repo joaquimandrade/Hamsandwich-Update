@@ -71,6 +71,7 @@ extern bool gDoForwards;
 	P_CBASE(pthis, iThis)
 
 #define P_INT(___PARAM)				__vec->push_back(new Data(RET_INTEGER, (void *) & (___PARAM)));
+#define P_SHORT(___PARAM)			__vec->push_back(new Data(RET_SHORT, (void *) & (___PARAM)));
 #define P_FLOAT(___PARAM)			__vec->push_back(new Data(RET_FLOAT, (void *) & (___PARAM)));			
 #define P_VECTOR(___PARAM)			__vec->push_back(new Data(RET_VECTOR, (void *) & (___PARAM)));
 #define P_STR(___PARAM)				__vec->push_back(new Data(RET_STRING, (void *) & (___PARAM)));
@@ -1398,6 +1399,38 @@ int Hook_Int_Vector_Vector_Float_Float(Hook *hook, void *pthis, Vector v1, Vecto
 		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
 		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
 		,f1, f2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+
+	return ret;
+}
+
+int Hook_Int_Short(Hook *hook, void *pthis, short s1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_SHORT(s1)
+
+	PRE_START()
+		,s1
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, short)>(hook->func)(pthis, 0, s1);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, short)>(hook->func)(pthis, s1);
+#endif
+
+	POST_START()
+		,s1
 	POST_END()
 
 	KILL_VECTOR()

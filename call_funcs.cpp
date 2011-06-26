@@ -859,6 +859,20 @@ cell Call_Int_Vector_Vector_Float_Float(AMX *amx, cell *params)
 #endif
 }
 
+cell Call_Int_Short(AMX *amx, cell *params)
+{
+	SETUP(1);
+
+	short s3=*MF_GetAmxAddr(amx, params[3]);
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, short)>(__func)(pv, 0, s3);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, int, short)>(__func)(pv, s3);
+#endif
+}
+
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

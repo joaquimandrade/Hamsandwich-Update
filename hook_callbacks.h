@@ -234,6 +234,10 @@ const bool RT_Int_Vector_Vector_Float_Float= false;
 const int PC_Int_Vector_Vector_Float_Float = 4;
 int Hook_Int_Vector_Vector_Float_Float(Hook *hook, void *pthis, Vector v1, Vector v2, float f1, float f2);
 
+const bool RT_Int_Short = false;
+const int PC_Int_Short = 1;
+int Hook_Int_Short(Hook *hook, void *pthis, short s1);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

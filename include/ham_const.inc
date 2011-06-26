@@ -683,6 +683,15 @@ enum Ham
 	 */
 	Ham_IgnoreConditions,
 
+	/**
+	 * Description:		Tells use whether or not the monster cares about the type of Hint Node given.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, hint);
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_FValidateHintType, this, hint);
+	 */
+	Ham_FValidateHintType,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
