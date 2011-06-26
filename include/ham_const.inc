@@ -535,14 +535,77 @@ enum Ham
 	 */
 	Ham_Move,
 
-	Ham_ShouldAdvanceRoute, /* Need documentation, not present in NS, TS and CS */
-	Ham_GetStoppedActivity, /* Need documentation, not present in NS, TS and CS */
-	Ham_Stop,				/* Need documentation, not present in NS, TS and CS */
-	Ham_CheckRangeAttack1,  /* Need documentation, not present in NS, TS and CS */
-	Ham_CheckRangeAttack2,  /* Need documentation, not present in NS, TS and CS */
-	Ham_CheckMeleeAttack1,  /* Need documentation, not present in NS, TS and CS */
-	Ham_CheckMeleeAttack2,  /* Need documentation, not present in NS, TS and CS */
-	Ham_ScheduleChange,		/* Need documentation, not present in NS, TS and CS */
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:waypointDist)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_ShouldAdvanceRoute, this, Float:waypointDist);
+	 */
+	Ham_ShouldAdvanceRoute,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (ACT_* constants, see HLDSK. It might different depending the mod).
+	 * Execute params:	ExecuteHam(Ham_GetStoppedActivity, this);
+	 */
+	Ham_GetStoppedActivity,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_Stop, this);
+	 */
+	Ham_Stop,		
+		
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_CheckRangeAttack1, this, Float:dot, Float:dist);
+	 */
+	Ham_CheckRangeAttack1,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_CheckRangeAttack2, this, Float:dot, Float:dist);
+	 */
+	Ham_CheckRangeAttack2,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_CheckMeleeAttack1, this, Float:dot, Float:dist);
+	 */
+	Ham_CheckMeleeAttack1,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_CheckMeleeAttack2, this, Float:dot, Float:dist);
+	 */
+	Ham_CheckMeleeAttack2, 
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ScheduleChange, this, Float:dot, Float:dist);
+	 */
+	Ham_ScheduleChange,
 
 	/**
 	 * Description:		Determines whether or not the monster can play the scripted sequence or AI sequence that is
