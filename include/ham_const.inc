@@ -521,6 +521,11 @@ enum Ham
 	 */
 	Ham_GetDeathActivity,
 
+
+	/**
+	 * The following functions are not supported by Counter-Strike, The Specialists and Natural Selection mods
+	 */
+
 	/**
 	 * Description:		Takes a single step towards the next ROUTE location.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
