@@ -142,6 +142,7 @@ enum
 	Ham_HearingSensitivity,
 	Ham_BarnacleVictimBitten,
 	Ham_BarnacleVictimReleased,
+	Ham_PrescheduleThink,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,

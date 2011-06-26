@@ -158,7 +158,8 @@ hook_t hooklist[] =
 	{ V("hearingsensitivity",		Float_Void) },
 	{ V("barnaclevictimbitten",		Void_Entvar) },
 	{ V("barnaclevictimreleased",	Void_Void) },
-	
+	{ V("preschedulethink",			Void_Void) },
+
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */
