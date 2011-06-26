@@ -148,6 +148,7 @@ hook_t hooklist[] =
 	{ V("setyawspeed",				Void_Void) },
 	{ V("buildnearestroute",		Int_Vector_Vector_Float_Float) },
 	{ V("findcover",				Int_Vector_Vector_Float_Float) },
+	{ V("coverradius",				Float_Void },
 	
 	/** Entity specific hooks **/
 
