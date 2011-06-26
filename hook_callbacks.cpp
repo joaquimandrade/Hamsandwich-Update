@@ -1368,6 +1368,45 @@ void Hook_Void_Str_Float_Float_Float_Int_Cbase(Hook *hook, void *pthis, const ch
 	POP()
 }
 
+int Hook_Int_Vector_Vector_Float_Float(Hook *hook, void *pthis, Vector v1, Vector v2, float f1, float f2)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_VECTOR(v1)
+	P_VECTOR(v2)
+	P_FLOAT(f1)
+	P_FLOAT(f2)
+
+	PRE_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+		,f1, f2
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector, Vector, float, float)>(hook->func)(pthis, 0, v1, v2, f1, f2);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, Vector, Vector, float, float)>(hook->func)(pthis, v1, v2, f1, f2);
+#endif
+
+	POST_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+		,f1, f2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+
+	return ret;
+}
+
 
 void Hook_Deprecated(Hook* hook)
 {

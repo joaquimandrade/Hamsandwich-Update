@@ -624,6 +624,18 @@ enum Ham
 	Ham_SetYawSpeed,
 
 	/**
+	 * Description:		Tries to build a route as close to the target as possible, even if there isn't a path to the final point.
+	 *					If supplied, search will return a node at least as far away as MinDist from vecThreat, but no farther than minDist.
+	 *					if maxDist isn't supplied, it defaults to a reasonable value.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_BuildNearestRoute, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
+	 */
+	Ham_BuildNearestRoute,
+
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	

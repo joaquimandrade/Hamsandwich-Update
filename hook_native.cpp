@@ -126,6 +126,8 @@ hook_t hooklist[] =
 	{ V("bestvisibleenemy",			Cbase_Void) },
 	{ V("finviewcone",				Int_Cbase) },
 	{ V("getdeathactivity",			Int_Void) },
+
+	/* Specific monsters */
 	{ V("move",						Void_Float) },
 	{ V("shouldadvanceroute",		Int_Float) },
 	{ V("getstoppedactivity",		Int_Void) },
@@ -144,6 +146,8 @@ hook_t hooklist[] =
 	{ V("setactivity",				Void_Int) },
 	{ V("checkenemy",				Int_Cbase) },
 	{ V("setyawspeed",				Void_Void) },
+	{ V("buildnearestroute",		Int_Vector_Vector_Float_Float) },
+	
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

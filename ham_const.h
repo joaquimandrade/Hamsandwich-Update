@@ -130,6 +130,7 @@ enum
 	Ham_SetActivity,
 	Ham_CheckEnemy,
 	Ham_SetYawSpeed,
+	Ham_BuildNearestRoute,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
