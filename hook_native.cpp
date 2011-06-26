@@ -143,6 +143,7 @@ hook_t hooklist[] =
 	{ V("getidealstate",			Int_Void) },
 	{ V("setactivity",				Void_Int) },
 	{ V("checkenemy",				Int_Cbase) },
+	{ V("setyawspeed",				Void_Void) },
 	/** Entity specific hooks **/
 
 	/* CBasePlayer */

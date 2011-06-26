@@ -615,6 +615,15 @@ enum Ham
 	Ham_CheckEnemy,
 
 	/**
+	 * Description:		Allows each sequence to have a different turn rate associated with it.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SetYawSpeed, this);
+	 */
+	Ham_SetYawSpeed,
+
+	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
 	

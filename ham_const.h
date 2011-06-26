@@ -110,6 +110,7 @@ enum
 	Ham_Look, 
 	Ham_BestVisibleEnemy, 
 	Ham_FInViewCone,
+
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,
 	Ham_GetStoppedActivity,
@@ -128,6 +129,7 @@ enum
 	Ham_GetIdealState,
 	Ham_SetActivity,
 	Ham_CheckEnemy,
+	Ham_SetYawSpeed,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
