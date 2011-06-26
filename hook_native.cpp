@@ -149,6 +149,7 @@ hook_t hooklist[] =
 	{ V("buildnearestroute",		Int_Vector_Vector_Float_Float) },
 	{ V("findcover",				Int_Vector_Vector_Float_Float) },
 	{ V("coverradius",				Float_Void) },
+	{ V("fcancheckattacks",			Int_Void) },
 	
 	/** Entity specific hooks **/
 
