@@ -110,11 +110,6 @@ enum
 	Ham_Look, 
 	Ham_BestVisibleEnemy, 
 	Ham_FInViewCone,
-	Ham_FCanActiveIdle,
-	Ham_ISoundMask,
-	Ham_HearingSensitivity,
-	Ham_BarnacleVictimBitten,
-	Ham_BarnacleVictimReleased,
 
 	Ham_Move,
 	Ham_ShouldAdvanceRoute,
@@ -142,6 +137,11 @@ enum
 	Ham_CheckAmmo,
 	Ham_IgnoreConditions,
 	Ham_FValidateHintType,
+	Ham_FCanActiveIdle,
+	Ham_ISoundMask,
+	Ham_HearingSensitivity,
+	Ham_BarnacleVictimBitten,
+	Ham_BarnacleVictimReleased,
 
 	Ham_Player_Jump,
 	Ham_Player_Duck,
