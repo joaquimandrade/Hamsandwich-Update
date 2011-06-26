@@ -154,6 +154,7 @@ hook_t hooklist[] =
 	{ V("ignoreconditions",			Int_Void) },
 	{ V("fvalidatehinttype",		Int_Short) },
 	{ V("fcanactiveidle",			Int_Void) },
+	{ V("isoundmask",				Int_Void) },
 	
 	/** Entity specific hooks **/
 

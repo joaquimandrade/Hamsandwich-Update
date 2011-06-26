@@ -701,6 +701,16 @@ enum Ham
 	 */
 	Ham_FCanActiveIdle,
 
+	/**
+	 * Description:		Returns a bit mask indicating which types of sounds this monster regards. 
+	 *					In the base class implementation, monsters care about all sounds, but no scents.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this);
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_ISoundMask, this);
+	 */
+	Ham_ISoundMask,
+
 
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
