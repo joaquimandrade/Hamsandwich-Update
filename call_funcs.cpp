@@ -799,9 +799,9 @@ cell Call_Void_Str_Float_Float_Float(AMX *amx, cell *params)
 	float f6=amx_ftoc2(*MF_GetAmxAddr(amx, params[6]));
 
 #ifdef _WIN32
-	reinterpret_cast<int (__fastcall *)(void*, int, const char *, float, float, float)>(__func)(pv, 0, sz3, f4, f5, f6);
+	reinterpret_cast<void (__fastcall *)(void*, int, const char *, float, float, float)>(__func)(pv, 0, sz3, f4, f5, f6);
 #elif defined __linux__
-	reinterpret_cast<int (*)(void *, const char *, float, float, float)>(__func)(pv, sz3, f4, f5, f6);
+	reinterpret_cast<void (*)(void *, const char *, float, float, float)>(__func)(pv, sz3, f4, f5, f6);
 #endif
 
 	return 1;
@@ -824,9 +824,9 @@ cell Call_Void_Str_Float_Float_Float_Int_Cbase(AMX *amx, cell *params)
 
 
 #ifdef _WIN32
-	reinterpret_cast<int (__fastcall *)(void*, int, const char *, float, float, float, int, void *)>(__func)(pv, 0, sz3, f4, f5, f6, i7, p8);
+	reinterpret_cast<void (__fastcall *)(void*, int, const char *, float, float, float, int, void *)>(__func)(pv, 0, sz3, f4, f5, f6, i7, p8);
 #elif defined __linux__
-	reinterpret_cast<int (*)(void *, const char *, float, float, float, int, void *)>(__func)(pv, sz3, f4, f5, f6, i7, p8);
+	reinterpret_cast<void (*)(void *, const char *, float, float, float, int, void *)>(__func)(pv, sz3, f4, f5, f6, i7, p8);
 #endif
 
 	return 1;
