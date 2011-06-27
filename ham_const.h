@@ -258,6 +258,12 @@ enum
 	Ham_NS_GetHull,
 	Ham_NS_GetMaxWalkSpeed,
 	Ham_NS_SetSteamID,
+	Ham_NS_GetEffectivePlayerClass,
+	Ham_NS_GetAuthenticationMask,
+	Ham_NS_EffectivePlayerClassChanged,
+	Ham_NS_NeedsTeamUpdate,
+	Ham_NS_SendTeamUpdate,
+	Ham_NS_SendWeaponUpdate,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,

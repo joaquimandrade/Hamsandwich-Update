@@ -1584,6 +1584,54 @@ enum Ham
 	 */
 	Ham_NS_SetSteamID,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_NS_GetEffectivePlayerClass, this)
+	 */
+	Ham_NS_GetEffectivePlayerClass,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_NS_GetAuthenticationMask, this)
+	 */
+	Ham_NS_GetAuthenticationMask,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_EffectivePlayerClassChanged, this)
+	 */
+	Ham_NS_EffectivePlayerClassChanged,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_NeedsTeamUpdate, this)
+	 */
+	Ham_NS_NeedsTeamUpdate,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_SendTeamUpdate, this)
+	 */
+	Ham_NS_SendTeamUpdate,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_SendWeaponUpdate, this)
+	 */
+	Ham_NS_SendWeaponUpdate,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	

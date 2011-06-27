@@ -285,6 +285,12 @@ hook_t hooklist[] =
 	{ V("ns_gethull",				Int_Void) },
 	{ V("ns_getmaxwalkspeed",		Float_Void) },
 	{ V("ns_setsteamid",			Int_Str) },
+	{ V("ns_geteffectiveplayerclass", Int_Void) },
+	{ V("ns_getauthenticationmask", Int_Void) },
+	{ V("ns_effectiveplayerclasschanged", Void_Void) },
+	{ V("ns_needsteamupdate",		Void_Void) },
+	{ V("ns_sendteamupdate",		Void_Void) },
+	{ V("ns_sendweaponupdate",		Void_Void) },
 
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },
