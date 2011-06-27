@@ -296,6 +296,7 @@ hook_t hooklist[] =
 	{ V("ns_getanimationforactivity",Int_Int_Str_Bool) },
 	{ V("ns_startobserver",			Void_Vector_Vector) },
 	{ V("ns_stopobserver",			Void_Void) },
+	{ V("ns_getadrenalinefactor",	Float_Void) },
 
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },

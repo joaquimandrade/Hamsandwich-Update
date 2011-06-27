@@ -269,6 +269,7 @@ enum
 	Ham_NS_GetAnimationForActivity,
 	Ham_NS_StartObserver,
 	Ham_NS_StopObserver,
+	Ham_NS_GetAdrenalineFactor,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,

@@ -1672,6 +1672,15 @@ enum Ham
 	 */
 	Ham_NS_StopObserver,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_NS_GetAdrenalineFactor, this)
+	 */
+	Ham_NS_GetAdrenalineFactor,
+
+
 
 	/** Virtual functions added to TS in TS 3 */
 	
