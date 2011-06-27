@@ -1574,7 +1574,7 @@ enum Ham
 	 * Return type:		Float.
 	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this)
 	 */
-	Ham_NS_GetMaxWalkSpeed,
+	Ham_NS_Player_GetMaxWalkSpeed,
 
 	/**
 	 * Description:		-
