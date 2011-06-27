@@ -286,7 +286,6 @@ hook_t hooklist[] =
 	{ V("ns_getmaxwalkspeed",		Float_Void) },
 	{ V("ns_setsteamid",			Int_Str) },
 
-	
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },
 	{ V("ts_goslow",				Void_Float_Int) },

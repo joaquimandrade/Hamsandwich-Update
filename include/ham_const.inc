@@ -1574,7 +1574,7 @@ enum Ham
 	 * Return type:		Float.
 	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this)
 	 */
-	Ham_NS_Player_GetMaxWalkSpeed,
+	Ham_NS_GetMaxWalkSpeed,
 
 	/**
 	 * Description:		-
@@ -1582,7 +1582,7 @@ enum Ham
 	 * Return type:		Integer.
 	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this, const steamID[])
 	 */
-	Ham_NS_Player_SetSteamID,
+	Ham_NS_SetSteamID,
 
 	
 	/** Virtual functions added to TS in TS 3 */

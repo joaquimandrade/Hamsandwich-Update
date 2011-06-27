@@ -256,8 +256,8 @@ enum
 	Ham_NS_SetBoneController,
 	Ham_NS_SaveDataForReset,
 	Ham_NS_GetHull,
-	Ham_NS_Player_GetMaxWalkSpeed,
-	Ham_NS_Player_SetSteamID,
+	Ham_NS_GetMaxWalkSpeed,
+	Ham_NS_SetSteamID,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,
