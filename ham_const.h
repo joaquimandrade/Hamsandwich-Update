@@ -99,7 +99,7 @@ enum
 	Ham_FVecVisible,
 	Ham_ChangeYaw,
 	Ham_HasHumanGibs,
-	Ham_AlienGibs, 
+	Ham_HasAlienGibs, 
 	Ham_FadeMonster,
 	Ham_GibMonster,
 	Ham_BecomeDead,
@@ -249,6 +249,8 @@ enum
 	Ham_ESF_TakeDamage2, // Only valid in ESF Open Beta
 	Ham_ESF_IsFighter,
 	Ham_ESF_IsBuddy,
+	Ham_ESF_EmitSound,
+	Ham_ESF_EmitNullSound,
 	Ham_ESF_Weapon_HolsterWhenMeleed,
 
 	Ham_NS_GetPointValue,

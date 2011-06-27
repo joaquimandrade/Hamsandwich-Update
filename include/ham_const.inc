@@ -493,7 +493,7 @@ enum Ham
 	
 	Ham_ChangeYaw, /* Need documentation */
 	Ham_HasHumanGibs, /* Need documentation */
-	Ham_Has_AlienGibs, /* Need documentation */
+	Ham_HasAlienGibs, /* Need documentation */
 	Ham_FadeMonster, /* Need documentation */
 	Ham_GibMonster, /* Need documentation */
 	Ham_BecomeDead, /* Need documentation */
@@ -1512,6 +1512,24 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_IsBuddy, this);
 	 */
 	Ham_ESF_IsBuddy,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this, const char sample[], somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_EmitSound, this, const char sample[], somevalue);
+	 */
+	Ham_ESF_EmitSound,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_EmitNullSound, this, somevalue);
+	 */
+	Ham_ESF_EmitNullSound,
 
 	
 	/**

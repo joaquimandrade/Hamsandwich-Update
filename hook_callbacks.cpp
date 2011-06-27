@@ -1773,6 +1773,35 @@ int Hook_Int_Int_Int_Float_Int(Hook *hook, void *pthis, int i1, int i2, float f1
 	return ret;
 }
 
+void Hook_Void_Str_Int(Hook *hook, void *pthis, const char *sz1, int i2)
+{
+	PUSH_VOID()
+		String a=sz1;
+
+	MAKE_VECTOR()
+
+	P_STR(a)
+	P_INT(i2)
+
+	PRE_START()
+		, a.c_str(), i2
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, const char *, int)>(hook->func)(pthis, 0, a.c_str(), i2);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, const char *, int)>(hook->func)(pthis, a.c_str(), i2);
+#endif
+
+	POST_START()
+		, a.c_str(), i2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+
 
 void Hook_Deprecated(Hook* hook)
 {

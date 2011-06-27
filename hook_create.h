@@ -136,6 +136,8 @@ int Create_Int_Str_Str_Int_Str_Int_Int(AMX *amx, const char *func);
 
 int Create_Int_Int_Int_Float_Int(AMX *amx, const char *func);
 
+int Create_Void_Str_Int(AMX *amx, const char *func);
+
 
 int Create_Deprecated(AMX* amx, const char* func);
 

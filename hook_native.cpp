@@ -274,6 +274,8 @@ hook_t hooklist[] =
 	{ V("esf_isenvmodel",			Int_Void) },
 	{ V("esf_isfighter",			Int_Void) },
 	{ V("esf_isbuddy",				Int_Void) },
+	{ V("esf_emitsound",			Void_Str_Int) },
+	{ V("esf_emitnullsound",		Void_Int) },
 	{ V("esf_takedamage2",			Int_Entvar_Entvar_Float_Float_Int) },
 	{ V("esf_weapon_holsterwhenmeleed",	Void_Void) },
 	
