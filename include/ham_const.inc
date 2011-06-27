@@ -1503,6 +1503,14 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
 	 */
 	Ham_ESF_TakeDamage2,
+
+	/**
+	 * Description:		Unsure.
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_ESF_Weapon_HolsterWhenMeleed, this);
+	 */
+	Ham_ESF_Weapon_HolsterWhenMeleed,
 	
 	/**
 	 * Description:		Returns how many points each entity is worth.

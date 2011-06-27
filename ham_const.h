@@ -112,6 +112,7 @@ enum
 	Ham_FInViewCone,
 	Ham_GetDeathActivity,
 
+	// Not valid in CS, NS and TS.
 	Ham_RunAI,
 	Ham_MonsterThink,
 	Ham_MonsterInit,
@@ -246,6 +247,7 @@ enum
 
 	Ham_ESF_IsEnvModel, // Only valid in ESF Open Beta
 	Ham_ESF_TakeDamage2, // Only valid in ESF Open Beta
+	Ham_ESF_Weapon_HolsterWhenMeleed,
 
 	Ham_NS_GetPointValue,
 	Ham_NS_AwardKill,

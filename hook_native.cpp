@@ -273,13 +273,14 @@ hook_t hooklist[] =
 	/* Earth's Special Forces */
 	{ V("esf_isenvmodel",			Int_Void) },
 	{ V("esf_takedamage2",			Int_Entvar_Entvar_Float_Float_Int) },
-
+	{ V("esf_weapon_holsterwhenmeleed",	Void_Void) },
+	
 	/* Natural-Selection */
 	{ V("ns_getpointvalue",			Int_Void) },
 	{ V("ns_awardkill",				Void_Entvar) },
 	{ V("ns_resetentity",			Void_Void) },
 	{ V("ns_updateonremove",		Void_Void) },
-
+	
 	{ V("ts_giveslowmul",			Void_Void) },
 	{ V("ts_goslow",				Void_Float_Int) },
 	{ V("ts_inslow",				Int_Void) },
