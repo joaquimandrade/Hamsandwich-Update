@@ -247,6 +247,8 @@ enum
 
 	Ham_ESF_IsEnvModel, // Only valid in ESF Open Beta
 	Ham_ESF_TakeDamage2, // Only valid in ESF Open Beta
+	Ham_ESF_IsFighter,
+	Ham_ESF_IsBuddy,
 	Ham_ESF_Weapon_HolsterWhenMeleed,
 
 	Ham_NS_GetPointValue,

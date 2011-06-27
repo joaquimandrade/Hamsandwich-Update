@@ -272,6 +272,8 @@ hook_t hooklist[] =
 
 	/* Earth's Special Forces */
 	{ V("esf_isenvmodel",			Int_Void) },
+	{ V("esf_isfighter",			Int_Void) },
+	{ V("esf_isbuddy",				Int_Void) },
 	{ V("esf_takedamage2",			Int_Entvar_Entvar_Float_Float_Int) },
 	{ V("esf_weapon_holsterwhenmeleed",	Void_Void) },
 	

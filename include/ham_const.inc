@@ -1494,6 +1494,25 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_IsEnvModel, this);
 	 */
 	Ham_ESF_IsEnvModel, 
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_IsFighter, this);
+	 */
+	Ham_ESF_IsFighter,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_IsBuddy, this);
+	 */
+	Ham_ESF_IsBuddy,
+
 	
 	/**
 	 * Description:		Unsure.
