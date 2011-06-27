@@ -122,6 +122,8 @@ int Create_Void_Vector_Entvar_Entvar_Float_Int_Int(AMX *amx, const char *func);
 
 int Create_Float_Int_Float(AMX *amx, const char *func);
 
+int Create_Int_Str(AMX *amx, const char *func);
+
 
 int Create_Deprecated(AMX* amx, const char* func);
 

@@ -1544,6 +1544,39 @@ float Hook_Float_Int_Float(Hook *hook, void *pthis, int i1, float f2)
 	return ret;
 }
 
+int Hook_Int_Str(Hook *hook, void *pthis, const char *sz1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+	String a=sz1;
+
+	MAKE_VECTOR()
+	P_STR(a)
+
+	PRE_START()
+		, a.c_str()
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, const char *)>(hook->func)(pthis, 0, a.c_str());
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, const char *)>(hook->func)(pthis, a.c_str());
+#endif
+
+	POST_START()
+		, a.c_str()
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+
 void Hook_Deprecated(Hook* hook)
 {
 }

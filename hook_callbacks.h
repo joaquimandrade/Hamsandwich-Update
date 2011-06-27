@@ -257,6 +257,11 @@ const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;
 void Hook_Deprecated(Hook* hook);
 
+const bool RT_Int_Str = false;
+const int PC_Int_Str = 1;
+int Hook_Int_Str(Hook *hook, void *pthis, const char *sz1);
+
+
 const bool RT_Float_Int_Float = false;
 const int PC_Float_Int_Float = 2;
 float Hook_Float_Int_Float(Hook *hook, void *pthis, int i1, float f2);

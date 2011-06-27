@@ -284,6 +284,7 @@ hook_t hooklist[] =
 	{ V("ns_savedataforreset",		Void_Void) },
 	{ V("ns_gethull",				Int_Void) },
 	{ V("ns_getmaxwalkspeed",		Float_Void) },
+	{ V("ns_setsteamid",			Int_Str) },
 
 	
 	/* The Specialists */

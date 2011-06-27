@@ -1576,6 +1576,14 @@ enum Ham
 	 */
 	Ham_NS_GetMaxWalkSpeed,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const steamID[])
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this, const steamID[])
+	 */
+	Ham_NS_Player_SetSteamID,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	

@@ -946,6 +946,19 @@ cell Call_Float_Int_Float(AMX *amx, cell *params)
 	return 1;	
 }
 
+cell Call_Int_Str(AMX *amx, cell *params)
+{
+	SETUP(1);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, const char *)>(__func)(pv, 0, sz3);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, const char *)>(__func)(pv, sz3);
+#endif
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {
