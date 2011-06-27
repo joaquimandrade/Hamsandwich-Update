@@ -306,6 +306,10 @@ int Create_Void_Cbase_Int(AMX *amx, const char *func)
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
 }
 
+int Create_Void_Str(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_STRING, FP_DONE);
+}
 
 
 int Create_Deprecated(AMX* amx, const char* func)

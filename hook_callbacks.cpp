@@ -1829,6 +1829,32 @@ void Hook_Void_Cbase_Int(Hook *hook, void *pthis, void *p1, int i1)
 	POP()
 }
 
+void Hook_Void_Str(Hook *hook, void *pthis, const char *sz1)
+{
+	PUSH_VOID()
+	String a=sz1;
+
+	MAKE_VECTOR()
+
+	P_STR(a)
+
+	PRE_START()
+	, a.c_str()
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, const char *)>(hook->func)(pthis, 0, a.c_str());
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, const char *)>(hook->func)(pthis, a.c_str());
+#endif
+
+	POST_START()
+		, a.c_str()
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
 
 void Hook_Deprecated(Hook* hook)
 {

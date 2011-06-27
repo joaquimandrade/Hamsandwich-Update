@@ -294,6 +294,10 @@ const bool RT_Void_Cbase_Int = true;
 const int PC_Void_Cbase_Int = 2;
 void Hook_Void_Cbase_Int(Hook *hook, void *pthis, void *p1, int i1);
 
+const bool RT_Void_Str = true;
+const int PC_Void_Str = 1;
+void Hook_Void_Str(Hook *hook, void *pthis, const char *sz1);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

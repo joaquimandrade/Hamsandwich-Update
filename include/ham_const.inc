@@ -1582,6 +1582,15 @@ enum Ham
 	Ham_ESF_IsEnvModel,
 
 	/**
+	 * Description:		Unsure.
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this, entityida, entityidb, Float:floata, Float:floatb, dmgbits)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
+	 */
+	Ham_ESF_TakeDamage2,
+
+	/**
 	 * Description:		-
 	 *					Is only in ESF Open Beta.
 	 * Forward params:	function(this)
@@ -1654,13 +1663,175 @@ enum Ham
 	Ham_ESF_SetMaxPowerLevel,
 
 	/**
-	 * Description:		Unsure.
+	 * Description:		-
 	 *					Is only in ESF Open Beta.
-	 * Forward params:	function(this, entityida, entityidb, Float:floata, Float:floatb, dmgbits)
-	 * Return type:		Integer.
-	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
+	 * Forward params:	function(this, anim)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_StopAniTrigger, this, anim);
 	 */
-	Ham_ESF_TakeDamage2,
+	Ham_ESF_StopAniTrigger,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_StopFly, this);
+	 */
+	Ham_ESF_StopFly,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_HideWeapon, this);
+	 */
+	Ham_ESF_HideWeapon,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this, somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_HideWeapon, this, somevalue);
+	 */
+	Ham_ESF_ClientRemoveWeapon,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this, const model[])
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_SendClientsCustomModel, this, const model[]);
+	 */
+	Ham_ESF_SendClientsCustomModel,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanTurbo, this);
+	 */
+	Ham_ESF_CanTurbo,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanPrimaryFire, this);
+	 */
+	Ham_ESF_CanPrimaryFire,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanSecondaryFire, this);
+	 */
+	Ham_ESF_CanSecondaryFire,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanStopFly, this);
+	 */
+	Ham_ESF_CanStopFly,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanBlock, this);
+	 */
+	Ham_ESF_CanBlock,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanRaiseKi, this);
+	 */
+	Ham_ESF_CanRaiseKi,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanRaiseStamina, this);
+	 */
+	Ham_ESF_CanRaiseStamina,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanTeleport, this);
+	 */
+	Ham_ESF_CanTeleport,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanStartFly, this);
+	 */
+	Ham_ESF_CanStartFly,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanStartPowerup, this);
+	 */
+	Ham_ESF_CanStartPowerup,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanJump, this);
+	 */
+	Ham_ESF_CanJump,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_CanWallJump, this);
+	 */
+	Ham_ESF_CanWallJump,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_IsSuperJump, this);
+	 */
+	Ham_ESF_IsSuperJump,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_ESF_IsMoveBack, this);
+	 */
+	Ham_ESF_IsMoveBack,
 
 	/**
 	 * Description:		Unsure.

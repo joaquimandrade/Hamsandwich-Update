@@ -140,6 +140,8 @@ cell Call_Void_Str_Int(AMX* amx, cell* params);
 
 cell Call_Void_Cbase_Int(AMX* amx, cell* params);
 
+cell Call_Void_Str(AMX* amx, cell* params);
+
 
 cell Call_Deprecated(AMX* amx, cell* params);
 
