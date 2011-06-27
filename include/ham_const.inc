@@ -39,7 +39,7 @@
 enum Ham
 {
 	/**
-	 * Description: 	This is typically called whenever an entity is created. 
+	 * Description:		This is typically called whenever an entity is created. 
 	 *					It is the virtual equivilent of spawn from the engine.
 	 *					Some mods call this on player spawns too.
 	 * Forward params:	function(this)
@@ -49,7 +49,7 @@ enum Ham
 	Ham_Spawn = 0, 
 	
 	/**
-	 * Description: 	This is typically called on map change.
+	 * Description:		This is typically called on map change.
 	 *					This will typically precache all assets required by the entity.
 	 * Forward params:	function(this)
 	 * Return type:		None.
@@ -491,18 +491,104 @@ enum Ham
 	 */
 	Ham_FVecVisible,
 	
-	Ham_ChangeYaw, /* Need documentation */
-	Ham_HasHumanGibs, /* Need documentation */
-	Ham_HasAlienGibs, /* Need documentation */
-	Ham_FadeMonster, /* Need documentation */
-	Ham_GibMonster, /* Need documentation */
-	Ham_BecomeDead, /* Need documentation */
-	Ham_IRelationship, /* Need documentation */
-	Ham_PainSound, /* Need documentation */
-	Ham_ReportAIState, /* Need documentation */
-	Ham_MonsterInitDead, /* Need documentation */
-	Ham_Look, /* Need documentation */
-	Ham_BestVisibleEnemy, /* Need documentation */
+	/**
+	 * Description:		Turns a monster towards its ideal_yaw.
+	 * Forward params:	function(this, speed);
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_ChangeYaw, this, speed);
+	 */
+	Ham_ChangeYaw,
+	
+	/**
+	 * Description:		Returns if monster has human gibs.
+	 * Forward params:	function(this);
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_HasHumanGibs, this);
+	 */
+	Ham_HasHumanGibs,
+	
+	/**
+	 * Description:		Returns if monster has alien gibs.
+	 * Forward params:	function(this);
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_HasAlienGibs, this);
+	 */
+	Ham_HasAlienGibs,
+	
+	/**
+	 * Description:		Slowly fades a entity out, then removes it.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_FadeMonster, this);
+	 */
+	Ham_FadeMonster,
+	
+	/**
+	 * Description:		Create some gore and get rid of a monster's model.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_GibMonster, this);
+	 */
+	Ham_GibMonster,
+	
+	/**
+	 * Description:		Called when monster dies and prepares its entity to become a corpse.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_BecomeDead, this);
+	 */
+	Ham_BecomeDead,
+	
+	/**
+	 * Description:		Checks relation ship between two monsters.
+	 * Forward params:	function(this, idother);
+	 * Return type:		Integer (R_* constant, look monsters.h)
+	 * Execute params:	ExecuteHam(Ham_IRelationship, this, idother);
+	 */
+	Ham_IRelationship,
+	
+	/**
+	 * Description:		Called when monster is about to emit pain sound.
+	 *					Not guaranteed to actually emit sound. (random, time, etc..)
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_PainSound, this);
+	 */
+	Ham_PainSound,
+	
+	/**
+	 * Description:		Prints debug information about monster to console. (state, activity, and other)
+	 *					This function is called by impulse 103.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ReportAIState, this);
+	 */
+	Ham_ReportAIState,
+	
+	/**
+	 * Description:		Called when monster has died.
+	 * Forward params:	function(this);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_MonsterInitDead, this);
+	 */
+	Ham_MonsterInitDead,
+	
+	/**
+	 * Description:		Function to find enemies or food by sight.
+	 *					distance is maximum distance (in units) monster can see.
+	 * Forward params:	function(this, distance);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_Look, this, distance);
+	 */
+	Ham_Look,
+	
+	/**
+	 * Description:		This functions searches the link list whose head is the caller's m_pLink field.
+	 * Forward params:	function(this);
+	 * Return type:		Integer (entity).
+	 * Execute params:	ExecuteHam(Ham_BestVisibleEnemy, this);
+	 */
+	Ham_BestVisibleEnemy,
 	
 	/**
 	 * Description:		Returns TRUE if the passed ent is in the caller's forward view cone. 
@@ -512,7 +598,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FInViewCone, this, idOther);
 	 */
 	Ham_FInViewCone,
-
+	
 	/**
 	 * Description:		Determines the best type of death animation to play.
 	 * Forward params:	function(this);
@@ -520,12 +606,12 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_GetDeathActivity, this);
 	 */
 	Ham_GetDeathActivity,
-
-
+	
+	
 	/**
 	 * The following functions are not supported by Counter-Strike, The Specialists and Natural Selection mods
 	 */
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -534,7 +620,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_RunAI, this);
 	 */
 	Ham_RunAI,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -543,7 +629,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_MonsterThink, this);
 	 */
 	Ham_MonsterThink,
-
+	
 	/**
 	 * Description:		After a monster is spawned, it needs to be dropped into the world, checked for mobility problems
 	 *					and put on the proper path, if any. This function does all of those things after the monster spawns.
@@ -554,7 +640,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_MonsterInit, this);
 	 */
 	Ham_MonsterInit,
-
+	
 	/**
 	 * Description:		Takes a single step towards the next ROUTE location.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -563,7 +649,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Move, this, Float:interval);
 	 */
 	Ham_Move,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -572,7 +658,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ShouldAdvanceRoute, this, Float:waypointDist);
 	 */
 	Ham_ShouldAdvanceRoute,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -581,7 +667,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_GetStoppedActivity, this);
 	 */
 	Ham_GetStoppedActivity,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -589,8 +675,8 @@ enum Ham
 	 * Return type:		None.
 	 * Execute params:	ExecuteHam(Ham_Stop, this);
 	 */
-	Ham_Stop,		
-		
+	Ham_Stop,
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -599,7 +685,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CheckRangeAttack1, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckRangeAttack1,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -608,7 +694,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CheckRangeAttack2, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckRangeAttack2,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -617,7 +703,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CheckMeleeAttack1, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckMeleeAttack1,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -626,7 +712,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CheckMeleeAttack2, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckMeleeAttack2, 
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -635,7 +721,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ScheduleChange, this, Float:dot, Float:dist);
 	 */
 	Ham_ScheduleChange,
-
+	
 	/**
 	 * Description:		Determines whether or not the monster can play the scripted sequence or AI sequence that is
 	 *					trying to possess it. If DisregardState is set, the monster will be sucked into the script 
@@ -646,7 +732,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CanPlaySequence, this, bool:disregardState, interruptLevel );
 	 */
 	Ham_CanPlaySequence,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -655,7 +741,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CanPlaySentence, this, bool:disregardState );
 	 */
 	Ham_CanPlaySentence,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -664,7 +750,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_PlaySentence, this, const sentence[], Float:duration, Float:volume, Float:attenuation );
 	 */
 	Ham_PlaySentence,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -673,7 +759,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_PlaySentence, this, const sentence[], Float:duration, Float:volume, Float:attenuation, bool:concurrent, idListener );
 	 */
 	Ham_PlayScriptedSentence,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -682,7 +768,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_SentenceStop, this);
 	 */
 	Ham_SentenceStop,
-
+	
 	/**
 	 * Description:		Surveys the Conditions information available and finds the best new state for a monster.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -691,7 +777,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_GetIdealState, this);
 	 */
 	Ham_GetIdealState,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -700,7 +786,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_SetActivity, this, newActivity);
 	 */
 	Ham_SetActivity,
-
+	
 	/**
 	 * Description:		Part of the condition collection process gets and stores data and conditions 
 	 *					pertaining to a monster's enemy. Returns TRUE if Enemy LKP was updated.
@@ -710,7 +796,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CheckEnemy, this, idEnemy);
 	 */
 	Ham_CheckEnemy,
-
+	
 	/**
 	 * Description:		Allows each sequence to have a different turn rate associated with it.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -719,7 +805,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_SetYawSpeed, this);
 	 */
 	Ham_SetYawSpeed,
-
+	
 	/**
 	 * Description:		Tries to build a route as close to the target as possible, even if there isn't a path to the final point.
 	 *					If supplied, search will return a node at least as far away as MinDist from vecThreat, but no farther than minDist.
@@ -730,7 +816,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_BuildNearestRoute, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
 	 */
 	Ham_BuildNearestRoute,
-
+	
 	/**
 	 * Description:		Tries to find a nearby node that will hide the caller from its enemy. 
 	 *					If supplied, search will return a node at least as far away as MinDist from vecThreat, but no farther than minDist.
@@ -741,7 +827,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FindCover, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
 	 */
 	Ham_FindCover,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -750,7 +836,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CoverRadius, this);
 	 */
 	Ham_CoverRadius,
-
+	
 	/**
 	 * Description:		Prequalifies a monster to do more fine checking of potential attacks.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -759,7 +845,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FCanCheckAttacks, this);
 	 */
 	Ham_FCanCheckAttacks,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -768,7 +854,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CheckAmmo, this);
 	 */
 	Ham_CheckAmmo,
-
+	
 	/**
 	 * Description:		Before a set of conditions is allowed to interrupt a monster's schedule, this function removes
 	 *					conditions that we have flagged to interrupt the current schedule, but may not want to interrupt
@@ -779,7 +865,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_IgnoreConditions, this);
 	 */
 	Ham_IgnoreConditions,
-
+	
 	/**
 	 * Description:		Tells use whether or not the monster cares about the type of Hint Node given.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -788,7 +874,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FValidateHintType, this, hint);
 	 */
 	Ham_FValidateHintType,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -797,7 +883,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_FValidateHintType, this);
 	 */
 	Ham_FCanActiveIdle,
-
+	
 	/**
 	 * Description:		Returns a bit mask indicating which types of sounds this monster regards. 
 	 *					In the base class implementation, monsters care about all sounds, but no scents.
@@ -807,7 +893,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ISoundMask, this);
 	 */
 	Ham_ISoundMask,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -816,7 +902,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_HearingSensitivity, this);
 	 */
 	Ham_HearingSensitivity,
-
+	
 	/**
 	 * Description:		Called by Barnacle victims when the barnacle pulls their head into its mouth.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -825,7 +911,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_BarnacleVictimBitten, this, idBarnacle);
 	 */
 	Ham_BarnacleVictimBitten,
-
+	
 	/**
 	 * Description:		Called by barnacle victims when the host barnacle is killed.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -834,7 +920,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_BarnacleVictimReleased, this);
 	 */
 	Ham_BarnacleVictimReleased,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -843,7 +929,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_PrescheduleThink, this);
 	 */
 	Ham_PrescheduleThink,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -852,7 +938,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_DeathSound, this);
 	 */
 	Ham_DeathSound,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -861,7 +947,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_AlertSound, this);
 	 */
 	Ham_AlertSound,
-
+	
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
@@ -870,7 +956,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_IdleSound, this);
 	 */
 	Ham_IdleSound,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this)
@@ -878,8 +964,8 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_StopFollowing, this);
 	 */
 	Ham_StopFollowing,
-
-
+	
+	
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
@@ -948,11 +1034,11 @@ enum Ham
 	 */
 	Ham_Player_UpdateClientData,
 	
-
+	
 	/**
 	 * Items have all the attributes of normal entities in addition to these.
 	 */
-	 
+	
 	/**
 	 * Description:		Adds the item to the player.
 	 * Forward params:	function(this, idPlayer);
@@ -1093,7 +1179,7 @@ enum Ham
 	/**
 	 * Weapons have all the attributes to Ham_Item_*, in addition to these.
 	 */
-	 
+	
 	/**
 	 * Description:		Gets ammo from the target weapon.
 	 * Forward params:	function(this, idTarget)
@@ -1205,7 +1291,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_Weapon_UseDecrement, this);
 	 */
 	Ham_Weapon_UseDecrement,
-	 
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, someboolvalue)
@@ -1366,7 +1452,7 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_GetStateEnt, this, idtarget);
 	 */
 	Ham_DOD_GetStateEnt,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this)
@@ -1374,7 +1460,7 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_SetScriptReset, this);
 	 */
 	Ham_DOD_SetScriptReset,
-
+	
 	/**
 	 * Description:		Whether or not a player can drop this item.
 	 * Forward params:	function(this)
@@ -1405,7 +1491,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_DB_GetItemName, this, buffer[], size);
 	 */
 	Ham_TFC_DB_GetItemName,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, iduser)
@@ -1469,7 +1555,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_Concuss, this, entityid);
 	 */
 	Ham_TFC_Concuss,
-
+	
 	/**
 	 * Description:		This entity is exploding, or otherwise needs to inflict damage upon entities within a certain range.
 	 * Forward params:	function(this, inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType)
@@ -1477,7 +1563,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_RadiusDamage, this, inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType);
 	 */
 	Ham_TFC_RadiusDamage,
-
+	
 	/**
 	 * Description:		This entity is exploding, or otherwise needs to inflict damage upon entities within a certain range.
 	 * Forward params:	function(this, const Float:source[3], inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType)
@@ -1494,7 +1580,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_IsEnvModel, this);
 	 */
 	Ham_ESF_IsEnvModel, 
-
+	
 	/**
 	 * Description:		-
 	 *					Is only in ESF Open Beta.
@@ -1503,7 +1589,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_IsFighter, this);
 	 */
 	Ham_ESF_IsFighter,
-
+	
 	/**
 	 * Description:		-
 	 *					Is only in ESF Open Beta.
@@ -1512,7 +1598,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_IsBuddy, this);
 	 */
 	Ham_ESF_IsBuddy,
-
+	
 	/**
 	 * Description:		-
 	 *					Is only in ESF Open Beta.
@@ -1521,7 +1607,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_EmitSound, this, const char sample[], somevalue);
 	 */
 	Ham_ESF_EmitSound,
-
+	
 	/**
 	 * Description:		-
 	 *					Is only in ESF Open Beta.
@@ -1530,7 +1616,6 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_EmitNullSound, this, somevalue);
 	 */
 	Ham_ESF_EmitNullSound,
-
 	
 	/**
 	 * Description:		Unsure.
@@ -1540,7 +1625,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
 	 */
 	Ham_ESF_TakeDamage2,
-
+	
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this)
@@ -1580,7 +1665,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_UpdateOnRemove, this)
 	 */
 	Ham_NS_UpdateOnRemove,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, constroller, Float:value)
@@ -1588,7 +1673,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_SetBoneController, this, constroller, Float:value)
 	 */
 	Ham_NS_SetBoneController,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1604,7 +1689,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetHull, this)
 	 */
 	Ham_NS_GetHull,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1612,7 +1697,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this)
 	 */
 	Ham_NS_GetMaxWalkSpeed,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, const teamID[])
@@ -1620,7 +1705,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_SetTeamID, this, const teamID[])
 	 */
 	Ham_NS_SetTeamID,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1628,7 +1713,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetEffectivePlayerClass, this)
 	 */
 	Ham_NS_GetEffectivePlayerClass,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1636,7 +1721,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetAuthenticationMask, this)
 	 */
 	Ham_NS_GetAuthenticationMask,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1644,7 +1729,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_EffectivePlayerClassChanged, this)
 	 */
 	Ham_NS_EffectivePlayerClassChanged,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1652,7 +1737,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_NeedsTeamUpdate, this)
 	 */
 	Ham_NS_NeedsTeamUpdate,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1660,7 +1745,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_SendTeamUpdate, this)
 	 */
 	Ham_NS_SendTeamUpdate,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1668,7 +1753,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_SendWeaponUpdate, this)
 	 */
 	Ham_NS_SendWeaponUpdate,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, idOther)
@@ -1676,7 +1761,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_InitPlayerFromSpawn, this, idOther)
 	 */
 	Ham_NS_InitPlayerFromSpawn,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1684,7 +1769,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_PackDeadPlayerItems, this)
 	 */
 	Ham_NS_PackDeadPlayerItems,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, someval, const someotherval[], bool:someotherval2)
@@ -1692,7 +1777,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetAnimationForActivity, this, someval, const someotherval[], bool:someotherval2)
 	 */
 	Ham_NS_GetAnimationForActivity,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, const Float:position[3], const Float:viewAngles[3])
@@ -1700,7 +1785,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_StartObserver, this, const Float:position[3], const Float:viewAngles[3])
 	 */
 	Ham_NS_StartObserver,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1708,7 +1793,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_StopObserver, this)
 	 */
 	Ham_NS_StopObserver,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1716,7 +1801,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetAdrenalineFactor, this)
 	 */
 	Ham_NS_GetAdrenalineFactor,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, const name[], bool:showpickup))
@@ -1724,7 +1809,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetNamedItem, this, const name[], bool:showpickup)
 	 */
 	Ham_NS_GetNamedItem,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1732,7 +1817,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Suicide, this)
 	 */
 	Ham_NS_Suicide,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1740,7 +1825,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_GetCanUseWeapon, this)
 	 */
 	Ham_NS_GetCanUseWeapon,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1748,7 +1833,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetWeaponPrimeTime, this)
 	 */
 	Ham_NS_Weapon_GetWeaponPrimeTime,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1756,7 +1841,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_PrimeWeapon, this)
 	 */
 	Ham_NS_Weapon_PrimeWeapon,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1764,7 +1849,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPrimed, this)
 	 */
 	Ham_NS_Weapon_GetIsWeaponPrimed,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1772,7 +1857,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPriming, this)
 	 */
 	Ham_NS_Weapon_GetIsWeaponPriming,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, const viewModel[], const weaponModel[], anim, const animExt[], skiplocal, body)
@@ -1780,7 +1865,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_DefaultDeploy, this, const viewModel[], const weaponModel[], anim, const animExt[], skiplocal, body)
 	 */
 	Ham_NS_Weapon_DefaultDeploy,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, clipsize, anim, Float:delay, body)
@@ -1788,7 +1873,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_DefaultReload, this, clipsize, anim, Float:delay, body)
 	 */
 	Ham_NS_Weapon_DefaultReload,
-
+	
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1796,8 +1881,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetDeployTime, this)
 	 */
 	Ham_NS_Weapon_GetDeployTime,
-
-
+	
 	/** Virtual functions added to TS in TS 3 */
 	
 	/**
