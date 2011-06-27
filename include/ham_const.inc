@@ -1568,6 +1568,14 @@ enum Ham
 	 */
 	Ham_NS_GetHull,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this)
+	 */
+	Ham_NS_GetMaxWalkSpeed,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	
