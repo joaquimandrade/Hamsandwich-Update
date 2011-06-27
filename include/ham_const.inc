@@ -1552,6 +1552,14 @@ enum Ham
 	 */
 	Ham_NS_SetBoneController,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SetBoneController, this)
+	 */
+	Ham_NS_SaveDataForReset,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	

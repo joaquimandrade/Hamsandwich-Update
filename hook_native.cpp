@@ -281,6 +281,8 @@ hook_t hooklist[] =
 	{ V("ns_resetentity",			Void_Void) },
 	{ V("ns_updateonremove",		Void_Void) },
 	{ V("ns_setbonecontroller",		Float_Int_Float) },
+	{ V("ns_savedataforreset",		Void_Void) },
+
 	
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },
