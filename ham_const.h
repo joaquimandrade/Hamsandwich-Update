@@ -255,6 +255,7 @@ enum
 	Ham_NS_UpdateOnRemove,
 	Ham_NS_SetBoneController,
 	Ham_NS_SaveDataForReset,
+	Ham_NS_GetHull,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,

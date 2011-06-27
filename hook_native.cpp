@@ -282,6 +282,7 @@ hook_t hooklist[] =
 	{ V("ns_updateonremove",		Void_Void) },
 	{ V("ns_setbonecontroller",		Float_Int_Float) },
 	{ V("ns_savedataforreset",		Void_Void) },
+	{ V("ns_gethull",				Int_Void) },
 
 	
 	/* The Specialists */
