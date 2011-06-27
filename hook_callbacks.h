@@ -298,6 +298,26 @@ const bool RT_Void_Str = true;
 const int PC_Void_Str = 1;
 void Hook_Void_Str(Hook *hook, void *pthis, const char *sz1);
 
+const bool RT_Void_Vector = true;
+const int PC_Void_Vector = 1;
+void Hook_Void_Vector(Hook *hook, void *pthis, Vector v1);
+
+const bool RT_Int_Str_Vector_Str = false;
+const int PC_Int_Str_Vector_Str = 3;
+int Hook_Int_Str_Vector_Str(Hook *hook, void *pthis, const char *sz1, Vector v2, const char *sz2);
+
+const bool RT_Int_Str_Str = false;
+const int PC_Int_Str_Str = 3;
+int Hook_Int_Str_Str(Hook *hook, void *pthis, const char *sz1, const char *sz2);
+
+const bool RT_Void_Float_Float = true;
+const int PC_Void_Float_Float = 2;
+void Hook_Void_Float_Float(Hook *hook, void *pthis, float f1, float f2);
+
+const bool RT_Void_Str_Str_Int = true;
+const int PC_Void_Str_Str_Int = 3;
+void Hook_Void_Str_Str_Int(Hook *hook, void *pthis, const char *sz1, const char *sz2, int i3);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

@@ -1856,6 +1856,162 @@ void Hook_Void_Str(Hook *hook, void *pthis, const char *sz1)
 	POP()
 }
 
+void Hook_Void_Vector(Hook *hook, void *pthis, Vector v1)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+	P_VECTOR(v1)
+
+	PRE_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, Vector)>(hook->func)(pthis, 0, v1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, Vector)>(hook->func)(pthis, v1);
+#endif
+
+	POST_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+int Hook_Int_Str_Vector_Str(Hook *hook, void *pthis, const char *sz1, Vector v2, const char *sz2)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	String a=sz1;
+	String b=sz2;
+
+	MAKE_VECTOR()
+
+	P_STR(a)
+	P_VECTOR(v2)
+	P_STR(b)
+
+	PRE_START()
+		, a.c_str(), MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false), b.c_str()
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, const char *, Vector, const char *)>(hook->func)(pthis, 0, a.c_str(), v2, b.c_str());
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, const char *, Vector, const char *)>(hook->func)(pthis, a.c_str(), v2, b.c_str());
+#endif
+
+	POST_START()
+		, a.c_str(), MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false), b.c_str()
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+int Hook_Int_Str_Str(Hook *hook, void *pthis, const char *sz1, const char *sz2)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	String a=sz1;
+	String b=sz2;
+
+	MAKE_VECTOR()
+
+	P_STR(a)
+	P_STR(b)
+
+	PRE_START()
+		, a.c_str(), b.c_str()
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, const char *, const char *)>(hook->func)(pthis, 0, a.c_str(), b.c_str());
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, const char *, const char *)>(hook->func)(pthis, a.c_str(), b.c_str());
+#endif
+
+	POST_START()
+		, a.c_str(), b.c_str()
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+void Hook_Void_Float_Float(Hook *hook, void *pthis, float f1, float f2)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+	P_FLOAT(f1)
+	P_FLOAT(f2)
+
+	PRE_START()
+		,f1, f2
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, float, float)>(hook->func)(pthis, 0, f1, f2);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, float, float)>(hook->func)(pthis, f1, f2);
+#endif
+
+	POST_START()
+		,f1, f2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+void Hook_Void_Str_Str_Int(Hook *hook, void *pthis, const char *sz1, const char *sz2, int i3)
+{
+	PUSH_VOID()
+
+	String a=sz1;
+	String b=sz2;
+
+	MAKE_VECTOR()
+
+	P_STR(a)
+	P_STR(b)
+	P_INT(i3)
+
+	PRE_START()
+		, a.c_str(), b.c_str(), i3
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<int (__fastcall*)(void*, int, const char *, const char *, int)>(hook->func)(pthis, 0, a.c_str(), b.c_str(), i3);
+#elif defined __linux__
+		reinterpret_cast<int (*)(void*, const char *, const char *, int)>(hook->func)(pthis, a.c_str(), b.c_str(), i3);
+#endif
+
+	POST_START()
+		, a.c_str(), b.c_str(), i3
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+
 void Hook_Deprecated(Hook* hook)
 {
 

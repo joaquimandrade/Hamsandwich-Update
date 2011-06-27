@@ -1119,6 +1119,94 @@ cell Call_Void_Str(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Void_Vector(AMX *amx, cell *params)
+{
+	SETUP(1);
+
+	Vector v3;
+
+	float *fl3=(float *)MF_GetAmxAddr(amx, params[3]);
+	v3.x=fl3[0];
+	v3.y=fl3[1];
+	v3.z=fl3[2];
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void *, int, Vector)>(__func)(pv, 0, v3);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, Vector)>(__func)(pv, v3);
+#endif
+
+	return 1;
+}
+
+cell Call_Int_Str_Vector_Str(AMX* amx, cell* params)
+{
+	SETUP(3);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	char *sz5=MF_GetAmxString(amx, params[5], 1, NULL);
+
+	Vector v4;
+
+	float *fl4=(float *)MF_GetAmxAddr(amx, params[4]);
+	v4.x=fl4[0];
+	v4.y=fl4[1];
+	v4.z=fl4[2];
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, const char *, Vector,  const char *)>(__func)(pv, 0, sz3, v4, sz5);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, const char *, Vector,  const char *)>(__func)(pv, sz3, v4, sz5);
+#endif
+}
+
+cell Call_Int_Str_Str(AMX* amx, cell* params)
+{
+	SETUP(2);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	char *sz4=MF_GetAmxString(amx, params[4], 1, NULL);
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, const char *, const char *)>(__func)(pv, 0, sz3, sz4);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, const char *, const char *)>(__func)(pv, sz3, sz4);
+#endif
+}
+
+cell Call_Void_Float_Float(AMX *amx, cell *params)
+{
+	SETUP(2);
+
+	float f3=amx_ctof(*MF_GetAmxAddr(amx, params[3])); 
+	float f4=amx_ctof(*MF_GetAmxAddr(amx, params[4])); 
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void *, int, float, float)>(__func)(pv, 0, f3, f4);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, float, float)>(__func)(pv, f3, f4);
+#endif
+
+	return 1;
+}
+
+cell Call_Void_Str_Str_Int(AMX *amx, cell *params)
+{
+	SETUP(3);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	char *sz4=MF_GetAmxString(amx, params[4], 1, NULL);
+	int i5=*MF_GetAmxAddr(amx, params[5]);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, const char *, const char *, int)>(__func)(pv, 0, sz3, sz4, i5);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, const char *, const char *, int)>(__func)(pv, sz3, sz4, i5);
+#endif
+
+	return 1;
+}
+
 cell Call_Deprecated(AMX *amx, cell *params)
 {
 	MF_LogError(amx, AMX_ERR_NATIVE, "Ham function is deprecated.");

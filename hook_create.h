@@ -142,6 +142,16 @@ int Create_Void_Cbase_Int(AMX *amx, const char *func);
 
 int Create_Void_Str(AMX *amx, const char *func);
 
+int Create_Void_Vector(AMX *amx, const char *func);
+
+int Create_Int_Str_Vector_Str(AMX *amx, const char *func);
+
+int Create_Int_Str_Str(AMX *amx, const char *func);
+
+int Create_Void_Float_Float(AMX *amx, const char *func);
+
+int Create_Void_Str_Str_Int(AMX *amx, const char *func);
+
 
 int Create_Deprecated(AMX* amx, const char* func);
 
