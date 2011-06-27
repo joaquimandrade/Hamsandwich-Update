@@ -1578,11 +1578,11 @@ enum Ham
 
 	/**
 	 * Description:		-
-	 * Forward params:	function(this, const steamID[])
+	 * Forward params:	function(this, const teamID[])
 	 * Return type:		Integer.
-	 * Execute params:	ExecuteHam(Ham_NS_GetMaxWalkSpeed, this, const steamID[])
+	 * Execute params:	ExecuteHam(Ham_NS_SetTeamID, this, const teamID[])
 	 */
-	Ham_NS_SetSteamID,
+	Ham_NS_SetTeamID,
 
 	/**
 	 * Description:		-

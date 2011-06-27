@@ -257,7 +257,7 @@ enum
 	Ham_NS_SaveDataForReset,
 	Ham_NS_GetHull,
 	Ham_NS_GetMaxWalkSpeed,
-	Ham_NS_SetSteamID,
+	Ham_NS_SetTeamID,
 	Ham_NS_GetEffectivePlayerClass,
 	Ham_NS_GetAuthenticationMask,
 	Ham_NS_EffectivePlayerClassChanged,
