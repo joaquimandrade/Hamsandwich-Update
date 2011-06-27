@@ -1543,6 +1543,15 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_UpdateOnRemove, this)
 	 */
 	Ham_NS_UpdateOnRemove,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, constroller, Float:value)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_SetBoneController, this, constroller, Float:value)
+	 */
+	Ham_NS_SetBoneController,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	

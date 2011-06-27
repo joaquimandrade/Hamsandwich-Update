@@ -1511,6 +1511,39 @@ void Hook_Void_Vector_Entvar_Entvar_Float_Int_Int(Hook *hook, void *pthis, Vecto
 	POP()
 }
 
+float Hook_Float_Int_Float(Hook *hook, void *pthis, int i1, float f2)
+{
+	float ret=0.0;
+	float origret=0.0;
+
+	PUSH_FLOAT()
+
+	MAKE_VECTOR()
+
+	P_INT(i1)
+	P_FLOAT(f2)
+
+	PRE_START()
+		, i1, f2
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<float (__fastcall*)(void*, int, int, float)>(hook->func)(pthis, 0, i1, f2);
+#elif defined __linux__
+		origret=reinterpret_cast<float (*)(void*, int, float)>(hook->func)(pthis, i1, f2);
+#endif
+
+	POST_START()
+		,i1, f2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
 void Hook_Deprecated(Hook* hook)
 {
 }

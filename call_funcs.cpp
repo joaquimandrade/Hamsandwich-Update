@@ -929,6 +929,23 @@ cell Call_Void_Vector_Entvar_Entvar_Float_Int_Int(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Float_Int_Float(AMX *amx, cell *params)
+{
+	SETUP(3);
+
+	int i3=*MF_GetAmxAddr(amx, params[3]);
+	float f4=amx_ctof2(*MF_GetAmxAddr(amx, params[4]));
+
+#ifdef _WIN32
+	float ret=reinterpret_cast<float (__fastcall *)(void *, int, int, float)>(__func)(pv, 0, i3, f4);
+#elif defined __linux__
+	float ret=reinterpret_cast<float (*)(void *, int, float)>(__func)(pv, i3, f4);
+#endif
+	*MF_GetAmxAddr(amx, params[5])=amx_ftoc2(ret);
+
+	return 1;	
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

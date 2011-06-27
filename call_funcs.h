@@ -120,6 +120,8 @@ cell Call_Void_Entvar_Entvar_Float_Int_Int(AMX *amx, cell *params);
 
 cell Call_Void_Vector_Entvar_Entvar_Float_Int_Int(AMX *amx, cell *params);
 
+cell Call_Float_Int_Float(AMX* amx, cell* params);
+
 
 cell Call_Deprecated(AMX* amx, cell* params);
 

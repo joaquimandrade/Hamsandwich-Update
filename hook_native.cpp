@@ -280,7 +280,9 @@ hook_t hooklist[] =
 	{ V("ns_awardkill",				Void_Entvar) },
 	{ V("ns_resetentity",			Void_Void) },
 	{ V("ns_updateonremove",		Void_Void) },
+	{ V("ns_setbonecontroller",		Float_Int_Float) },
 	
+	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },
 	{ V("ts_goslow",				Void_Float_Int) },
 	{ V("ts_inslow",				Int_Void) },

@@ -253,6 +253,7 @@ enum
 	Ham_NS_AwardKill,
 	Ham_NS_ResetEntity,
 	Ham_NS_UpdateOnRemove,
+	Ham_NS_SetBoneController,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,
