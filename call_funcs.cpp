@@ -992,6 +992,32 @@ cell Call_Int_Int_Str_Bool(AMX *amx, cell *params)
 #endif
 }
 
+cell Call_Void_Vector_Vector(AMX *amx, cell *params)
+{
+	SETUP(2);
+
+	Vector v3;
+	Vector v4;
+
+	float *fl3=(float *)MF_GetAmxAddr(amx, params[3]);
+	v3.x=fl3[0];
+	v3.y=fl3[1];
+	v3.z=fl3[2];
+
+	float *fl4=(float *)MF_GetAmxAddr(amx, params[4]);
+	v4.x=fl4[0];
+	v4.y=fl4[1];
+	v4.z=fl4[2];
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void *, int, Vector, Vector)>(__func)(pv, 0, v3, v4);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, Vector, Vector)>(__func)(pv, v3, v4);
+#endif
+
+	return 1;
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

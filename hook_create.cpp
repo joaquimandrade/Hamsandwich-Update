@@ -276,6 +276,11 @@ int Create_Int_Int_Str_Bool(AMX *amx, const char *func)
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_STRING, FP_CELL, FP_DONE);
 }
 
+int Create_Void_Vector_Vector(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_DONE);
+}
+
 
 int Create_Deprecated(AMX* amx, const char* func)
 {

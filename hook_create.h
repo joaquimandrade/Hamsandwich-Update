@@ -128,6 +128,8 @@ int Create_Void_Edict(AMX *amx, const char *func);
 
 int Create_Int_Int_Str_Bool(AMX *amx, const char *func);
 
+int Create_Void_Vector_Vector(AMX *amx, const char *func);
+
 
 int Create_Deprecated(AMX* amx, const char* func);
 

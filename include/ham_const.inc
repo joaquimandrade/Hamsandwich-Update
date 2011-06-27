@@ -1656,6 +1656,22 @@ enum Ham
 	 */
 	Ham_NS_GetAnimationForActivity,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:position[3], const Float:viewAngles[3])
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_StartObserver, this, const Float:position[3], const Float:viewAngles[3])
+	 */
+	Ham_NS_StartObserver,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_StopObserver, this)
+	 */
+	Ham_NS_StopObserver,
+
 
 	/** Virtual functions added to TS in TS 3 */
 	

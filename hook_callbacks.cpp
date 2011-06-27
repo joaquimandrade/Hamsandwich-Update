@@ -1640,6 +1640,35 @@ int Hook_Int_Int_Str_Bool(Hook *hook, void *pthis, int i1, const char *sz2, bool
 	return ret;
 }
 
+void Hook_Void_Vector_Vector(Hook *hook, void *pthis, Vector v1, Vector v2)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+
+	P_VECTOR(v1)
+	P_VECTOR(v2)
+
+	PRE_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, Vector, Vector)>(hook->func)(pthis, 0, v1, v2);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, Vector, Vector)>(hook->func)(pthis, v1, v2);
+#endif
+
+	POST_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
 
 
 void Hook_Deprecated(Hook* hook)

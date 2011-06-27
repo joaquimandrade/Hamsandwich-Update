@@ -253,9 +253,10 @@ void  Hook_Void_Vector_Entvar_Entvar_Float_Int_Int(Hook *hook, void *pthis,
 	entvars_t *attacker, float damage, 
 	int classignore, int damagebits);
 
-const bool RT_Deprecated = true;
-const int PC_Deprecated = 0;
-void Hook_Deprecated(Hook* hook);
+
+const bool RT_Float_Int_Float = false;
+const int PC_Float_Int_Float = 2;
+float Hook_Float_Int_Float(Hook *hook, void *pthis, int i1, float f2);
 
 const bool RT_Int_Str = false;
 const int PC_Int_Str = 1;
@@ -269,9 +270,12 @@ const bool RT_Int_Int_Str_Bool = true;
 const int PC_Int_Int_Str_Bool = 3;
 int Hook_Int_Int_Str_Bool(Hook *hook, void *pthis, int i1, const char *sz2, bool b3);
 
+const bool RT_Void_Vector_Vector= true;
+const int PC_Void_Vector_Vector = 2;
+void Hook_Void_Vector_Vector(Hook *hook, void *pthis, Vector v1, Vector v2);
 
-const bool RT_Float_Int_Float = false;
-const int PC_Float_Int_Float = 2;
-float Hook_Float_Int_Float(Hook *hook, void *pthis, int i1, float f2);
 
+const bool RT_Deprecated = true;
+const int PC_Deprecated = 0;
+void Hook_Deprecated(Hook* hook);
 #endif
