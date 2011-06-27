@@ -271,6 +271,10 @@ int Create_Void_Edict(AMX *amx, const char *func)
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
 }
 
+int Create_Int_Int_Str_Bool(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_STRING, FP_CELL, FP_DONE);
+}
 
 
 int Create_Deprecated(AMX* amx, const char* func)

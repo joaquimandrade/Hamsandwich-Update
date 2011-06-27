@@ -70,6 +70,7 @@ extern bool gDoForwards;
 	ParamStack.push(__vec);														\
 	P_CBASE(pthis, iThis)
 
+#define P_BOOL(___PARAM)			__vec->push_back(new Data(RET_BOOL, (void *) & (___PARAM)));
 #define P_INT(___PARAM)				__vec->push_back(new Data(RET_INTEGER, (void *) & (___PARAM)));
 #define P_SHORT(___PARAM)			__vec->push_back(new Data(RET_SHORT, (void *) & (___PARAM)));
 #define P_FLOAT(___PARAM)			__vec->push_back(new Data(RET_FLOAT, (void *) & (___PARAM)));			
@@ -1603,6 +1604,42 @@ void Hook_Void_Edict(Hook *hook, void *pthis, edict_t *ed1)
 	KILL_VECTOR()
 	POP()
 }
+
+int Hook_Int_Int_Str_Bool(Hook *hook, void *pthis, int i1, const char *sz2, bool b3)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+	String a=sz2;
+
+	MAKE_VECTOR()
+
+	P_INT(i1)
+	P_STR(a)
+	P_BOOL(b3)
+
+	PRE_START()
+		, i1, a.c_str(), b3
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, int, const char *, bool)>(hook->func)(pthis, 0, i1, a.c_str(), b3);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, int, const char *, bool)>(hook->func)(pthis, i1, a.c_str(), b3);
+#endif
+
+	POST_START()
+		, i1, a.c_str(), b3
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
 
 
 void Hook_Deprecated(Hook* hook)

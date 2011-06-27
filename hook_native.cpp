@@ -293,6 +293,7 @@ hook_t hooklist[] =
 	{ V("ns_sendweaponupdate",		Void_Void) },
 	{ V("ns_initplayerfromspawn",	Void_Edict) },
 	{ V("ns_packdeadplayeritems",	Void_Void) },
+	{ V("ns_getanimationforactivity",Int_Int_Str_Bool) },
 
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },

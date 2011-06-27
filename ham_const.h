@@ -266,6 +266,7 @@ enum
 	Ham_NS_SendWeaponUpdate,
 	Ham_NS_InitPlayerFromSpawn,
 	Ham_NS_PackDeadPlayerItems,
+	Ham_NS_GetAnimationForActivity,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,

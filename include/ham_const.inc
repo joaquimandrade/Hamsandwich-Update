@@ -1648,7 +1648,15 @@ enum Ham
 	 */
 	Ham_NS_PackDeadPlayerItems,
 
-	
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, someval, const someotherval[], bool:someotherval2)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_NS_GetAnimationForActivity, this, someval, const someotherval[], bool:someotherval2)
+	 */
+	Ham_NS_GetAnimationForActivity,
+
+
 	/** Virtual functions added to TS in TS 3 */
 	
 	/**

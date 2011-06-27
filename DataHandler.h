@@ -37,6 +37,7 @@
 enum
 {
 	RET_VOID,
+	RET_BOOL,
 	RET_INTEGER,
 	RET_SHORT,
 	RET_FLOAT,

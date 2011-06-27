@@ -977,6 +977,21 @@ cell Call_Void_Edict(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Int_Int_Str_Bool(AMX *amx, cell *params)
+{
+	SETUP(3);
+
+	int i3=*MF_GetAmxAddr(amx, params[3]);
+	char *sz4=MF_GetAmxString(amx, params[4], 0, NULL);
+	bool b5=*MF_GetAmxAddr(amx, params[5]) ? true : false;
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, int, const char *, bool)>(__func)(pv, 0, i3, sz4, b5);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, int, const char *, bool)>(__func)(pv, i3, sz4, b5);
+#endif
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {
