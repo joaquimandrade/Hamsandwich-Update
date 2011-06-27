@@ -1640,6 +1640,14 @@ enum Ham
 	 */
 	Ham_NS_InitPlayerFromSpawn,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_PackDeadPlayerItems, this)
+	 */
+	Ham_NS_PackDeadPlayerItems,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	
