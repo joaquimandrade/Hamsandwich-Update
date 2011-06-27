@@ -1704,6 +1704,61 @@ enum Ham
 	 */
 	Ham_NS_GetCanUseWeapon,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetWeaponPrimeTime, this)
+	 */
+	Ham_NS_Weapon_GetWeaponPrimeTime,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_PrimeWeapon, this)
+	 */
+	Ham_NS_Weapon_PrimeWeapon,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPrimed, this)
+	 */
+	Ham_NS_Weapon_GetIsWeaponPrimed,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPriming, this)
+	 */
+	Ham_NS_Weapon_GetIsWeaponPriming,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const viewModel[], const weaponModel[], anim, const animExt[], skiplocal, body)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_DefaultDeploy, this, const viewModel[], const weaponModel[], anim, const animExt[], skiplocal, body)
+	 */
+	Ham_NS_Weapon_DefaultDeploy,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, clipsize, anim, Float:delay, body)
+	 * Return type:		Integer (Boolean).
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_DefaultReload, this, clipsize, anim, Float:delay, body)
+	 */
+	Ham_NS_Weapon_DefaultReload,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetDeployTime, this)
+	 */
+	Ham_NS_Weapon_GetDeployTime,
 
 
 	/** Virtual functions added to TS in TS 3 */

@@ -270,6 +270,13 @@ enum
 	Ham_NS_StartObserver,
 	Ham_NS_StopObserver,
 	Ham_NS_GetAdrenalineFactor,
+	Ham_NS_Weapon_GetWeaponPrimeTime,
+	Ham_NS_Weapon_PrimeWeapon,
+	Ham_NS_Weapon_GetIsWeaponPrimed,
+	Ham_NS_Weapon_GetIsWeaponPriming,
+	Ham_NS_Weapon_DefaultDeploy,
+	Ham_NS_Weapon_DefaultReload,
+	Ham_NS_Weapon_GetDeployTime,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,

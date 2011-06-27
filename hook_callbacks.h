@@ -278,6 +278,14 @@ const bool RT_Void_Str_Bool = true;
 const int PC_Void_Str_Bool = 2;
 void Hook_Void_Str_Bool(Hook *hook, void *pthis, const char *sz1, bool b2);
 
+const bool RT_Int_Str_Str_Int_Str_Int_Int = false;
+const int PC_Int_Str_Str_Int_Str_Int_Int = 6;
+int Hook_Int_Str_Str_Int_Str_Int_Int(Hook *hook, void *pthis, const char *sz1, const char *sz2, int i1, const char *sz3, int i2, int i3);
+
+const bool RT_Int_Int_Int_Float_Int = false;
+const int PC_Int_Int_Int_Float_Int = 4;
+int Hook_Int_Int_Int_Float_Int(Hook *hook, void *pthis, int i1, int i2, float f1, int i3);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

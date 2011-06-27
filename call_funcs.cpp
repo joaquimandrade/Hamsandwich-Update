@@ -1034,6 +1034,40 @@ cell Call_Void_Str_Bool(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Int_Str_Str_Int_Str_Int_Int(AMX* amx, cell* params)
+{
+	SETUP(6);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	char *sz4=MF_GetAmxString(amx, params[4], 1, NULL);
+	char *sz6=MF_GetAmxString(amx, params[6], 2, NULL);
+
+	int i5=*MF_GetAmxAddr(amx, params[5]);
+	int i7=*MF_GetAmxAddr(amx, params[7]);
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, const char *, const char *, int, const char *, int)>(__func)(pv, 0, sz3, sz4, i5, sz6, i7);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, const char *, const char *, int, const char *, int)>(__func)(pv, sz3, sz4, i5, sz6, i7);
+#endif
+}
+
+cell Call_Int_Int_Int_Float_Int(AMX* amx, cell* params)
+{
+	SETUP(4);
+
+	int i3=*MF_GetAmxAddr(amx, params[3]);
+	int i4=*MF_GetAmxAddr(amx, params[4]);
+	float f5=amx_ctof2(*MF_GetAmxAddr(amx, params[5]));
+	int i6=*MF_GetAmxAddr(amx, params[6]);
+
+#ifdef _WIN32
+	return reinterpret_cast<int (__fastcall *)(void*, int, int, int, float, int)>(__func)(pv, 0, i3, i4, f5, i6);
+#elif defined __linux__
+	return reinterpret_cast<int (*)(void *, int, int, float, int)>(__func)(pv, i3, i4, f5, i6);
+#endif
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

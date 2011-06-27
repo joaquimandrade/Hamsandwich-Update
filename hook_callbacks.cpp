@@ -1697,6 +1697,84 @@ void Hook_Void_Str_Bool(Hook *hook, void *pthis, const char *sz1, bool b2)
 	POP()
 }
 
+int Hook_Int_Str_Str_Int_Str_Int_Int(Hook *hook, void *pthis, const char *sz1, const char *sz2, int i1, const char *sz3, int i2, int i3)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	String a=sz1;
+	String b=sz2;
+	String c=sz3;
+
+	MAKE_VECTOR()
+
+	P_STR(a)
+	P_STR(b)
+	P_INT(i1)
+	P_STR(c)
+	P_INT(i2)
+	P_INT(i3)
+
+	PRE_START()
+		, a.c_str(), b.c_str(), i1, c.c_str(), i2, i3
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, const char *, const char *, int, const char *, int, int)>(hook->func)(pthis, 0, a.c_str(), b.c_str(), i1, c.c_str(), i2, i3);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, const char *, const char *, int, const char *, int, int)>(hook->func)(pthis, a.c_str(), b.c_str(), i1, c.c_str(), i2, i3);
+#endif
+
+	POST_START()
+		, a.c_str(), b.c_str(), i1, c.c_str(), i2, i3
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+int Hook_Int_Int_Int_Float_Int(Hook *hook, void *pthis, int i1, int i2, float f1, int i3)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_INT(i1)
+	P_INT(i2)
+	P_FLOAT(f1)
+	P_INT(i3)
+
+	PRE_START()
+		, i1, i2, f1, i3
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, int, int, float, int)>(hook->func)(pthis, 0, i1, i2, f1, i3);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, int, int, float, int)>(hook->func)(pthis, i1, i2, f1, i3);
+#endif
+
+	POST_START()
+		, i1, i2, f1, i3
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+
 void Hook_Deprecated(Hook* hook)
 {
+
 }

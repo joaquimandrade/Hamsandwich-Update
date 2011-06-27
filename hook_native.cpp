@@ -300,6 +300,13 @@ hook_t hooklist[] =
 	{ V("ns_givenameditem",			Void_Str_Bool) },
 	{ V("ns_suicide",				Void_Void) },
 	{ V("ns_getcanuseweapon",		Int_Void) },
+	{ V("ns_weapon_getweaponprimetime",	Float_Void) },
+	{ V("ns_weapon_primeweapon",		Void_Void) },
+	{ V("ns_weapon_getisweaponprimed",	Int_Void) },
+	{ V("ns_weapon_getisweaponpriming",	Int_Void) },
+	{ V("ns_weapon_defaultdeploy",		Int_Str_Str_Int_Str_Int_Int) },
+	{ V("ns_weapon_defaultreload",		Int_Int_Int_Float_Int) },
+	{ V("ns_weapon_getdeploytime",		Float_Void) },
 
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },
