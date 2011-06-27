@@ -251,6 +251,10 @@ enum
 	Ham_ESF_IsBuddy,
 	Ham_ESF_EmitSound,
 	Ham_ESF_EmitNullSound,
+	Ham_ESF_IncreaseStrength,
+	Ham_ESF_IncreasePL,
+	Ham_ESF_SetPowerLevel,
+	Ham_ESF_SetMaxPowerLevel,
 	Ham_ESF_Weapon_HolsterWhenMeleed,
 
 	Ham_NS_GetPointValue,

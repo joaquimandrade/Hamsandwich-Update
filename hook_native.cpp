@@ -165,7 +165,7 @@ hook_t hooklist[] =
 	{ V("deathsound",				Void_Void) },
 	{ V("alertsound",				Void_Void) },
 	{ V("idlesound",				Void_Void) },
-	{ V("stopfollowing",			Void_Void) },
+	{ V("stopfollowing",			Void_Int) },
 
 	/** Entity specific hooks **/
 
@@ -276,6 +276,10 @@ hook_t hooklist[] =
 	{ V("esf_isbuddy",				Int_Void) },
 	{ V("esf_emitsound",			Void_Str_Int) },
 	{ V("esf_emitnullsound",		Void_Int) },
+	{ V("esf_increasestrength",		Void_Cbase_Int) },
+	{ V("esf_increasepl",			Void_Int) },
+	{ V("esf_setpowerlevel",		Void_Int) },
+	{ V("esf_setmaxpowerlevel",		Void_Int) },
 	{ V("esf_takedamage2",			Int_Entvar_Entvar_Float_Float_Int) },
 	{ V("esf_weapon_holsterwhenmeleed",	Void_Void) },
 	

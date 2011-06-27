@@ -1084,6 +1084,26 @@ cell Call_Void_Str_Int(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Void_Cbase_Int(AMX *amx, cell *params)
+{
+	SETUP(2);
+
+	int id3=*MF_GetAmxAddr(amx, params[3]);
+	CHECK_ENTITY(id3);
+
+	void *p8=IndexToPrivate(id3);
+
+	int i4=*MF_GetAmxAddr(amx, params[4]);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, void *, int)>(__func)(pv, 0, p8, i4);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, void *, int)>(__func)(pv, p8, i4);
+#endif
+
+	return 1;
+}
+
 cell Call_Deprecated(AMX *amx, cell *params)
 {
 	MF_LogError(amx, AMX_ERR_NATIVE, "Ham function is deprecated.");

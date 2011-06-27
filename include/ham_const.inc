@@ -873,9 +873,9 @@ enum Ham
 
 	/**
 	 * Description:		Unsure.
-	 * Forward params:	function(this)
+	 * Forward params:	function(this,bool:clearSchedule)
 	 * Return type:		None.
-	 * Execute Params:	ExecuteHam(Ham_StopFollowing, this);
+	 * Execute Params:	ExecuteHam(Ham_StopFollowing, this, bool:clearSchedule);
 	 */
 	Ham_StopFollowing,
 
@@ -1531,7 +1531,42 @@ enum Ham
 	 */
 	Ham_ESF_EmitNullSound,
 
-	
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this someEntid, somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_IncreaseStrength, this, someEntid, somevalue);
+	 */
+	Ham_ESF_IncreaseStrength,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_IncreasePL, this, somevalue);
+	 */
+	Ham_ESF_IncreasePL,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_SetPowerLevel, this, somevalue);
+	 */
+	Ham_ESF_SetPowerLevel,
+
+	/**
+	 * Description:		-
+	 *					Is only in ESF Open Beta.
+	 * Forward params:	function(this somevalue)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_ESF_SetMaxPowerLevel, this, somevalue);
+	 */
+	Ham_ESF_SetMaxPowerLevel,
+
 	/**
 	 * Description:		Unsure.
 	 *					Is only in ESF Open Beta.

@@ -1801,6 +1801,33 @@ void Hook_Void_Str_Int(Hook *hook, void *pthis, const char *sz1, int i2)
 	POP()
 }
 
+void Hook_Void_Cbase_Int(Hook *hook, void *pthis, void *p1, int i1)
+{
+	PUSH_VOID()
+	int iEnt =PrivateToIndex(p1);
+
+	MAKE_VECTOR()
+
+	P_CBASE(p1, iEnt)
+	P_INT(i1)
+
+	PRE_START()
+		, iEnt, i1
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, void *, int)>(hook->func)(pthis, 0, p1, i1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, void *, int)>(hook->func)(pthis, p1, i1);
+#endif
+
+	POST_START()
+		, iEnt, i1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
 
 
 void Hook_Deprecated(Hook* hook)
