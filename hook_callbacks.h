@@ -266,13 +266,17 @@ const bool RT_Void_Edict = true;
 const int PC_Void_Edict = 1;
 void Hook_Void_Edict(Hook *hook, void *pthis, edict_t *ed1 );
 
-const bool RT_Int_Int_Str_Bool = true;
+const bool RT_Int_Int_Str_Bool = false;
 const int PC_Int_Int_Str_Bool = 3;
 int Hook_Int_Int_Str_Bool(Hook *hook, void *pthis, int i1, const char *sz2, bool b3);
 
 const bool RT_Void_Vector_Vector= true;
 const int PC_Void_Vector_Vector = 2;
 void Hook_Void_Vector_Vector(Hook *hook, void *pthis, Vector v1, Vector v2);
+
+const bool RT_Void_Str_Bool = true;
+const int PC_Void_Str_Bool = 2;
+void Hook_Void_Str_Bool(Hook *hook, void *pthis, const char *sz1, bool b2);
 
 
 const bool RT_Deprecated = true;

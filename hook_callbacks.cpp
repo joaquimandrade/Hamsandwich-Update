@@ -1669,7 +1669,33 @@ void Hook_Void_Vector_Vector(Hook *hook, void *pthis, Vector v1, Vector v2)
 	POP()
 }
 
+void Hook_Void_Str_Bool(Hook *hook, void *pthis, const char *sz1, bool b2)
+{
+	PUSH_VOID()
+	String a=sz1;
 
+	MAKE_VECTOR()
+
+	P_STR(a)
+	P_BOOL(b2)
+
+	PRE_START()
+	, a.c_str(), b2
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, const char *, bool)>(hook->func)(pthis, 0, a.c_str(), b2);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, const char *, bool)>(hook->func)(pthis, a.c_str(), b2);
+#endif
+
+	POST_START()
+		, a.c_str(), b2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
 
 void Hook_Deprecated(Hook* hook)
 {

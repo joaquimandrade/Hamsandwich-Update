@@ -1680,6 +1680,30 @@ enum Ham
 	 */
 	Ham_NS_GetAdrenalineFactor,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const name[], bool:showpickup))
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_GetNamedItem, this, const name[], bool:showpickup)
+	 */
+	Ham_NS_GetNamedItem,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_Suicide, this)
+	 */
+	Ham_NS_Suicide,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_NS_GetCanUseWeapon, this)
+	 */
+	Ham_NS_GetCanUseWeapon,
+
 
 
 	/** Virtual functions added to TS in TS 3 */

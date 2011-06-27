@@ -297,6 +297,9 @@ hook_t hooklist[] =
 	{ V("ns_startobserver",			Void_Vector_Vector) },
 	{ V("ns_stopobserver",			Void_Void) },
 	{ V("ns_getadrenalinefactor",	Float_Void) },
+	{ V("ns_givenameditem",			Void_Str_Bool) },
+	{ V("ns_suicide",				Void_Void) },
+	{ V("ns_getcanuseweapon",		Int_Void) },
 
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },

@@ -1018,6 +1018,22 @@ cell Call_Void_Vector_Vector(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Void_Str_Bool(AMX *amx, cell *params)
+{
+	SETUP(2);
+
+	char *sz3=MF_GetAmxString(amx, params[3], 0, NULL);
+	bool b4=*MF_GetAmxAddr(amx, params[4]) ? true : false;
+
+#ifdef _WIN32
+	reinterpret_cast<int (__fastcall *)(void*, int, const char *, bool)>(__func)(pv, 0, sz3, b4);
+#elif defined __linux__
+	reinterpret_cast<int (*)(void *, const char *, bool)>(__func)(pv, sz3, b4);
+#endif
+
+	return 1;
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {
