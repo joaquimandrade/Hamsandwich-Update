@@ -124,6 +124,8 @@ cell Call_Float_Int_Float(AMX* amx, cell* params);
 
 cell Call_Int_Str(AMX* amx, cell* params);
 
+cell Call_Void_Edict(AMX* amx, cell* params);
+
 
 cell Call_Deprecated(AMX* amx, cell* params);
 

@@ -130,6 +130,16 @@ inline int EntvarToIndex(entvars_t *pev)
 	return ENTINDEX_NEW(pev->pContainingEntity);
 };
 
+inline int EdictToIndex(edict_t *v)
+{
+	if (v==NULL)
+	{
+		return -1;
+	}
+
+	return ENTINDEX_NEW(v);
+}
+
 inline edict_t *EntvarToEdict(entvars_t *pev)
 {
 	if (pev==NULL)

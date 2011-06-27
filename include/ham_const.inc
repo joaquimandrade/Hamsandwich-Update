@@ -1632,6 +1632,14 @@ enum Ham
 	 */
 	Ham_NS_SendWeaponUpdate,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idOther)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_NS_InitPlayerFromSpawn, this, idOther)
+	 */
+	Ham_NS_InitPlayerFromSpawn,
+
 	
 	/** Virtual functions added to TS in TS 3 */
 	

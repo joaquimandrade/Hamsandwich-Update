@@ -959,6 +959,24 @@ cell Call_Int_Str(AMX *amx, cell *params)
 #endif
 }
 
+cell Call_Void_Edict(AMX *amx, cell *params)
+{
+	SETUP(1);
+
+	int id3=*MF_GetAmxAddr(amx, params[3]);
+	CHECK_ENTITY(id3);
+
+	edict_t *ed3=INDEXENT_NEW(id3);
+
+#ifdef _WIN32
+	reinterpret_cast<int (__fastcall *)(void*, int, edict_t *)>(__func)(pv, 0, ed3);
+#elif defined __linux__
+	reinterpret_cast<int (*)(void *, edict_t *)>(__func)(pv, ed3);
+#endif
+
+	return 1;
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

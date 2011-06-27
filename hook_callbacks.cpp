@@ -77,6 +77,7 @@ extern bool gDoForwards;
 #define P_STR(___PARAM)				__vec->push_back(new Data(RET_STRING, (void *) & (___PARAM)));
 #define P_CBASE(__PARAM, __INDEX)	__vec->push_back(new Data(RET_CBASE, (void *) & (__PARAM), reinterpret_cast<int *>(& (__INDEX))));
 #define P_ENTVAR(__PARAM, __INDEX)	__vec->push_back(new Data(RET_ENTVAR, (void *) & (__PARAM), reinterpret_cast<int *>(& (__INDEX))));
+#define P_EDICT(__PARAM, __INDEX)	__vec->push_back(new Data(RET_EDICT, (void *) & (__PARAM), reinterpret_cast<int *>(& (__INDEX))));
 #define P_TRACE(__PARAM)			__vec->push_back(new Data(RET_TRACE, (void *) (__PARAM)));
 #define P_PTRVECTOR(__PARAM)		__vec->push_back(new Data(RET_VECTOR, (void *) (__PARAM)));
 #define P_PTRFLOAT(__PARAM)			__vec->push_back(new Data(RET_FLOAT, (void *) (__PARAM)));
@@ -1574,6 +1575,33 @@ int Hook_Int_Str(Hook *hook, void *pthis, const char *sz1)
 
 	CHECK_RETURN()
 	return ret;
+}
+
+void Hook_Void_Edict(Hook *hook, void *pthis, edict_t *ed1)
+{
+	PUSH_VOID()
+
+	int id1=EdictToIndex(ed1);
+
+	MAKE_VECTOR()
+	P_EDICT(ed1, id1)
+
+	PRE_START()
+		, id1
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, edict_t *)>(hook->func)(pthis, 0, ed1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, edict_t *)>(hook->func)(pthis, ed1);
+#endif
+
+	POST_START()
+		, id1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
 }
 
 

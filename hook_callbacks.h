@@ -261,6 +261,10 @@ const bool RT_Int_Str = false;
 const int PC_Int_Str = 1;
 int Hook_Int_Str(Hook *hook, void *pthis, const char *sz1);
 
+const bool RT_Void_Edict = true;
+const int PC_Void_Edict = 1;
+void Hook_Void_Edict(Hook *hook, void *pthis, edict_t *ed1 );
+
 
 const bool RT_Float_Int_Float = false;
 const int PC_Float_Int_Float = 2;

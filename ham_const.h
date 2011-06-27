@@ -264,6 +264,7 @@ enum
 	Ham_NS_NeedsTeamUpdate,
 	Ham_NS_SendTeamUpdate,
 	Ham_NS_SendWeaponUpdate,
+	Ham_NS_InitPlayerFromSpawn,
 
 	Ham_TS_GiveSlowMul,
 	Ham_TS_GoSlow,

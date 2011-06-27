@@ -291,6 +291,7 @@ hook_t hooklist[] =
 	{ V("ns_needsteamupdate",		Void_Void) },
 	{ V("ns_sendteamupdate",		Void_Void) },
 	{ V("ns_sendweaponupdate",		Void_Void) },
+	{ V("ns_initplayerfromspawn",	Void_Edict) },
 
 	/* The Specialists */
 	{ V("ts_giveslowmul",			Void_Void) },
