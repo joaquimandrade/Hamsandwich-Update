@@ -68,9 +68,9 @@ enum Ham
 	Ham_Keyvalue,
 
 	/**
-	 * Description:		Returns flags for how an entity can be used (FCAP_* constants in hlsdk_const.inc)
+	 * Description:		Returns flags for how an entity can be used.
 	 * Forward params:	function(this)
-	 * Return type:		Integer.
+	 * Return type:		Integer (FCAP_* constants, see hlsdk_const.inc).
 	 * Execute params:	ExecuteHam(Ham_ObjectCaps, this);
 	 */
 	Ham_ObjectCaps,
@@ -542,7 +542,7 @@ enum Ham
 	/**
 	 * Description:		Checks relation ship between two monsters.
 	 * Forward params:	function(this, idother);
-	 * Return type:		Integer (R_* constant, look monsters.h)
+	 * Return type:		Integer (R_* constants, see HLDSK).
 	 * Execute params:	ExecuteHam(Ham_IRelationship, this, idother);
 	 */
 	Ham_IRelationship,
@@ -654,7 +654,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:waypointDist)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_ShouldAdvanceRoute, this, Float:waypointDist);
 	 */
 	Ham_ShouldAdvanceRoute,
@@ -681,7 +681,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:dot, Float:dist)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CheckRangeAttack1, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckRangeAttack1,
@@ -690,7 +690,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:dot, Float:dist)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CheckRangeAttack2, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckRangeAttack2,
@@ -699,7 +699,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:dot, Float:dist)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CheckMeleeAttack1, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckMeleeAttack1,
@@ -708,7 +708,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:dot, Float:dist)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CheckMeleeAttack2, this, Float:dot, Float:dist);
 	 */
 	Ham_CheckMeleeAttack2,
@@ -728,7 +728,7 @@ enum Ham
 	 *					no matter what state it is in. ONLY Scripted AI ents should allow this.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, bool:disregardState, interruptLevel);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CanPlaySequence, this, bool:disregardState, interruptLevel);
 	 */
 	Ham_CanPlaySequence,
@@ -737,7 +737,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, bool:disregardState);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_CanPlaySentence, this, bool:disregardState);
 	 */
 	Ham_CanPlaySentence,
@@ -773,7 +773,7 @@ enum Ham
 	 * Description:		Surveys the Conditions information available and finds the best new state for a monster.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this);
-	 * Return type:		Integer. (MONSTERSTATE_* constants. See HLSDK.)
+	 * Return type:		Integer (MONSTERSTATE_* constants, see HLDSK).
 	 * Execute params:	ExecuteHam(Ham_GetIdealState, this);
 	 */
 	Ham_GetIdealState,
@@ -812,7 +812,7 @@ enum Ham
 	 *					If maxDist isn't supplied, it defaults to a reasonable value.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_BuildNearestRoute, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
 	 */
 	Ham_BuildNearestRoute,
@@ -823,7 +823,7 @@ enum Ham
 	 *					If maxDist isn't supplied, it defaults to a reasonable value.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_FindCover, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist);
 	 */
 	Ham_FindCover,
@@ -841,7 +841,7 @@ enum Ham
 	 * Description:		Prequalifies a monster to do more fine checking of potential attacks.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_FCanCheckAttacks, this);
 	 */
 	Ham_FCanCheckAttacks,
@@ -870,7 +870,7 @@ enum Ham
 	 * Description:		Tells use whether or not the monster cares about the type of Hint Node given.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, hint);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_FValidateHintType, this, hint);
 	 */
 	Ham_FValidateHintType,
@@ -879,7 +879,7 @@ enum Ham
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this);
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_FValidateHintType, this);
 	 */
 	Ham_FCanActiveIdle,
@@ -1334,7 +1334,7 @@ enum Ham
 	/**
 	 * Description:		Whether or not the player can drop the specified item.
 	 * Forward params:	function(this)
-	 * Return type:		Integer
+	 * Return type:		Integer.
 	 * Execute params:	ExecuteHam(Ham_CS_Item_CanDrop, this);
 	 */
 	Ham_CS_Item_CanDrop,
@@ -2520,7 +2520,7 @@ enum Ham
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPrimed, this)
 	 */
 	Ham_NS_Weapon_GetIsWeaponPrimed,
@@ -2528,7 +2528,7 @@ enum Ham
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPriming, this)
 	 */
 	Ham_NS_Weapon_GetIsWeapPriming, // named truncated : Ham_NS_Weapon_GetIsWeaponPriming
@@ -2536,7 +2536,7 @@ enum Ham
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, const viewModel[], const weaponModel[], anim, const animExt[], skiplocal, body)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_DefaultDeploy, this, const viewModel[], const weaponModel[], anim, const animExt[], skiplocal, body)
 	 */
 	Ham_NS_Weapon_DefaultDeploy,
@@ -2544,7 +2544,7 @@ enum Ham
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, clipsize, anim, Float:delay, body)
-	 * Return type:		Integer (Boolean).
+	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_DefaultReload, this, clipsize, anim, Float:delay, body)
 	 */
 	Ham_NS_Weapon_DefaultReload,
