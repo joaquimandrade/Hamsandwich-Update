@@ -868,7 +868,7 @@ cell Call_Int_Short(AMX *amx, cell *params)
 #ifdef _WIN32
 	return reinterpret_cast<int (__fastcall *)(void*, int, short)>(__func)(pv, 0, s3);
 #elif defined __linux__
-	return reinterpret_cast<int (*)(void *, int, short)>(__func)(pv, s3);
+	return reinterpret_cast<int (*)(void *, short)>(__func)(pv, s3);
 #endif
 }
 
