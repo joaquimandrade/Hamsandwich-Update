@@ -1876,7 +1876,7 @@ enum Ham
 	 * Return type:		None.
 	 * Execute params:	ExecuteHam(Ham_ESF_GetWallJumpAnim, const value[], const Float:somevalue[3], const someothervalue[]);
 	 */
-	Ham_ESF_GetWallJumpAnim
+	Ham_ESF_GetWallJumpAnim,
 
 	/**
 	 * Description:		-
@@ -2305,9 +2305,9 @@ enum Ham
 	 * Description:		Unsure.
 	 * Forward params:	function(this)
 	 * Return type:		Integer.
-	 * Execute params:	ExecuteHam(Ham_ESF_Weapon_HolsterWhenMeleed, this);
+	 * Execute params:	ExecuteHam(Ham_ESF_Weapon_HolsterMeleed, this);
 	 */
-	Ham_ESF_Weapon_HolsterWhenMeleed,
+	Ham_ESF_Weapon_HolsterMeleed, // Name truncated : HolsterWhenMeleed
 
 	/**
 	 * Description:		Returns how many points each entity is worth.
@@ -2385,9 +2385,9 @@ enum Ham
 	 * Description:		-
 	 * Forward params:	function(this)
 	 * Return type:		Integer.
-	 * Execute params:	ExecuteHam(Ham_NS_GetEffectivePlayerClass, this)
+	 * Execute params:	ExecuteHam(Ham_NS_GetPlayerClass, this)
 	 */
-	Ham_NS_GetEffectivePlayerClass,
+	Ham_NS_GetPlayerClass, // name truncated : GetEffectivePlayerClass
 
 	/**
 	 * Description:		-
@@ -2403,7 +2403,7 @@ enum Ham
 	 * Return type:		None.
 	 * Execute params:	ExecuteHam(Ham_NS_EffectivePlayerClassChanged, this)
 	 */
-	Ham_NS_EffectivePlayerClassChanged,
+	Ham_NS_PlayerClassChanged, // Name truncated : Ham_NS_EffectivePlayerClassChanged
 
 	/**
 	 * Description:		-
@@ -2505,9 +2505,9 @@ enum Ham
 	 * Description:		-
 	 * Forward params:	function(this)
 	 * Return type:		Float.
-	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetWeaponPrimeTime, this)
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetWeapPrimeTime, this)
 	 */
-	Ham_NS_Weapon_GetWeaponPrimeTime,
+	Ham_NS_Weapon_GetWeapPrimeTime, // Name truncated : Ham_NS_Weapon_GetWeaponPrimeTime
 
 	/**
 	 * Description:		-
@@ -2531,7 +2531,7 @@ enum Ham
 	 * Return type:		Integer (Boolean).
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPriming, this)
 	 */
-	Ham_NS_Weapon_GetIsWeaponPriming,
+	Ham_NS_Weapon_GetIsWeapPriming, // named truncated : Ham_NS_Weapon_GetIsWeaponPriming
 
 	/**
 	 * Description:		-
