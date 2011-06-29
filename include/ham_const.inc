@@ -517,6 +517,7 @@ enum Ham
 
 	/**
 	 * Description:		Slowly fades a entity out, then removes it.
+	 * 			Using this on player will crash your server.
 	 * Forward params:	function(this);
 	 * Return type:		None.
 	 * Execute params:	ExecuteHam(Ham_FadeMonster, this);
