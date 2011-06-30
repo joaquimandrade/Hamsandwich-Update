@@ -517,7 +517,7 @@ enum Ham
 
 	/**
 	 * Description:		Slowly fades a entity out, then removes it.
-	 * 			Using this on player will crash your server.
+	 *					Using this on player will crash your server.
 	 * Forward params:	function(this);
 	 * Return type:		None.
 	 * Execute params:	ExecuteHam(Ham_FadeMonster, this);
@@ -592,13 +592,22 @@ enum Ham
 	Ham_BestVisibleEnemy,
 
 	/**
-	 * Description:		Returns TRUE if the passed ent is in the caller's forward view cone. 
+	 * Description:		Returns true if the passed ent is in the caller's forward view cone. 
 	 *					The dot product is performed in 2d, making the view cone infinitely tall. 
 	 * Forward params:	function(this, idOther);
 	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_FInViewCone, this, idOther);
 	 */
 	Ham_FInViewCone,
+
+	/**
+	 * Description:		Returns true if the passed ent is in the caller's forward view cone. 
+	 *					The dot product is performed in 2d, making the view cone infinitely tall. 
+	 * Forward params:	function(this, const Float:origin[3]);
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_FVecInViewCone, this, const Float:origin[3]);
+	 */
+	Ham_FVecInViewCone,
 
 	/**
 	 * Description:		Determines the best type of death animation to play.

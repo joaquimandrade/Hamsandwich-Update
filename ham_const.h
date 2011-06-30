@@ -110,6 +110,7 @@ enum
 	Ham_Look, 
 	Ham_BestVisibleEnemy, 
 	Ham_FInViewCone,
+	Ham_FVecInViewCone,
 	Ham_GetDeathActivity,
 
 	// Not valid in CS, NS and TS.

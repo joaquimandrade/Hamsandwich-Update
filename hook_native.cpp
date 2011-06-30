@@ -125,6 +125,7 @@ hook_t hooklist[] =
 	{ V("look",						Void_Int) },
 	{ V("bestvisibleenemy",			Cbase_Void) },
 	{ V("finviewcone",				Int_Cbase) },
+	{ V("fvecinviewcone",			Int_pVector) },
 	{ V("getdeathactivity",			Int_Void) },
 
 	/* Not supported by Counter-Strike, The Specialists and Natural Selection mods. */
