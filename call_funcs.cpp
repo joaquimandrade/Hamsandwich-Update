@@ -534,7 +534,7 @@ cell Call_Vector_pVector(AMX *amx, cell *params)
 	fl3[2]=v3.z;
 
 	return 1;
-}
+} 
 
 cell Call_Int_pVector(AMX *amx, cell *params)
 {
