@@ -112,6 +112,107 @@ hook_t hooklist[] =
 	{ V("illumination",				Int_Void) },
 	{ V("fvisible",					Int_Cbase) },
 	{ V("fvecvisible",				Int_pVector) },
+
+	/** Entity specific hooks **/
+
+	/* CBasePlayer */
+	{ V("player_jump",				Void_Void) },
+	{ V("player_duck",				Void_Void) },
+	{ V("player_prethink",			Void_Void) },
+	{ V("player_postthink",			Void_Void) },
+	{ V("player_getgunposition",	Vector_Void) },
+	{ V("player_shouldfadeondeath",	Int_Void) },
+	{ V("player_impulsecommands",	Void_Void) },
+	{ V("player_updateclientdata",	Void_Void) },
+
+	/* CBasePlayerItem */
+	{ V("item_addtoplayer",			Int_Cbase) },
+	{ V("item_addduplicate",		Int_Cbase) },
+	{ V("item_candeploy",			Int_Void) },
+	{ V("item_deploy",				Int_Void) },
+	{ V("item_canholster",			Int_Void) },
+	{ V("item_holster",				Void_Int) },
+	{ V("item_updateiteminfo",		Void_Void) },
+	{ V("item_preframe",			Void_Void) },
+	{ V("item_postframe",			Void_Void) },
+	{ V("item_drop",				Void_Void) },
+	{ V("item_kill",				Void_Void) },
+	{ V("item_attachtoplayer",		Void_Cbase) },
+	{ V("item_primaryammoindex",	Int_Void) },
+	{ V("item_secondaryammoindex",	Int_Void) },
+	{ V("item_updateclientdata",	Int_Cbase) },
+	{ V("item_getweaponptr",		Cbase_Void) },
+	{ V("item_itemslot",			Int_Void) },
+
+	/* CBasePlayerWeapon */
+	{ V("weapon_extractammo",		Int_Cbase) },
+	{ V("weapon_extractclipammo",	Int_Cbase) },
+	{ V("weapon_addweapon",			Int_Void) },
+	{ V("weapon_playemptysound",	Int_Void) },
+	{ V("weapon_resetemptysound",	Void_Void) },
+	{ V("weapon_sendweaponanim",	Void_Int_Int_Int) },
+	{ V("weapon_isusable",			Int_Void) },
+	{ V("weapon_primaryattack",		Void_Void) },
+	{ V("weapon_secondaryattack",	Void_Void) },
+	{ V("weapon_reload",			Void_Void) },
+	{ V("weapon_weaponidle",		Void_Void) },
+	{ V("weapon_retireweapon",		Void_Void) },
+	{ V("weapon_shouldweaponidle",	Int_Void) },
+	{ V("weapon_usedecrement",		Int_Void) },
+
+	/** Mod specific hooks **/
+
+	/* The Specialists */
+	{ V("ts_breakablerespawn",		Int_Int) },
+	{ V("ts_canusedthroughwalls",	Int_Void) },
+	{ V("ts_respawnwait",			Deprecated) },
+
+	/* Counter-Strike */
+	{ V("cstrike_restart",			Void_Void) },
+	{ V("cstrike_roundrespawn",		Void_Void) },
+	{ V("cstrike_item_candrop",		Int_Void) },
+	{ V("cstrike_item_getmaxspeed",	Float_Void) },
+
+	/* Day of Defeat */
+	{ V("dod_roundrespawn",			Void_Void) },
+	{ V("dod_roundrespawnent",		Void_Void) },
+	{ V("dod_roundstore",			Void_Void) },
+	{ V("dod_areasetindex",			Void_Int) },
+	{ V("dod_areasendstatus",		Void_Cbase) },
+	{ V("dod_getstate",				Int_Void) },
+	{ V("dod_getstateent",			Int_Cbase) },
+	{ V("dod_item_candrop",			Int_Void) },
+
+	/* Team Fortress Classic */
+	{ V("tfc_engineeruse",			Int_Cbase) },
+	{ V("tfc_finished",				Void_Void) },
+	{ V("tfc_empexplode",			Void_Entvar_Float_Float) },
+	{ V("tfc_calcempdmgrad",		Int_pFloat_pFloat) },
+	{ V("tfc_takeempblast",			Void_Entvar) },
+	{ V("tfc_empremove",			Void_Void) },
+	{ V("tfc_takeconcussionblast",	Void_Entvar_Float) },
+	{ V("tfc_concuss",				Void_Entvar) },
+
+	/* Earth's Special Forces */
+	{ V("esf_isenvmodel",			Int_Void) },
+	{ V("esf_takedamage2",			Int_Entvar_Entvar_Float_Float_Int) },
+
+	/* Natural-Selection */
+	{ V("ns_getpointvalue",			Int_Void) },
+	{ V("ns_awardkill",				Void_Entvar) },
+	{ V("ns_resetentity",			Void_Void) },
+	{ V("ns_updateonremove",		Void_Void) },
+
+	{ V("ts_giveslowmul",			Void_Void) },
+	{ V("ts_goslow",				Void_Float_Int) },
+	{ V("ts_inslow",				Int_Void) },
+	{ V("ts_isobjective",			Int_Void) },
+	{ V("ts_enableobjective",		Void_Int) },
+	{ V("ts_onfreeentprivatedata",	Void_Void) },
+	{ V("ts_shouldcollide",			Int_Cbase) },
+
+	/** New Additions (2011) **/
+
 	{ V("changeyaw",				Float_Int) },
 	{ V("hashumangibs",				Int_Void) },
 	{ V("hasaliengibs",				Int_Void) },
@@ -168,64 +269,9 @@ hook_t hooklist[] =
 	{ V("idlesound",				Void_Void) },
 	{ V("stopfollowing",			Void_Int) },
 
-	/** Entity specific hooks **/
-
-	/* CBasePlayer */
-	{ V("player_jump",				Void_Void) },
-	{ V("player_duck",				Void_Void) },
-	{ V("player_prethink",			Void_Void) },
-	{ V("player_postthink",			Void_Void) },
-	{ V("player_getgunposition",	Vector_Void) },
-	{ V("player_shouldfadeondeath",	Int_Void) },
-	{ V("player_impulsecommands",	Void_Void) },
-	{ V("player_updateclientdata",	Void_Void) },
-
-	/* CBasePlayerItem */
-	{ V("item_addtoplayer",			Int_Cbase) },
-	{ V("item_addduplicate",		Int_Cbase) },
-	{ V("item_candeploy",			Int_Void) },
-	{ V("item_deploy",				Int_Void) },
-	{ V("item_canholster",			Int_Void) },
-	{ V("item_holster",				Void_Int) },
-	{ V("item_updateiteminfo",		Void_Void) },
-	{ V("item_preframe",			Void_Void) },
-	{ V("item_postframe",			Void_Void) },
-	{ V("item_drop",				Void_Void) },
-	{ V("item_kill",				Void_Void) },
-	{ V("item_attachtoplayer",		Void_Cbase) },
-	{ V("item_primaryammoindex",	Int_Void) },
-	{ V("item_secondaryammoindex",	Int_Void) },
-	{ V("item_updateclientdata",	Int_Cbase) },
-	{ V("item_getweaponptr",		Cbase_Void) },
-	{ V("item_itemslot",			Int_Void) },
-	
-	/* CBasePlayerWeapon */
-	{ V("weapon_extractammo",		Int_Cbase) },
-	{ V("weapon_extractclipammo",	Int_Cbase) },
-	{ V("weapon_addweapon",			Int_Void) },
-	{ V("weapon_playemptysound",	Int_Void) },
-	{ V("weapon_resetemptysound",	Void_Void) },
-	{ V("weapon_sendweaponanim",	Void_Int_Int_Int) },
-	{ V("weapon_isusable",			Int_Void) },
-	{ V("weapon_primaryattack",		Void_Void) },
-	{ V("weapon_secondaryattack",	Void_Void) },
-	{ V("weapon_reload",			Void_Void) },
-	{ V("weapon_weaponidle",		Void_Void) },
-	{ V("weapon_retireweapon",		Void_Void) },
-	{ V("weapon_shouldweaponidle",	Int_Void) },
-	{ V("weapon_usedecrement",		Int_Void) },
 	/** Mod specific hooks **/
 
-	/* The Specialists */
-	{ V("ts_breakablerespawn",		Int_Int) },
-	{ V("ts_canusedthroughwalls",	Int_Void) },
-	{ V("ts_respawnwait",			Deprecated) },
-
 	/* Counter-Strike */
-	{ V("cstrike_restart",			Void_Void) },
-	{ V("cstrike_roundrespawn",		Void_Void) },
-	{ V("cstrike_item_candrop",		Int_Void) },
-	{ V("cstrike_item_getmaxspeed",	Float_Void) },
 	{ V("cstrike_weapon_sendweaponanim",Void_Int_Int) },
 	{ V("cstrike_player_resetmaxspeed",	Void_Void) },
 	{ V("cstrike_player_isbot",		Int_Void) },
@@ -234,15 +280,7 @@ hook_t hooklist[] =
 	{ V("cstrike_player_ontouchingweapon",Void_Cbase) },
 
 	/* Day of Defeat */
-	{ V("dod_roundrespawn",			Void_Void) },
-	{ V("dod_roundrespawnent",		Void_Void) },
-	{ V("dod_roundstore",			Void_Void) },
-	{ V("dod_areasetindex",			Void_Int) },
-	{ V("dod_areasendstatus",		Void_Cbase) },
-	{ V("dod_getstate",				Int_Void) },
-	{ V("dod_getstateent",			Int_Cbase) },
 	{ V("dod_setscriptreset",		Void_Void) },
-	{ V("dod_item_candrop",			Int_Void) },
 	{ V("dod_item_spawndeploy",		Int_Void) },
 	{ V("dod_item_setdmgtime",		Void_Float) },
 	{ V("dod_item_dropgren",		Void_Void) },
@@ -260,20 +298,10 @@ hook_t hooklist[] =
 
 	/* Team Fortress Classic */
 	{ V("tfc_dbgetitemname",		Str_Void) },
-	{ V("tfc_engineeruse",			Int_Cbase) },
-	{ V("tfc_finished",				Void_Void) },
-	{ V("tfc_empexplode",			Void_Entvar_Float_Float) },
-	{ V("tfc_calcempdmgrad",		Int_pFloat_pFloat) },
-	{ V("tfc_takeempblast",			Void_Entvar) },
-	{ V("tfc_empremove",			Void_Void) },
-	{ V("tfc_takeconcussionblast",	Void_Entvar_Float) },
-	{ V("tfc_concuss",				Void_Entvar) },
 	{ V("tfc_radiusdamage",			Void_Entvar_Entvar_Float_Int_Int) },
 	{ V("tfc_radiusdamage2",		Void_Vector_Entvar_Entvar_Float_Int_Int) },
 
 	/* Earth's Special Forces */
-	{ V("esf_isenvmodel",			Int_Void) },
-	{ V("esf_takedamage2",			Int_Entvar_Entvar_Float_Float_Int) },
 	{ V("esf_isfighter",			Int_Void) },
 	{ V("esf_isbuddy",				Int_Void) },
 	{ V("esf_emitsound",			Void_Str_Int) },
@@ -353,14 +381,9 @@ hook_t hooklist[] =
 	{ V("esf_updateki",				Void_Void) },
 	{ V("esf_updatehealth",			Void_Void) },
 	{ V("esf_getteleportdir",		Vector_Void) },
-
 	{ V("esf_weapon_holsterwhenmeleed",	Void_Void) },
 	
 	/* Natural-Selection */
-	{ V("ns_getpointvalue",			Int_Void) },
-	{ V("ns_awardkill",				Void_Entvar) },
-	{ V("ns_resetentity",			Void_Void) },
-	{ V("ns_updateonremove",		Void_Void) },
 	{ V("ns_setbonecontroller",		Float_Int_Float) },
 	{ V("ns_savedataforreset",		Void_Void) },
 	{ V("ns_gethull",				Int_Void) },
@@ -388,16 +411,6 @@ hook_t hooklist[] =
 	{ V("ns_weapon_defaultdeploy",		Int_Str_Str_Int_Str_Int_Int) },
 	{ V("ns_weapon_defaultreload",		Int_Int_Int_Float_Int) },
 	{ V("ns_weapon_getdeploytime",		Float_Void) },
-
-	/* The Specialists */
-	{ V("ts_giveslowmul",			Void_Void) },
-	{ V("ts_goslow",				Void_Float_Int) },
-	{ V("ts_inslow",				Int_Void) },
-	{ V("ts_isobjective",			Int_Void) },
-	{ V("ts_enableobjective",		Void_Int) },
-	{ V("ts_onfreeentprivatedata",	Void_Void) },
-	{ V("ts_shouldcollide",			Int_Cbase) },
-
 };
 
 
