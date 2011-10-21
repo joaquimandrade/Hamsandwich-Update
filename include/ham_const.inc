@@ -1728,19 +1728,116 @@ enum Ham
 	 */
 	Ham_DOD_SetScriptReset,
 
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Item_SpawnDeploy, this);
+	 */
 	Ham_DOD_Item_SpawnDeploy,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:someValue)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Item_SetDmgTime, this, Float:someValue);
+	 */
 	Ham_DOD_Item_SetDmgTime,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Item_DropGren, this);
+	 */
 	Ham_DOD_Item_DropGren,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_IsUseable, this);
+	 */
 	Ham_DOD_Weapon_IsUseable,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:min, someEntity, seed)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_Aim, this, Float:min, someEntity, seed);
+	 */
 	Ham_DOD_Weapon_Aim,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:min, someEntity)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_flAim, this, Float:min, someEntity);
+	 */
 	Ham_DOD_Weapon_flAim,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:amount, targetEnt)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_RemoveStamina, this, Float:amount, targetEnt);
+	 */
 	Ham_DOD_Weapon_RemoveStamina,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, fov)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_ChangeFOV, this, fov);
+	 */
 	Ham_DOD_Weapon_ChangeFOV,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_ZoomOut, this);
+	 */
 	Ham_DOD_Weapon_ZoomOut,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_ZoomIn, this);
+	 */
 	Ham_DOD_Weapon_ZoomIn,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_GetFOV, this);
+	 */
 	Ham_DOD_Weapon_GetFOV,
-	Ham_DOD_Weapon_IsWaterSniping, /* PlayerIsWaterSniping (had to truncate the name) */
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_IsWaterSniping, this);
+	 */
+	Ham_DOD_Weapon_IsWaterSniping,  // Name Truncated: Ham_DOD_Weapon_PlayerIsWaterSniping 
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_UpdateZoomSpeed, this);
+	 */
 	Ham_DOD_Weapon_UpdateZoomSpeed,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute Params:	ExecuteHam(Ham_DOD_Weapon_Special, this);
+	 */
 	Ham_DOD_Weapon_Special,
 
 
