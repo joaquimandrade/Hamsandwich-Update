@@ -491,6 +491,7 @@ enum Ham
 	 */
 	Ham_FVecVisible,
 
+
 	/**
 	 * Players have all the attributes of normal entities, in addition to these.
 	 */
@@ -810,13 +811,12 @@ enum Ham
 	Ham_Weapon_ShouldWeaponIdle,
 
 	/**
-	 * Description:		Not sure.
+	 * Description:		Unsure.
 	 * Forward params:	function(this)
 	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_Weapon_UseDecrement, this);
 	 */
 	Ham_Weapon_UseDecrement,
-
 
 	/**
 	 * Description:		-
@@ -858,6 +858,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_RoundRespawn, this);
 	 */
 	Ham_CS_RoundRespawn,
+
 	/**
 	 * Description:		Whether or not the player can drop the specified item.
 	 * Forward params:	function(this)
@@ -874,7 +875,6 @@ enum Ham
 	 */
 	Ham_CS_Item_GetMaxSpeed,
 
-
 	/**
 	 * Description:		I assume this spawns players at the start of a new round.
 	 * Forward params:	function(this)
@@ -887,7 +887,7 @@ enum Ham
 	 * Description:		I assume this spawns entities (like func_breakables) at the start of a new round.
 	 * Forward params:	function(this)
 	 * Return type:		None.
-	 * Execute Params:	ExecuteHam(Ham_DOD_RoundRespawn, this);
+	 * Execute Params:	ExecuteHam(Ham_DOD_RoundRespawnEnt, this);
 	 */
 	Ham_DOD_RoundRespawnEnt,
 
@@ -938,7 +938,6 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_Item_CanDrop, this);
 	 */
 	Ham_DOD_Item_CanDrop,
-
 
 	/**
 	 * Description:		Unsure.
@@ -1004,7 +1003,6 @@ enum Ham
 	 */
 	Ham_TFC_Concuss,
 
-
 	/**
 	 * Description:		Unsure.
 	 *					This is available only in ESF Open Beta.
@@ -1022,7 +1020,6 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
 	 */
 	Ham_ESF_TakeDamage2,
-
 
 	/**
 	 * Description:		Returns how many points each entity is worth.
@@ -1057,7 +1054,9 @@ enum Ham
 	Ham_NS_UpdateOnRemove,
 
 
-/** Virtual functions added to TS in TS 3 */
+	/**
+	 * Virtual functions added to TS in TS 3
+	 */
 
 	/**
 	 * Description:		Unsure.
@@ -1114,6 +1113,7 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TS_ShouldCollide, this, otherEntity)
 	 */
 	Ham_TS_ShouldCollide,
+
 
 	/**
 	 * LATE ADDITIONS (2011)
@@ -1631,7 +1631,6 @@ enum Ham
 	 */
 	Ham_StopFollowing,
 
-
 	/**
 	 * Description:		Sends an animation event for the weapon. skiplocal is 1 if client is predicting weapon animations.
 	 * Forward params:	function(this, iAnim, skiplocal);
@@ -1682,7 +1681,6 @@ enum Ham
 	 */
 	Ham_CS_Player_OnTouchingWeapon,
 
-
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1690,7 +1688,6 @@ enum Ham
 	 * Execute Params:	ExecuteHam(Ham_DOD_SetScriptReset, this);
 	 */
 	Ham_DOD_SetScriptReset,
-
 
 	Ham_DOD_Item_SpawnDeploy,
 	Ham_DOD_Item_SetDmgTime,
@@ -1706,7 +1703,6 @@ enum Ham
 	Ham_DOD_Weapon_IsWaterSniping, /* PlayerIsWaterSniping (had to truncate the name) */
 	Ham_DOD_Weapon_UpdateZoomSpeed,
 	Ham_DOD_Weapon_Special,
-
 
 	/** 
 	 * Description:		Get the item name.
@@ -1731,7 +1727,6 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_RadiusDamage2, this, const Float:source[3], inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType);
 	 */
 	Ham_TFC_RadiusDamage2,
-
 
 	/**
 	 * Description:		-
@@ -2452,7 +2447,6 @@ enum Ham
 	 */
 	Ham_ESF_Weapon_HolsterMeleed, // Name truncated : HolsterWhenMeleed
 
-
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, constroller, Float:value)
@@ -2465,7 +2459,7 @@ enum Ham
 	 * Description:		-
 	 * Forward params:	function(this)
 	 * Return type:		None.
-	 * Execute params:	ExecuteHam(Ham_SetBoneController, this)
+	 * Execute params:	ExecuteHam(Ham_NS_SaveDataForReset, this)
 	 */
 	Ham_NS_SaveDataForReset,
 
@@ -2499,7 +2493,7 @@ enum Ham
 	 * Return type:		Integer.
 	 * Execute params:	ExecuteHam(Ham_NS_GetPlayerClass, this)
 	 */
-	Ham_NS_GetPlayerClass, // name truncated : GetEffectivePlayerClass
+	Ham_NS_GetPlayerClass, // Name truncated : Ham_NS_GetEffectivePlayerClass
 
 	/**
 	 * Description:		-
@@ -2641,9 +2635,9 @@ enum Ham
 	 * Description:		-
 	 * Forward params:	function(this)
 	 * Return type:		Integer (boolean).
-	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeaponPriming, this)
+	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetIsWeapPriming, this)
 	 */
-	Ham_NS_Weapon_GetIsWeapPriming, // named truncated : Ham_NS_Weapon_GetIsWeaponPriming
+	Ham_NS_Weapon_GetIsWeapPriming, // Name truncated : Ham_NS_Weapon_GetIsWeaponPriming
 
 	/**
 	 * Description:		-
