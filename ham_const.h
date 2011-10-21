@@ -226,6 +226,7 @@ enum
 	Ham_GetIdealState,
 	Ham_SetActivity,
 	Ham_CheckEnemy,
+	Ham_FTriangulate,
 	Ham_SetYawSpeed,
 	Ham_BuildNearestRoute,
 	Ham_FindCover,

@@ -326,6 +326,11 @@ const bool RT_Void_Cbase_pVector_Float = true;
 const int PC_Void_Cbase_pVector_Float = 3;
 void Hook_Void_Cbase_pVector_Float(Hook *hook, void *pthis, void *p1, Vector *v1, float fl);
 
+const bool RT_Int_pVector_pVector_Cbase_Float_pVector = false;
+const int PC_Int_pVector_pVector_Cbase_Float_pVector = 5;
+int Hook_Int_pVector_pVector_Cbase_Float_pVector(Hook *hook, void *pthis, Vector *v1, Vector *v2, void* cb, float fl, Vector *v3 );
+
+
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;
 void Hook_Deprecated(Hook* hook);

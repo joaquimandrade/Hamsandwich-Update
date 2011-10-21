@@ -1278,6 +1278,59 @@ cell Call_Void_Cbase_pVector_Float(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Int_pVector_pVector_Cbase_Float_pVector(AMX *amx, cell *params)
+{
+	SETUP(5);
+
+	Vector v3;
+	Vector v4;
+
+	float *fl3=(float *)MF_GetAmxAddr(amx, params[3]);
+	float *fl4=(float *)MF_GetAmxAddr(amx, params[4]);
+
+	v3.x=fl3[0];
+	v3.y=fl3[1];
+	v3.z=fl3[2];
+
+	v4.x=fl4[0];
+	v4.y=fl4[1];
+	v4.z=fl4[2];
+
+	int id5=*MF_GetAmxAddr(amx, params[5]);
+	CHECK_ENTITY(id5);
+	void *p5=IndexToPrivate(id5);
+
+	float f6=amx_ctof2(*MF_GetAmxAddr(amx, params[6]));
+
+	Vector v7;
+	float *fl7=(float *)MF_GetAmxAddr(amx, params[7]);
+
+	v7.x=fl7[0];
+	v7.y=fl7[1];
+	v7.z=fl7[2];
+
+#ifdef _WIN32
+	int ret=reinterpret_cast<int (__fastcall *)(void *, int, Vector*, Vector*, void*, float, Vector*)>(__func)(pv, 0, &v3, &v4, p5, f6, &v7);
+#elif defined __linux__
+	int ret=reinterpret_cast<int (*)(void *, Vector*, Vector*, void*, float, Vector*)>(__func)(pv, &v3, &v4, p5, f6, &v7);
+#endif
+
+	fl3[0]=v3.x;
+	fl3[1]=v3.y;
+	fl3[2]=v3.z;
+
+	fl4[0]=v4.x;
+	fl4[1]=v4.y;
+	fl4[2]=v4.z;
+
+	fl7[0]=v7.x;
+	fl7[1]=v7.y;
+	fl7[2]=v7.z;
+
+	return ret;
+}
+
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

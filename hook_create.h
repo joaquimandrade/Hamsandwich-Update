@@ -156,6 +156,8 @@ int Create_Int_pVector_pVector_Cbase_pFloat(AMX *amx, const char *func);
 
 int Create_Void_Cbase_pVector_Float(AMX *amx, const char *func);
 
+int Create_Int_pVector_pVector_Cbase_Float_pVector(AMX *amx, const char *func);
+
 
 int Create_Deprecated(AMX* amx, const char* func);
 

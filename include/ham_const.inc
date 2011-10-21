@@ -1454,6 +1454,16 @@ enum Ham
 	Ham_CheckEnemy,
 
 	/**
+	 * Description:		Tries to overcome local obstacles by triangulating a path around them.
+	 *					'dist' is how far the obstruction that we are trying to triangulate around is from the monster.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, const Float:start[3], const Float:end[3], Float:dist, targetEnt, Float:apex[3]);
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_FTriangulate, this, const Float:start[3], const Float:end[3], Float:dist, targetEnt, Float:apex[3]);
+	 */
+	Ham_FTriangulate,
+
+	/**
 	 * Description:		Allows each sequence to have a different turn rate associated with it.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this);

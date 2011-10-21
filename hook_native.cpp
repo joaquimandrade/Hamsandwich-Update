@@ -252,6 +252,7 @@ hook_t hooklist[] =
 	{ V("getidealstate",			Int_Void) },
 	{ V("setactivity",				Void_Int) },
 	{ V("checkenemy",				Int_Cbase) },
+	{ V("ftriangulate",				Int_pVector_pVector_Cbase_Float_pVector) },
 	{ V("setyawspeed",				Void_Void) },
 	{ V("buildnearestroute",		Int_Vector_Vector_Float_Float) },
 	{ V("findcover",				Int_Vector_Vector_Float_Float) },
