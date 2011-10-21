@@ -318,6 +318,10 @@ const bool RT_Void_Str_Str_Int = true;
 const int PC_Void_Str_Str_Int = 3;
 void Hook_Void_Str_Str_Int(Hook *hook, void *pthis, const char *sz1, const char *sz2, int i3);
 
+const bool RT_Int_pVector_pVector_Cbase_pFloat = false;
+const int PC_Int_pVector_pVector_Cbase_pFloat = 4;
+int Hook_Int_pVector_pVector_Cbase_pFloat(Hook *hook, void *pthis, Vector *v1, Vector *v2, void* cb, float* fl);
+
 
 const bool RT_Deprecated = true;
 const int PC_Deprecated = 0;

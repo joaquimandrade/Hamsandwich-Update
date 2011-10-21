@@ -152,6 +152,8 @@ cell Call_Void_Float_Float(AMX* amx, cell* params);
 
 cell Call_Void_Str_Str_Int(AMX* amx, cell* params);
 
+cell Call_Int_pVector_pVector_Cbase_pFloat(AMX* amx, cell* params);
+
 
 cell Call_Deprecated(AMX* amx, cell* params);
 

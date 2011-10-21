@@ -233,6 +233,7 @@ hook_t hooklist[] =
 	{ V("runai",					Void_Void) },
 	{ V("monsterthink",				Void_Void) },
 	{ V("monsterinit",				Void_Void) },
+	{ V("checklocalmove",			Int_pVector_pVector_Cbase_pFloat) },
 	{ V("move",						Void_Float) },
 	{ V("shouldadvanceroute",		Int_Float) },
 	{ V("getstoppedactivity",		Int_Void) },

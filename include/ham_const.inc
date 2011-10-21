@@ -1280,6 +1280,15 @@ enum Ham
 	Ham_MonsterInit,
 
 	/**
+	 * Description:		Check validity of a straight move through space.
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, const Float:start[3], const Float:end[3], target, Float:dist)
+	 * Return type:		Integer (See LOCALMOVE_* constants).
+	 * Execute params:	ExecuteHam(Ham_CheckLocalMove, this, const Float:start[3], const Float:end[3], target, Float:dist);
+	 */
+	Ham_CheckLocalMove,
+
+	/**
 	 * Description:		Takes a single step towards the next ROUTE location.
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:interval)

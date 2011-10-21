@@ -1207,6 +1207,48 @@ cell Call_Void_Str_Str_Int(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Int_pVector_pVector_Cbase_pFloat(AMX *amx, cell *params)
+{
+	SETUP(4);
+
+	Vector v3;
+	Vector v4;
+
+	float *fl3=(float *)MF_GetAmxAddr(amx, params[3]);
+	float *fl4=(float *)MF_GetAmxAddr(amx, params[4]);
+
+	v3.x=fl3[0];
+	v3.y=fl3[1];
+	v3.z=fl3[2];
+
+	v4.x=fl4[0];
+	v4.y=fl4[1];
+	v4.z=fl4[2];
+
+	int id5=*MF_GetAmxAddr(amx, params[5]);
+	CHECK_ENTITY(id5);
+	void *p5=IndexToPrivate(id5);
+
+	float f6=amx_ctof2(*MF_GetAmxAddr(amx, params[6]));
+
+#ifdef _WIN32
+	int ret=reinterpret_cast<int (__fastcall *)(void *, int, Vector*, Vector*, void*, float*)>(__func)(pv, 0, &v3, &v4, p5, &f6);
+#elif defined __linux__
+	int ret=reinterpret_cast<int (*)(void *, Vector*, Vector*, void*, float*)>(__func)(pv, &v3, &v4, p5, &f6);
+#endif
+
+	fl3[0]=v3.x;
+	fl3[1]=v3.y;
+	fl3[2]=v3.z;
+
+	fl4[0]=v4.x;
+	fl4[1]=v4.y;
+	fl4[2]=v4.z;
+
+	return ret;
+}
+
+
 cell Call_Deprecated(AMX *amx, cell *params)
 {
 	MF_LogError(amx, AMX_ERR_NATIVE, "Ham function is deprecated.");
