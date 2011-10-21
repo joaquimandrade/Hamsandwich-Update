@@ -1300,6 +1300,15 @@ enum Ham
 	/**
 	 * Description:		-
 	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
+	 * Forward params:	function(this, targetEnt, const Float:dir[3], Float:interval)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_Move, this, targetEnt, const Float:dir[3], Float:interval);
+	 */
+	Ham_MoveExecute,
+
+	/**
+	 * Description:		-
+	 *					This function is not supported by Counter-Strike, The Specialists and Natural Selection mods.
 	 * Forward params:	function(this, Float:waypointDist)
 	 * Return type:		Integer (boolean).
 	 * Execute params:	ExecuteHam(Ham_ShouldAdvanceRoute, this, Float:waypointDist);

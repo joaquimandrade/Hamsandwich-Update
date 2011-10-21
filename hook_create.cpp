@@ -341,6 +341,11 @@ int Create_Int_pVector_pVector_Cbase_pFloat(AMX *amx, const char *func)
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_CELL, FP_CELL, FP_DONE);
 }
 
+int Create_Void_Cbase_pVector_Float(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_ARRAY, FP_CELL, FP_DONE);
+}
+
 
 int Create_Deprecated(AMX* amx, const char* func)
 {

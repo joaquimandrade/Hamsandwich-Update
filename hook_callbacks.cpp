@@ -877,47 +877,6 @@ int Hook_Int_pVector(Hook *hook, void *pthis, Vector *v1)
 	return ret;
 }
 
-int Hook_Int_pVector_pVector_Cbase_pFloat(Hook *hook, void *pthis, Vector *v1, Vector *v2, void* cb, float* fl)
-{
-	int ret=0;
-	int origret=0;
-
-	PUSH_INT()
-
-	int i3=PrivateToIndex(cb);
-
-	MAKE_VECTOR()
-	P_PTRVECTOR(v1)
-	P_PTRVECTOR(v2)
-	P_CBASE(cb, i3)
-	P_PTRFLOAT(fl)
-
-	PRE_START()
-		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
-		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
-		, i3
-		, fl != NULL ? *fl : 0
-	PRE_END()
-
-#if defined _WIN32
-	origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector *, Vector *, void *, float *)>(hook->func)(pthis, 0, v1, v2, cb, fl);
-#elif defined __linux__
-	origret=reinterpret_cast<int (*)(void*, Vector *, Vector *, void *, float *)>(hook->func)(pthis, v1, v2, cb, fl);
-#endif
-
-	POST_START()
-		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
-		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
-		, i3
-		, fl != NULL ? *fl : 0
-	POST_END()
-
-	KILL_VECTOR()
-	POP()
-	CHECK_RETURN()
-	return ret;
-}
-
 void Hook_Void_Entvar_Float_Float(Hook *hook, void *pthis, entvars_t *ev1, float f1, float f2)
 {
 	PUSH_VOID()
@@ -2045,6 +2004,76 @@ void Hook_Void_Str_Str_Int(Hook *hook, void *pthis, const char *sz1, const char 
 
 	POST_START()
 		, a.c_str(), b.c_str(), i3
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+int Hook_Int_pVector_pVector_Cbase_pFloat(Hook *hook, void *pthis, Vector *v1, Vector *v2, void* cb, float* fl)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	int i3=PrivateToIndex(cb);
+
+	MAKE_VECTOR()
+	P_PTRVECTOR(v1)
+	P_PTRVECTOR(v2)
+	P_CBASE(cb, i3)
+	P_PTRFLOAT(fl)
+
+	PRE_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
+		, i3
+		, fl != NULL ? *fl : 0
+	PRE_END()
+
+#if defined _WIN32
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector *, Vector *, void *, float *)>(hook->func)(pthis, 0, v1, v2, cb, fl);
+#elif defined __linux__
+	origret=reinterpret_cast<int (*)(void*, Vector *, Vector *, void *, float *)>(hook->func)(pthis, v1, v2, cb, fl);
+#endif
+
+	POST_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
+		, i3
+		, fl != NULL ? *fl : 0
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
+void Hook_Void_Cbase_pVector_Float(Hook *hook, void *pthis, void *p1, Vector *v1, float fl)
+{
+	PUSH_VOID()
+	int iEnt =PrivateToIndex(p1);
+
+	MAKE_VECTOR()
+
+	P_CBASE(p1, iEnt)
+	P_PTRVECTOR(v1)
+	P_FLOAT(fl)
+
+	PRE_START()
+		, iEnt, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false), fl
+	PRE_END()
+
+#if defined _WIN32
+	reinterpret_cast<void (__fastcall*)(void*, int, void *, Vector *, float)>(hook->func)(pthis, 0, p1, v1, fl);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, void *, int, Vector *, float)>(hook->func)(pthis, p1, v1, fl);
+#endif
+
+	POST_START()
+		, iEnt, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false), fl
 	POST_END()
 
 	KILL_VECTOR()

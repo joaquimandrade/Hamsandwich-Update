@@ -209,6 +209,7 @@ enum
 	Ham_MonsterInit,
 	Ham_CheckLocalMove,
 	Ham_Move,
+	Ham_MoveExecute,
 	Ham_ShouldAdvanceRoute,
 	Ham_GetStoppedActivity,
 	Ham_Stop,

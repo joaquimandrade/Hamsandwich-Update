@@ -1248,6 +1248,36 @@ cell Call_Int_pVector_pVector_Cbase_pFloat(AMX *amx, cell *params)
 	return ret;
 }
 
+cell Call_Void_Cbase_pVector_Float(AMX *amx, cell *params)
+{
+	SETUP(3);
+
+	int id3=*MF_GetAmxAddr(amx, params[3]);
+	CHECK_ENTITY(id3);
+
+	void *i3=IndexToPrivate(id3);
+
+	Vector v4;
+	float *fl4=(float *)MF_GetAmxAddr(amx, params[4]);
+	v4.x=fl4[0];
+	v4.y=fl4[1];
+	v4.z=fl4[2];
+
+	float f5=amx_ctof2(*MF_GetAmxAddr(amx, params[5]));
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, void *, Vector *, float)>(__func)(pv, 0, i3, &v4, f5);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, void *, Vector *, float)>(__func)(pv, i3, &v4, f5);
+#endif
+
+	fl4[0]=v4.x;
+	fl4[1]=v4.y;
+	fl4[2]=v4.z;
+
+	return 1;
+}
+
 
 cell Call_Deprecated(AMX *amx, cell *params)
 {

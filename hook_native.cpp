@@ -235,6 +235,7 @@ hook_t hooklist[] =
 	{ V("monsterinit",				Void_Void) },
 	{ V("checklocalmove",			Int_pVector_pVector_Cbase_pFloat) },
 	{ V("move",						Void_Float) },
+	{ V("moveexecute",				Void_Cbase_pVector_Float) },
 	{ V("shouldadvanceroute",		Int_Float) },
 	{ V("getstoppedactivity",		Int_Void) },
 	{ V("stop",						Void_Void) },
