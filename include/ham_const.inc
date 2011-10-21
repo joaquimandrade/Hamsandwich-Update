@@ -818,6 +818,11 @@ enum Ham
 	 */
 	Ham_Weapon_UseDecrement,
 
+
+	/**
+	 * The following functions are specific to The Specialists.
+	 */
+
 	/**
 	 * Description:		-
 	 * Forward params:	function(this, someboolvalue)
@@ -842,6 +847,10 @@ enum Ham
 	 */
 	Ham_TS_RespawnWait,
 
+
+	/**
+	 * The following functions are specific to Counter-Strike.
+	 */
 
 	/**
 	 * Description:		This is called on a map reset for most map based entities.
@@ -874,6 +883,11 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_CS_Item_GetMaxSpeed, this, Float:output);
 	 */
 	Ham_CS_Item_GetMaxSpeed,
+
+
+	/**
+	 * The following functions are specific to Day Of Defeat.
+	 */
 
 	/**
 	 * Description:		I assume this spawns players at the start of a new round.
@@ -939,6 +953,11 @@ enum Ham
 	 */
 	Ham_DOD_Item_CanDrop,
 
+
+	/**
+	 * The following functions are specific to The Team Fortress Classic.
+	 */
+
 	/**
 	 * Description:		Unsure.
 	 * Forward params:	function(this, iduser)
@@ -1003,6 +1022,11 @@ enum Ham
 	 */
 	Ham_TFC_Concuss,
 
+
+	/**
+	 * The following functions are specific to Earth's Special Forces.
+	 */
+
 	/**
 	 * Description:		Unsure.
 	 *					This is available only in ESF Open Beta.
@@ -1020,6 +1044,11 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_TakeDamage2, this, entityida, entityidb, Float:floata, Float:floatb, dmgbits);
 	 */
 	Ham_ESF_TakeDamage2,
+
+
+	/**
+	 * The following functions are specific to Natural Selection.
+	 */
 
 	/**
 	 * Description:		Returns how many points each entity is worth.
@@ -1055,7 +1084,7 @@ enum Ham
 
 
 	/**
-	 * Virtual functions added to TS in TS 3
+	 * The following functions are specific to The Specialists.
 	 */
 
 	/**
@@ -1631,6 +1660,11 @@ enum Ham
 	 */
 	Ham_StopFollowing,
 
+
+	/**
+	 * The following functions are specific to Counter-Strike.
+	 */
+
 	/**
 	 * Description:		Sends an animation event for the weapon. skiplocal is 1 if client is predicting weapon animations.
 	 * Forward params:	function(this, iAnim, skiplocal);
@@ -1681,6 +1715,11 @@ enum Ham
 	 */
 	Ham_CS_Player_OnTouchingWeapon,
 
+
+	/**
+	 * The following functions are specific to Day Of Defeat.
+	 */
+
 	/**
 	 * Description:		-
 	 * Forward params:	function(this)
@@ -1703,6 +1742,11 @@ enum Ham
 	Ham_DOD_Weapon_IsWaterSniping, /* PlayerIsWaterSniping (had to truncate the name) */
 	Ham_DOD_Weapon_UpdateZoomSpeed,
 	Ham_DOD_Weapon_Special,
+
+
+	/**
+	 * The following functions are specific to Team Fortress Classic.
+	 */
 
 	/** 
 	 * Description:		Get the item name.
@@ -1727,6 +1771,11 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_TFC_RadiusDamage2, this, const Float:source[3], inflictorId, attackerId, Float:damage, classIgnore, bitsDamageType);
 	 */
 	Ham_TFC_RadiusDamage2,
+
+
+	/**
+	 * The following functions are specific to Earth's Special Forces.
+	 */
 
 	/**
 	 * Description:		-
@@ -2446,6 +2495,11 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_ESF_Weapon_HolsterMeleed, this);
 	 */
 	Ham_ESF_Weapon_HolsterMeleed, // Name truncated : HolsterWhenMeleed
+
+
+	/**
+	 * The following functions are specific to Natural Selection.
+	 */
 
 	/**
 	 * Description:		-
