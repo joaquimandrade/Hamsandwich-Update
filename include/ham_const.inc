@@ -2591,7 +2591,7 @@ enum Ham
 	 * Return type:		Integer.
 	 * Execute params:	ExecuteHam(Ham_ESF_Weapon_HolsterMeleed, this);
 	 */
-	Ham_ESF_Weapon_HolsterMeleed, // Name truncated : HolsterWhenMeleed
+	Ham_ESF_Weapon_HolsterMeleed, // Name truncated : Ham_ESF_Weapon_HolsterWhenMeleed
 
 
 	/**
@@ -2813,6 +2813,724 @@ enum Ham
 	 * Execute params:	ExecuteHam(Ham_NS_Weapon_GetDeployTime, this)
 	 */
 	Ham_NS_Weapon_GetDeployTime,
+
+
+	/**
+	 * The following functions are specific to Sven Co-op.
+	 */
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, cl)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_SC_GetClassification, this, cl)
+	 */
+	Ham_SC_GetClassification,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsMonster, this)
+	 */
+	Ham_SC_IsMonster,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsPhysX, this)
+	 */
+	Ham_SC_IsPhysX,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsPointEntity, this)
+	 */
+	Ham_SC_IsPointEntity,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsMachine, this)
+	 */
+	Ham_SC_IsMachine,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CriticalRemove, this)
+	 */
+	Ham_SC_CriticalRemove,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(UpdateOnRemove, this)
+	 */
+	Ham_SC_UpdateOnRemove,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, entity, bool:ignoreGlass)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FVisible, this, entity, bool:ignoreGlass)
+	 */
+	Ham_SC_FVisible,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:target[3], const Float:start[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FVisibleFromPos, this, const Float:target[3], const Float:start[3])
+	 */
+	Ham_SC_FVisibleFromPos,
+
+	/**
+	 * Description:		-
+	 *					Some examples of dotProduct value :
+	 *					VIEW_FIELD_FULL -1.0
+	 *					VIEW_FIELD_WIDE -0.7
+	 *					VIEW_FIELD_NARROW 0.7
+	 *					VIEW_FIELD_ULTRA_NARROW 0.9
+	 * Forward params:	function(this, entTest, Float:dotProduct)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsFacings, this, entTest, Float:dotProduct)
+	 */
+	Ham_SC_IsFacings,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:damage)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_SC_GetPointsForDamage, this, Float:damage)
+	 */
+	Ham_SC_GetPointsForDamage,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, attacker, inflictor, Float:damage)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_GetPointsForDamage, this, attacker, inflictor, Float:damage)
+	 */
+	Ham_SC_GetDamagePoints,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_OnCreate, this)
+	 */
+	Ham_SC_OnCreate,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_OnDestroy, this)
+	 */
+	Ham_SC_OnDestroy,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsValidEntity, this)
+	 */
+	Ham_SC_IsValidEntity,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_ShouldFadeOnDeath, this)
+	 */
+	Ham_SC_ShouldFadeOnDeath,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_SetupFriendly, this)
+	 */
+	Ham_SC_SetupFriendly,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_ReviveThink, this)
+	 */
+	Ham_SC_ReviveThink,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Revive, this)
+	 */
+	Ham_SC_Revive,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_StartMonster, this)
+	 */
+	Ham_SC_StartMonster,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CheckRangeAttack1_Move, this, Float:dot, Float:dist)
+	 */
+	Ham_SC_CheckRangeAttack1_Move,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CheckRangeAttack2_Move, this, Float:dot, Float:dist)
+	 */
+	Ham_SC_CheckRangeAttack2_Move,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CheckMeleeAttack1_Move, this, Float:dot, Float:dist)
+	 */
+	Ham_SC_CheckMeleeAttack1_Move,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:dot, Float:dist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CheckMeleeAttack2_Move, this, Float:dot, Float:dist)
+	 */
+	Ham_SC_CheckMeleeAttack2_Move,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CheckTankUsage, this)
+	 */
+	Ham_SC_CheckTankUsage,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_SetGaitActivity, this)
+	 */
+	Ham_SC_SetGaitActivity,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:start[3], const Float:end[3], Float:dist, targetEnt, Float:apex[3], Float:apex2[3], bool:coverPath)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FTriangulate, this, const Float:start[3], const Float:end[3], Float:dist, targetEnt, Float:apex[3], Float:apex2[3], bool:coverPath )
+	 */
+	Ham_SC_FTriangulate,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:start[3], const Float:end[3], Float:dist, targetEnt, Float:apex[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FTriangulateExtension, this, const Float:start[3], const Float:end[3], Float:dist, targetEnt, Float:apex[3])
+	 */
+	Ham_SC_FTriangulateExtension,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FindCoverGrenade, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist)
+	 */
+	Ham_SC_FindCoverGrenade,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FindCoverDistance, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist)
+	 */
+	Ham_SC_FindCoverDistance,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FindAttackPoint, this, const Float:threat[3], const Float:viewOffset[3], Float:minDist, Float:maxDist)
+	 */
+	Ham_SC_FindAttackPoint,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:coverLocation[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FValidateCover, this, const Float:coverLocation[3])
+	 */
+	Ham_SC_FValidateCover,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_NoFriendlyFire, this)
+	 */
+	Ham_SC_NoFriendlyFire1,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:pos[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_NoFriendlyFire2, this, const Float:pos[3])
+	 */
+	Ham_SC_NoFriendlyFire2,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:pos[3], targetEnt)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_NoFriendlyFire3, this, const Float:pos[3], targetEnt)
+	 */
+	Ham_SC_NoFriendlyFire3,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:toPos[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_NoFriendlyFireToPos, this, const Float:toPos[3])
+	 */
+	Ham_SC_NoFriendlyFireToPos,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, entity, const Float:pos[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FVisibleGunPos, this, entity, const Float:pos[3])
+	 */
+	Ham_SC_FVisibleGunPos,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, entity, const Float:pos[3])
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_FInBulletCone, this, entity, const Float:pos[3])
+	 */
+	Ham_SC_FInBulletCone,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_CallGibMonster, this)
+	 */
+	Ham_SC_CallGibMonster,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_CheckTimeBasedDamage, this)
+	 */
+	Ham_SC_CheckTimeBasedDamage,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsMoving, this)
+	 */
+	Ham_SC_IsMoving,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_IsPlayerFollowing, this)
+	 */
+	Ham_SC_IsPlayerFollowing,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idleader)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_StartPlayerFollowing, this, idleader)
+	 */
+	Ham_SC_StartPlayerFollowing,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, bool:clearSchedule)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_StopPlayerFollowing, this, bool:clearSchedule)
+	 */
+	Ham_SC_StopPlayerFollowing,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_UseSound, this)
+	 */
+	Ham_SC_UseSound,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_UnUseSound, this)
+	 */
+	Ham_SC_UnUseSound,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idOther)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_RideMonster, this, idOther)
+	 */
+	Ham_SC_RideMonster,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_CheckAndApplyGenericAttacks, this)
+	 */
+	Ham_SC_CheckApplyGenericAttacks, // Truncated name: Ham_SC_CheckAndApplyGenericAttacks
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_CheckScared, this)
+	 */
+	Ham_SC_CheckScared,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_CheckCreatureDanger, this)
+	 */
+	Ham_SC_CheckCreatureDanger,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_CheckFallDamage, this)
+	 */
+	Ham_SC_CheckFallDamage,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_CheckRevival, this)
+	 */
+	Ham_SC_CheckRevival,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_MedicCallSound, this)
+	 */
+	Ham_SC_MedicCallSound,
+
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_MedicCallSound, this)
+	 */
+	Ham_SC_Player_MenuInpPerformed, // Name truncated : Ham_SC_Player_MenuInputPerformed
+	
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_IsMenuInputDone, this)
+	 */
+	Ham_SC_Player_IsMenuInputDone,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_SpecialSpawn, this)
+	 */
+	Ham_SC_Player_SpecialSpawn,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idEntity)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Player_IsValidInfoEntity, this, idEntity)
+	 */
+	Ham_SC_Player_IsValidInfoEntity,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_LevelEnd, this)
+	 */
+	Ham_SC_Player_LevelEnd,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, voteType)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_VoteStarted, this, voteType)
+	 */
+	Ham_SC_Player_VoteStarted,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, voteType)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Player_CanStartNextVote, this, voteType)
+	 */
+	Ham_SC_Player_CanStartNextVote,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, voteInput)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_Vote, this, voteInput)
+	 */
+	Ham_SC_Player_Vote,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Player_HasVoted, this)
+	 */
+	Ham_SC_Player_HasVoted,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_ResetVote, this)
+	 */
+	Ham_SC_Player_ResetVote,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_LastVoteInput, this)
+	 */
+	Ham_SC_Player_LastVoteInput,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_InitVote, this)
+	 */
+	Ham_SC_Player_InitVote,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_StartNextVote, this)
+	 */
+	Ham_SC_Player_StartNextVote, // Truncated name : Ham_SC_Player_TimeToStartNextVote
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_ResetView, this)
+	 */
+	Ham_SC_Player_ResetView,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Float.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_GetLogFrequency, this)
+	 */
+	Ham_SC_Player_GetLogFrequency,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Player_LogPlayerStats, this)
+	 */
+	Ham_SC_Player_LogPlayerStats,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idPlayer, Float:time)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_DisableCollision, this, idPlayer, Float:time)
+	 */
+	Ham_SC_Player_DisableCollision, // Truncated name : Ham_SC_Player_DisableCollisionWithPlayer
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idPlayer, bool:testIntersection)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_EnableCollision, this, idPlayer, bool:testIntersection)
+	 */
+	Ham_SC_Player_EnableCollision, // Truncated name : Ham_SC_Player_EnableCollisionWithPlayer
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, idPlayer)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Player_CanTouchPlayer, this, idPlayer)
+	 */
+	Ham_SC_Player_CanTouchPlayer,
+
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Item_Materialize, this)
+	 */
+	Ham_SC_Item_Materialize,
+
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const Float:moving[3], const Float:standing[3], const Float:crouched[3])
+	 * Return type:		Vector, byreffed in execute.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_BulletAccuracy, this, const Float:moving[3], const Float:standing[3], const Float:crouched[3], Float:output[3])
+	 */
+	Ham_SC_Weapon_BulletAccuracy,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_TertiaryAttack, this)
+	 */
+	Ham_SC_Weapon_TertiaryAttack,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_BurstSupplement, this)
+	 */
+	Ham_SC_Weapon_BurstSupplement,
+	
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const alternative[] = "")
+	 * Return type:		String (string length returned and string byref'd in ExecuteHam).
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_GetP_Model, this, const alternative[] = "", buffer[], size)
+	 */
+	Ham_SC_Weapon_GetP_Model,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const alternative[] = "")
+	 * Return type:		String (string length returned and string byref'd in ExecuteHam).
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_GetW_Model, this, const alternative[] = "", buffer[], size)
+	 */
+	Ham_SC_Weapon_GetW_Model,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const alternative[] = "")
+	 * Return type:		String (string length returned and string byref'd in ExecuteHam).
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_GetV_Model, this, const alternative[] = "", buffer[], size)
+	 */
+	Ham_SC_Weapon_GetV_Model,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_PrecacheCustomMdl, this)
+	 */
+	Ham_SC_Weapon_PrecacheCustomMdl, // Truncated name : Ham_SC_Weapon_PrecacheCustomModels
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_IsMultiplayer, this)
+	 */
+	Ham_SC_Weapon_IsMultiplayer,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_FRunfuncs, this)
+	 */
+	Ham_SC_Weapon_FRunfuncs,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, fov)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_SetFOV, this, fov)
+	 */
+	Ham_SC_Weapon_SetFOV,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this)
+	 * Return type:		Integer (boolean).
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_FCanRun, this)
+	 */
+	Ham_SC_Weapon_FCanRun,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, Float:frametime)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_CustomDecrement, this, Float:frametime)
+	 */
+	Ham_SC_Weapon_CustomDecrement,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const model[])
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_SetV_Model, this, const model[])
+	 */
+	Ham_SC_Weapon_SetV_Model,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, const model[])
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_SetP_Model, this, const model[])
+	 */
+	Ham_SC_Weapon_SetP_Model,
+
+	/**
+	 * Description:		-
+	 * Forward params:	function(this, skin)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_SC_Weapon_ChangeWeaponSkin, this, skin)
+	 */
+	Ham_SC_Weapon_ChangeWeaponSkin,
+
 
 	/**
 	 * DONT USE ME LOL

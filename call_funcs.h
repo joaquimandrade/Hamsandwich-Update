@@ -156,7 +156,43 @@ cell Call_Int_pVector_pVector_Cbase_pFloat(AMX* amx, cell* params);
 
 cell Call_Void_Cbase_pVector_Float(AMX* amx, cell* params);
 
-cell Call_Int_pVector_pVector_Cbase_Float_pVector(AMX* amx, cell* params);
+cell Call_Int_pVector_pVector_Float_Cbase_pVector(AMX* amx, cell* params);
+
+cell Call_Int_Cbase_Bool(AMX* amx, cell* params);
+
+cell Call_Int_Vector_Vector(AMX *amx, cell *params);
+
+cell Call_Int_Entvar_Float(AMX *amx, cell *params);
+
+cell Call_Float_Float(AMX* amx, cell* params);
+
+cell Call_Void_Entvar_Entvar_Float(AMX *amx, cell *params);
+
+cell Call_Bool_Void(AMX *amx, cell *params);
+
+cell Call_Int_pVector_pVector_Float_Cbase_pVector_pVector_Bool(AMX* amx, cell* params);
+
+cell Call_Int_pVector_Cbase(AMX *amx, cell *params);
+
+cell Call_Int_Vector(AMX *amx, cell *params);
+
+cell Call_Int_Cbase_pVector(AMX *amx, cell *params);
+
+cell Call_Void_Bool(AMX *amx, cell *params);
+
+cell Call_Bool_Cbase(AMX *amx, cell *params);
+
+cell Call_Bool_Int(AMX *amx, cell *params);
+
+cell Call_Void_Cbase_Float(AMX* amx, cell* params);
+
+cell Call_Void_Cbase_Bool(AMX* amx, cell* params);
+
+cell Call_Vector_Vector_Vector_Vector(AMX *amx, cell *params);
+
+cell Call_Str_Str(AMX *amx, cell *params);
+
+cell Call_Void_Short(AMX *amx, cell *params);
 
 
 cell Call_Deprecated(AMX* amx, cell* params);

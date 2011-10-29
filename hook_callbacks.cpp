@@ -181,6 +181,7 @@ void Hook_Void_Void(Hook *hook, void *pthis)
 	KILL_VECTOR()
 	POP()
 }
+
 int Hook_Int_Void(Hook *hook, void *pthis)
 {
 	int ret=0;
@@ -189,16 +190,15 @@ int Hook_Int_Void(Hook *hook, void *pthis)
 	PUSH_INT()
 
 	MAKE_VECTOR()
-	
+
 
 	PRE_START()
 	PRE_END()
-	
-	
+
 #if defined _WIN32
-	origret=reinterpret_cast<int (__fastcall*)(void*,int)>(hook->func)(pthis,0);
+		origret=reinterpret_cast<int (__fastcall*)(void*,int)>(hook->func)(pthis,0);
 #elif defined __linux__
-	origret=reinterpret_cast<int (*)(void*)>(hook->func)(pthis);
+		origret=reinterpret_cast<int (*)(void*)>(hook->func)(pthis);
 #endif
 
 	POST_START()
@@ -479,8 +479,6 @@ int Hook_Int_Entvar(Hook *hook, void *pthis, entvars_t *ev1)
 	return ret;
 }
 
-
-
 int Hook_Int_Entvar_Entvar_Float_Int(Hook *hook, void *pthis, entvars_t *inflictor, entvars_t *attacker, float damage, int damagebits)
 {
 	int ret=0;
@@ -722,6 +720,7 @@ void Hook_Void_Float_Vector_Trace_Int(Hook *hook, void *pthis, float f1, Vector 
 	KILL_VECTOR()
 	POP()
 }
+
 const char *Hook_Str_Void(Hook *hook, void *pthis)
 {
 	String ret;
@@ -745,8 +744,8 @@ const char *Hook_Str_Void(Hook *hook, void *pthis)
 	KILL_VECTOR()
 	POP()
 	CHECK_RETURN_STR();
-	return ret.c_str();
 
+	return ret.c_str();
 }
 
 void *Hook_Cbase_Void(Hook *hook, void *pthis)
@@ -810,6 +809,7 @@ void Hook_Vector_Void(Hook *hook, Vector *out, void *pthis)
 	memcpy(out, &ret, sizeof(Vector));
 
 }
+
 #ifdef _WIN32
 void Hook_Vector_pVector(Hook *hook, void *pthis, Vector *out, Vector *v1)
 #elif defined __linux__
@@ -845,7 +845,6 @@ void Hook_Vector_pVector(Hook *hook, Vector *out, void *pthis, Vector *v1)
 	POP()
 	CHECK_RETURN_VEC()
 	memcpy(out, &ret, sizeof(Vector));
-
 }
 
 int Hook_Int_pVector(Hook *hook, void *pthis, Vector *v1)
@@ -2080,41 +2079,41 @@ void Hook_Void_Cbase_pVector_Float(Hook *hook, void *pthis, void *p1, Vector *v1
 	POP()
 }
 
-int Hook_Int_pVector_pVector_Cbase_Float_pVector(Hook *hook, void *pthis, Vector *v1, Vector *v2, void* cb, float fl, Vector *v3)
+int Hook_Int_pVector_pVector_Float_Cbase_pVector(Hook *hook, void *pthis, Vector *v1, Vector *v2, float fl, void* cb, Vector *v3)
 {
 	int ret=0;
 	int origret=0;
 
 	PUSH_INT()
 
-	int i3=PrivateToIndex(cb);
+	int i4=PrivateToIndex(cb);
 
 	MAKE_VECTOR()
 	P_PTRVECTOR(v1)
 	P_PTRVECTOR(v2)
-	P_CBASE(cb, i3)
 	P_FLOAT(fl)
+	P_CBASE(cb, i4)
 	P_PTRVECTOR(v3)
 
 	PRE_START()
-	, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
-	, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
-	, i3
-	, fl
-	, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v3), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
+		, fl
+		, i4
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v3), 3, false)
 	PRE_END()
 
 #if defined _WIN32
-	origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector *, Vector *, void *, float, Vector *)>(hook->func)(pthis, 0, v1, v2, cb, fl, v3);
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector *, Vector *, float, void *, Vector *)>(hook->func)(pthis, 0, v1, v2, fl, cb, v3);
 #elif defined __linux__
-	origret=reinterpret_cast<int (*)(void*, Vector *, Vector *, void *, float, Vector *)>(hook->func)(pthis, v1, v2, cb, fl, v3);
+	origret=reinterpret_cast<int (*)(void*, Vector *, Vector *, float, void *, Vector *)>(hook->func)(pthis, v1, v2, fl, cb, v3);
 #endif
 
 	POST_START()
 		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
 		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
-		, i3
 		, fl
+		, i4
 		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v3), 3, false)
 	POST_END()
 
@@ -2123,6 +2122,600 @@ int Hook_Int_pVector_pVector_Cbase_Float_pVector(Hook *hook, void *pthis, Vector
 	CHECK_RETURN()
 	return ret;
 }
+
+int Hook_Int_Cbase_Bool(Hook *hook, void *pthis, void *cb1, bool b1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+		int i1=PrivateToIndex(cb1);
+
+	MAKE_VECTOR()
+
+	P_CBASE(cb1, i1)
+	P_BOOL(b1)
+
+	PRE_START()
+		, i1, b1
+	PRE_END()
+#if defined _WIN32
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, void *, bool)>(hook->func)(pthis, 0, cb1, b1);
+#elif defined __linux__
+	origret=reinterpret_cast<int (*)(void*, void *, bool)>(hook->func)(pthis, cb1, b1);
+#endif
+
+	POST_START()
+		, i1, b1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
+int Hook_Int_Vector_Vector(Hook *hook, void *pthis, Vector v1, Vector v2)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_VECTOR(v1)
+	P_VECTOR(v2)
+
+	PRE_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+	PRE_END()
+
+#if defined _WIN32
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector, Vector)>(hook->func)(pthis, 0, v1, v2);
+#elif defined __linux__
+	origret=reinterpret_cast<int (*)(void*, Vector, Vector)>(hook->func)(pthis, v1, v2);
+#endif
+
+	POST_START()
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		,MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+
+	return ret;
+}
+
+int Hook_Int_Entvar_Float(Hook *hook, void *pthis, entvars_t *ev1, float f1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+	int i1=EntvarToIndex(ev1);
+
+	MAKE_VECTOR()
+	P_ENTVAR(ev1, i1)
+	P_FLOAT(f1)
+
+	PRE_START()
+		,i1, f1
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, entvars_t *, float)>(hook->func)(pthis, 0, ev1, f1);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, entvars_t *, float)>(hook->func)(pthis, ev1, f1);
+#endif
+
+	POST_START()
+		, i1, f1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
+float Hook_Float_Float(Hook *hook, void *pthis, float f1)
+{
+	float ret=0.0;
+	float origret=0.0;
+
+	PUSH_FLOAT()
+
+	MAKE_VECTOR()
+	P_FLOAT(f1)
+
+	PRE_START()
+		, f1
+	PRE_END()
+#if defined _WIN32
+	origret=reinterpret_cast<float (__fastcall*)(void*, int, float)>(hook->func)(pthis, 0, f1);
+#elif defined __linux__
+	origret=reinterpret_cast<float (*)(void*, float)>(hook->func)(pthis, f1);
+#endif
+
+	POST_START()
+		,f1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+void Hook_Void_Entvar_Entvar_Float(Hook *hook, void *pthis, entvars_t *attacker, entvars_t *inflictor, float damage)
+{
+	PUSH_VOID()
+
+	int iAttacker=EntvarToIndex(attacker);
+	int iInflictor=EntvarToIndex(inflictor);
+
+	MAKE_VECTOR()
+
+	P_ENTVAR(attacker, iAttacker)
+	P_ENTVAR(inflictor, iInflictor)
+	P_FLOAT(damage)
+
+	PRE_START()
+		, iAttacker, iInflictor, damage
+	PRE_END()
+
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, entvars_t *, entvars_t *, float)>(hook->func)(pthis, 0, attacker, inflictor, damage);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, entvars_t *, entvars_t *, float)>(hook->func)(pthis, attacker, inflictor, damage);
+#endif
+
+	POST_START()
+		, iAttacker, iInflictor, damage
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+bool Hook_Bool_Void(Hook *hook, void *pthis)
+{
+	bool ret=0;
+	bool origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	PRE_START()
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<bool (__fastcall*)(void*,int)>(hook->func)(pthis,0);
+#elif defined __linux__
+		origret=reinterpret_cast<bool (*)(void*)>(hook->func)(pthis);
+#endif
+
+	POST_START()
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+int Hook_Int_pVector_pVector_Float_Cbase_pVector_pVector_Bool(Hook *hook, void *pthis, Vector *v1, Vector *v2, float fl, void* cb, Vector *v3, Vector *v4, bool b1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	int i4=PrivateToIndex(cb);
+
+	MAKE_VECTOR()
+	P_PTRVECTOR(v1)
+	P_PTRVECTOR(v2)
+	P_FLOAT(fl)
+	P_CBASE(cb, i4)
+	P_PTRVECTOR(v3)
+	P_PTRVECTOR(v4)
+	P_BOOL(b1)
+
+	PRE_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
+		, fl
+		, i4
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v3), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v4), 3, false)
+		, b1
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector *, Vector *, float, void *, Vector *, Vector *, bool)>(hook->func)(pthis, 0, v1, v2, fl, cb, v3, v4, b1);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, Vector *, Vector *, float, void *, Vector *, Vector *, bool)>(hook->func)(pthis, v1, v2, fl, cb, v3, v4, b1);
+#endif
+
+	POST_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v2), 3, false)
+		, fl
+		, i4
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v3), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v4), 3, false)
+		, b1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
+int Hook_Int_pVector_Cbase(Hook *hook, void *pthis, Vector *v1, void* cb)
+{
+	int ret=0;
+	int origret=0;
+	PUSH_INT()
+
+	int i4=PrivateToIndex(cb);
+
+	MAKE_VECTOR()
+	P_PTRVECTOR(v1)
+	P_CBASE(cb, i4)
+
+	PRE_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, i4
+	PRE_END()
+
+#if defined _WIN32
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector *, void*)>(hook->func)(pthis, 0, v1, cb);
+#elif defined __linux__
+	origret=reinterpret_cast<int (*)(void*, Vector *, void*)>(hook->func)(pthis, v1, cb);
+#endif
+
+	POST_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+		, i4
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
+int Hook_Int_Vector(Hook *hook, void *pthis, Vector v1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_VECTOR(v1)
+
+	PRE_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, Vector)>(hook->func)(pthis, 0, v1);
+#elif defined __linux__
+		origret=reinterpret_cast<int (*)(void*, Vector)>(hook->func)(pthis, v1);
+#endif
+
+	POST_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+
+	return ret;
+}
+
+int Hook_Int_Cbase_pVector(Hook *hook, void *pthis, void *cb1, Vector *v1)
+{
+	int ret=0;
+	int origret=0;
+
+	PUSH_INT()
+
+	int iOther=PrivateToIndex(cb1);
+
+	MAKE_VECTOR()
+
+	P_CBASE(cb1, iOther)
+	P_PTRVECTOR(v1)
+
+	PRE_START()
+		, iOther
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+	PRE_END()
+#if defined _WIN32
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, void *, Vector *)>(hook->func)(pthis, 0, cb1, v1);
+#elif defined __linux__
+	origret=reinterpret_cast<int (*)(void*, void *, Vector *)>(hook->func)(pthis, cb1, v1);
+#endif
+
+	POST_START()
+		, iOther
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(v1), 3, false)
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
+void Hook_Void_Bool(Hook *hook, void *pthis, bool b1)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+	P_BOOL(b1)
+
+	PRE_START()
+		, b1
+	PRE_END()
+
+#if defined _WIN32
+	reinterpret_cast<void (__fastcall*)(void*, int, bool)>(hook->func)(pthis, 0, b1);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void*, bool)>(hook->func)(pthis, b1);
+#endif
+
+	POST_START()
+		,b1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+bool Hook_Bool_Cbase(Hook *hook, void *pthis, void *cb)
+{
+	bool ret=0;
+	bool origret=0;
+
+	PUSH_INT()
+
+	int iOther=PrivateToIndex(cb);
+
+	MAKE_VECTOR()
+
+	P_CBASE(cb, iOther)
+
+	PRE_START()
+		, iOther
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<bool (__fastcall*)(void*, int, void*)>(hook->func)(pthis, 0, cb);
+#elif defined __linux__
+		origret=reinterpret_cast<bool (*)(void*, void*)>(hook->func)(pthis, cb);
+#endif
+
+	POST_START()
+		, iOther
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+bool Hook_Bool_Int(Hook *hook, void *pthis, int i1)
+{
+	bool ret=0;
+	bool origret=0;
+
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_INT(i1)
+
+	PRE_START()
+		 , i1
+	PRE_END()
+
+#if defined _WIN32
+		origret=reinterpret_cast<bool (__fastcall*)(void*, int, int)>(hook->func)(pthis, 0, i1);
+#elif defined __linux__
+		origret=reinterpret_cast<bool (*)(void*, int)>(hook->func)(pthis, int);
+#endif
+
+	POST_START()
+		, i1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+
+	CHECK_RETURN()
+	return ret;
+}
+
+
+void Hook_Void_Cbase_Float(Hook *hook, void *pthis, void *p1, float f1)
+{
+	PUSH_VOID()
+		int iEnt =PrivateToIndex(p1);
+
+	MAKE_VECTOR()
+
+	P_CBASE(p1, iEnt)
+	P_FLOAT(f1)
+
+	PRE_START()
+		, iEnt, f1
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, void *, float)>(hook->func)(pthis, 0, p1, f1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, void *, float)>(hook->func)(pthis, p1, f1);
+#endif
+
+	POST_START()
+		, iEnt, f1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+
+void Hook_Void_Cbase_Bool(Hook *hook, void *pthis, void *p1, bool b1)
+{
+	PUSH_VOID()
+	int iEnt =PrivateToIndex(p1);
+
+	MAKE_VECTOR()
+
+	P_CBASE(p1, iEnt)
+	P_BOOL(b1)
+
+	PRE_START()
+		, iEnt, b1
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, void *, bool)>(hook->func)(pthis, 0, p1, b1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, void *, bool)>(hook->func)(pthis, p1, b1);
+#endif
+
+	POST_START()
+		, iEnt, b1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
+#ifdef _WIN32
+void Hook_Vector_Vector_Vector_Vector(Hook *hook, void *pthis, Vector *out, Vector v1, Vector v2, Vector v3)
+#elif defined __linux__
+void Hook_Vector_pVector(Hook *hook, Vector *out, void *pthis, Vector v1, Vector v2, Vector v3)
+#endif
+{
+	Vector ret;
+	Vector origret;
+
+	PUSH_VECTOR()
+
+	MAKE_VECTOR()
+
+	P_VECTOR(v1)
+	P_VECTOR(v2)
+	P_VECTOR(v3)
+
+	memset(&ret, 0x0, sizeof(Vector));
+	memset(&origret, 0x0, sizeof(Vector));
+
+	PRE_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v3), 3, false)
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, Vector *, Vector, Vector, Vector)>(hook->func)(pthis, 0, &origret, v1, v2, v3);
+#elif defined __linux__
+		origret=reinterpret_cast<Vector (*)(void*, Vector, Vector, Vector)>(hook->func)(pthis, v1, v2, v3);
+#endif
+
+	POST_START()
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v1), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v2), 3, false)
+		, MF_PrepareCellArrayA(reinterpret_cast<cell *>(&v3), 3, false)
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN_VEC()
+
+	memcpy(out, &ret, sizeof(Vector));
+}
+
+const char *Hook_Str_Str(Hook *hook, void *pthis, const char* str)
+{
+	String ret;
+	String origret;
+	String a = str;
+
+	MAKE_VECTOR()
+
+	PUSH_STRING()
+
+	P_STR(a)
+
+	PRE_START()
+		, a.c_str()
+	PRE_END()
+
+#if defined _WIN32
+	origret.assign(reinterpret_cast<const char *(__fastcall*)(void*, int, const char*)>(hook->func)(pthis, 0, a.c_str() ));
+#elif defined __linux__
+	origret.assign(reinterpret_cast<const char *(*)(void*, const char*)>(hook->func)(pthis, a.c_str()));
+#endif
+
+	POST_START()
+		, a.c_str()
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN_STR();
+
+	return ret.c_str();
+}
+
+void Hook_Void_Short(Hook *hook, void *pthis, short i1)
+{
+	PUSH_VOID()
+
+	MAKE_VECTOR()
+	P_SHORT(i1)
+
+	PRE_START()
+		, i1
+	PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, short)>(hook->func)(pthis, 0, i1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, short)>(hook->func)(pthis, i1);
+#endif
+
+	POST_START()
+		,i1
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+}
+
 
 void Hook_Deprecated(Hook* hook)
 {

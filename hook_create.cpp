@@ -43,7 +43,6 @@ int Create_Void_Entvar(AMX *amx, const char *func)
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
 }
 
-
 int Create_Void_Cbase(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
@@ -53,13 +52,11 @@ int Create_Int_Float_Int(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_FLOAT, FP_CELL, FP_DONE);
 }
-
 	
 int Create_Void_Entvar_Int(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
 }
-
 
 int Create_Int_Cbase(AMX *amx, const char *func)
 {
@@ -346,10 +343,101 @@ int Create_Void_Cbase_pVector_Float(AMX *amx, const char *func)
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_ARRAY, FP_CELL, FP_DONE);
 }
 
-int Create_Int_pVector_pVector_Cbase_Float_pVector(AMX *amx, const char *func)
+int Create_Int_pVector_pVector_Float_Cbase_pVector(AMX *amx, const char *func)
 {
 	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_CELL, FP_CELL, FP_ARRAY, FP_DONE);
 }
+
+int Create_Int_Cbase_Bool(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Int_Vector_Vector(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_DONE);
+}
+
+int Create_Int_Entvar_Float(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Float_Float(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Void_Entvar_Entvar_Float(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_FLOAT, FP_DONE);
+}
+
+int Create_Bool_Void(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_DONE);
+}
+
+int Create_Int_pVector_pVector_Float_Cbase_pVector_pVector_Bool(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_CELL, FP_CELL, FP_ARRAY, FP_ARRAY, FP_CELL, FP_DONE);
+}
+
+int Create_Int_pVector_Cbase(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_CELL, FP_DONE);
+}
+
+int Create_Int_Vector(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_DONE);
+}
+
+int Create_Int_Cbase_pVector(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_ARRAY, FP_DONE);
+}
+
+int Create_Void_Bool(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Bool_Cbase(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Bool_Int(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Void_Cbase_Float(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Void_Cbase_Bool(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_CELL, FP_DONE);
+}
+
+int Create_Vector_Vector_Vector_Vector(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_ARRAY, FP_ARRAY, FP_ARRAY, FP_DONE);
+}
+
+int Create_Str_Str(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_STRING, FP_DONE);
+}
+
+int Create_Void_Short(AMX *amx, const char *func)
+{
+	return MF_RegisterSPForwardByName(amx, func, FP_CELL, FP_CELL, FP_DONE);
+}
+
 
 
 int Create_Deprecated(AMX* amx, const char* func)

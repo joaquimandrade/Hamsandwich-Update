@@ -326,9 +326,85 @@ const bool RT_Void_Cbase_pVector_Float = true;
 const int PC_Void_Cbase_pVector_Float = 3;
 void Hook_Void_Cbase_pVector_Float(Hook *hook, void *pthis, void *p1, Vector *v1, float fl);
 
-const bool RT_Int_pVector_pVector_Cbase_Float_pVector = false;
-const int PC_Int_pVector_pVector_Cbase_Float_pVector = 5;
-int Hook_Int_pVector_pVector_Cbase_Float_pVector(Hook *hook, void *pthis, Vector *v1, Vector *v2, void* cb, float fl, Vector *v3 );
+const bool RT_Int_pVector_pVector_Float_Cbase_pVector = false;
+const int PC_Int_pVector_pVector_Float_Cbase_pVector = 5;
+int Hook_Int_pVector_pVector_Float_Cbase_pVector(Hook *hook, void *pthis, Vector *v1, Vector *v2, float fl, void* cb, Vector *v3);
+
+const bool RT_Int_Cbase_Bool = false;
+const int PC_Int_Cbase_Bool = 2;
+int Hook_Int_Cbase_Bool(Hook *hook, void *pthis, void *cb1, bool b1);
+
+const bool RT_Int_Vector_Vector = false;
+const int PC_Int_Vector_Vector = 2;
+int Hook_Int_Vector_Vector(Hook *hook, void *pthis, Vector v1, Vector v2);
+
+const bool RT_Int_Entvar_Float = false;
+const int PC_Int_Entvar_Float = 2;
+int Hook_Int_Entvar_Float(Hook *hook, void *pthis, entvars_t *ev1, float f1);
+
+const bool RT_Float_Float = false;
+const int PC_Float_Float = 1;
+float Hook_Float_Float(Hook *hook, void *pthis, float f1);
+
+const bool RT_Void_Entvar_Entvar_Float = true;
+const int PC_Void_Entvar_Entvar_Float = 3;
+void Hook_Void_Entvar_Entvar_Float(Hook *hook, void *pthis, entvars_t *attacker, entvars_t *inflictor, float damage);
+
+const bool RT_Bool_Void = false;
+const int PC_Bool_Void = 0;
+bool Hook_Bool_Void(Hook *hook, void *pthis);
+
+const bool RT_Int_pVector_pVector_Float_Cbase_pVector_pVector_Bool = false;
+const int PC_Int_pVector_pVector_Float_Cbase_pVector_pVector_Bool = 5;
+int Hook_Int_pVector_pVector_Float_Cbase_pVector_pVector_Bool(Hook *hook, void *pthis, Vector *v1, Vector *v2, float fl, void* cb, Vector *v3, Vector *v4, bool b1);
+
+const bool RT_Int_pVector_Cbase = false;
+const int PC_Int_pVector_Cbase = 1;
+int Hook_Int_pVector_Cbase(Hook *hook, void *pthis, Vector *v1, void *cb);
+
+const bool RT_Int_Vector= false;
+const int PC_Int_Vector = 4;
+int Hook_Int_Vector(Hook *hook, void *pthis, Vector v1);
+
+const bool RT_Int_Cbase_pVector = false;
+const int PC_Int_Cbase_pVector = 2;
+int  Hook_Int_Cbase_pVector(Hook *hook, void *pthis, void *cb1, Vector *v1);
+
+const bool RT_Void_Bool = true;
+const int PC_Void_Bool = 1;
+void Hook_Void_Bool(Hook *hook, void *pthis, bool b1);
+
+const bool RT_Bool_Cbase = false;
+const int PC_Bool_Cbase = 1;
+bool Hook_Bool_Cbase(Hook *hook, void *pthis, void *cb);
+
+const bool RT_Bool_Int = false;
+const int PC_Bool_Int = 1;
+bool Hook_Bool_Int(Hook *hook, void *pthis, int i1);
+
+const bool RT_Void_Cbase_Float = true;
+const int PC_Void_Cbase_Float = 2;
+void Hook_Void_Cbase_Float(Hook *hook, void *pthis, void *p1, float f1);
+
+const bool RT_Void_Cbase_Bool = true;
+const int PC_Void_Cbase_Bool = 2;
+void Hook_Void_Cbase_Bool(Hook *hook, void *pthis, void *p1, bool b1);
+
+const bool RT_Vector_Vector_Vector_Vector = true;
+const int PC_Vector_Vector_Vector_Vector = 4;
+#ifdef _WIN32
+void Hook_Vector_Vector_Vector_Vector(Hook *hook, void *pthis, Vector *out, Vector v1, Vector v2, Vector v3);
+#elif defined __linux__
+void Hook_Vector_Vector_Vector_Vector(Hook *hook, Vector *out, void *pthis, Vector v1, Vector v2, Vector v3);
+#endif
+
+const bool RT_Str_Str = false;
+const int PC_Str_Str = 1;
+const char *Hook_Str_Str(Hook *hook, void *pthis, const char* str);
+
+const bool RT_Void_Short = true;
+const int PC_Void_Short = 1;
+void Hook_Void_Short(Hook *hook, void *pthis, short i1);
 
 
 const bool RT_Deprecated = true;
