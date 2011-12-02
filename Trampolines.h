@@ -26,7 +26,6 @@
  *  version.
  */
 
-
 #ifndef TRAMPOLINES_H
 #define TRAMPOLINES_H
 

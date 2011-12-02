@@ -1,5 +1,5 @@
 /* Ham Sandwich
- *   Copyright 2007
+ *   Copyright 2007-2012
  *   By the AMX Mod X Development Team
  *
  *  Ham Sandwich is free software; you can redistribute it and/or modify it
@@ -26,6 +26,7 @@
  *  you do not wish to do so, delete this exception statement from your
  *  version.
  */
+
 #ifndef RETURNHANDLER_H
 #define RETURNHANDLER_H
 
