@@ -26,7 +26,6 @@
  *  you do not wish to do so, delete this exception statement from your
  *  version.
  */
-
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -34,8 +33,6 @@
 
 #include <extdll.h>
 #include "amxxmodule.h"
-
-
 
 #include "CVector.h"
 #include "CString.h"
@@ -48,8 +45,6 @@
 #include "ham_utils.h"
 
 #include "DataHandler.h"
-
-
 
 extern bool gDoForwards;
 
@@ -1306,8 +1301,6 @@ int Hook_Int_Int_Int(Hook *hook, void *pthis, int i1, int i2)
 
 void Hook_Void_Str_Float_Float_Float(Hook *hook, void *pthis, const char *sz1, float f1, float f2, float f3)
 {
-	int origret=0;
-
 	PUSH_VOID()
 	String a=sz1;
 
@@ -2069,7 +2062,7 @@ void Hook_Void_Cbase_pVector_Float(Hook *hook, void *pthis, void *p1, Vector *v1
 #if defined _WIN32
 	reinterpret_cast<void (__fastcall*)(void*, int, void *, Vector *, float)>(hook->func)(pthis, 0, p1, v1, fl);
 #elif defined __linux__
-	reinterpret_cast<void (*)(void*, void *, int, Vector *, float)>(hook->func)(pthis, p1, v1, fl);
+	reinterpret_cast<void (*)(void*, void *, Vector *, float)>(hook->func)(pthis, p1, v1, fl);
 #endif
 
 	POST_START()
@@ -2542,7 +2535,7 @@ bool Hook_Bool_Int(Hook *hook, void *pthis, int i1)
 #if defined _WIN32
 		origret=reinterpret_cast<bool (__fastcall*)(void*, int, int)>(hook->func)(pthis, 0, i1);
 #elif defined __linux__
-		origret=reinterpret_cast<bool (*)(void*, int)>(hook->func)(pthis, int);
+		origret=reinterpret_cast<bool (*)(void*, int)>(hook->func)(pthis, i1);
 #endif
 
 	POST_START()
@@ -2617,7 +2610,7 @@ void Hook_Void_Cbase_Bool(Hook *hook, void *pthis, void *p1, bool b1)
 #ifdef _WIN32
 void Hook_Vector_Vector_Vector_Vector(Hook *hook, void *pthis, Vector *out, Vector v1, Vector v2, Vector v3)
 #elif defined __linux__
-void Hook_Vector_pVector(Hook *hook, Vector *out, void *pthis, Vector v1, Vector v2, Vector v3)
+void Hook_Vector_Vector_Vector_Vector(Hook *hook, Vector *out, void *pthis, Vector v1, Vector v2, Vector v3)
 #endif
 {
 	Vector ret;
