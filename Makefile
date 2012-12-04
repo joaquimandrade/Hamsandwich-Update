@@ -1,8 +1,8 @@
 #(C)2004-2005 AMX Mod X Development Team
 # Makefile written by David "BAILOPAN" Anderson
 
-HLSDK = ../../../hlsdk
-MM_ROOT = ../../metamod/metamod
+HLSDK = ../hlsdk/multiplayer
+MM_ROOT = ../metamod/metamod
 
 ### EDIT BELOW FOR OTHER PROJECTS ###
 
@@ -40,7 +40,8 @@ else
 	CFLAGS = $(OPT_FLAGS)
 endif
 
-CFLAGS += -Wall -Wno-non-virtual-dtor -fno-exceptions -DHAVE_STDINT_H -fno-rtti -Werror -m32
+#CFLAGS += -Wall -Wno-non-virtual-dtor -fno-exceptions -DHAVE_STDINT_H -fno-rtti -Werror -m32
+CFLAGS += -Wall -Wno-unknown-pragmas -Wno-write-strings -Wno-deprecated -Wno-non-virtual-dtor -fno-exceptions -DHAVE_STDINT_H -fno-rtti -m32
 
 BINARY = $(NAME)_$(BIN_SUFFIX)
 CFLAGS += -DPAWN_CELL_SIZE=32 -DJIT -DASM32
