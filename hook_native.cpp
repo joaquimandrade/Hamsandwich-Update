@@ -470,6 +470,7 @@ hook_t hooklist[] =
 	{ V("sc_checkfalldamage",		Void_Void) },
 	{ V("sc_checkrevival",			Void_Void) },
 	{ V("sc_mediccallsound",		Void_Void) },
+
 	{ V("sc_player_menuinputperformed",		Void_Bool) },
 	{ V("sc_player_ismenuinputdone",Bool_Void) },
 	{ V("sc_player_specialspawn",	Void_Void) },
@@ -489,7 +490,9 @@ hook_t hooklist[] =
 	{ V("sc_player_disablecollisionwithplayer",	Void_Cbase_Float) },
 	{ V("sc_player_enablecollisionwithplayer",	Void_Cbase_Bool) },
 	{ V("sc_player_cantouchplayer",	Bool_Void) },
+
 	{ V("sc_item_materialize",		Void_Void) },
+
 	{ V("sc_weapon_bulletaccuracy",	Vector_Vector_Vector_Vector) },
 	{ V("sc_weapon_tertiaryattack",	Void_Void) },
 	{ V("sc_weapon_burstsupplement",Void_Void) },

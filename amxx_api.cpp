@@ -66,6 +66,17 @@ void OnAmxxAttach(void)
 	assert(strcmp(hooklist[Ham_NS_UpdateOnRemove].name, "ns_updateonremove")==0);
 	assert(strcmp(hooklist[Ham_TS_ShouldCollide].name, "ts_shouldcollide")==0);
 
+	assert(strcmp(hooklist[Ham_GetDeathActivity].name, "getdeathactivity")==0);
+	assert(strcmp(hooklist[Ham_StopFollowing].name, "stopfollowing")==0);
+	assert(strcmp(hooklist[Ham_CS_Player_OnTouchingWeapon].name, "cstrike_player_ontouchingweapon")==0);
+	assert(strcmp(hooklist[Ham_DOD_Weapon_Special].name, "dod_weapon_special")==0);
+	assert(strcmp(hooklist[Ham_TFC_RadiusDamage2].name, "tfc_radiusdamage2")==0);
+	assert(strcmp(hooklist[Ham_ESF_Weapon_HolsterMeleed].name, "esf_weapon_holsterwhenmeleed")==0);
+	assert(strcmp(hooklist[Ham_NS_Weapon_GetDeployTime].name, "ns_weapon_getdeploytime")==0);
+	assert(strcmp(hooklist[Ham_SC_MedicCallSound].name, "sc_mediccallsound")==0);
+	assert(strcmp(hooklist[Ham_SC_Player_CanTouchPlayer].name, "sc_player_cantouchplayer")==0);
+	assert(strcmp(hooklist[Ham_SC_Weapon_ChangeWeaponSkin].name, "sc_weapon_changeweaponskin")==0);
+
 	MF_AddNatives(pdata_natives_safe);
 	if (ReadConfig() > 0)
 	{
