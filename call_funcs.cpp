@@ -175,7 +175,7 @@ cell Call_Int_Float_Int(AMX *amx, cell *params)
 {
 	SETUP(2);
 
-	float f3=amx_ftoc2(*MF_GetAmxAddr(amx, params[3]));
+	float f3=amx_ctof2(*MF_GetAmxAddr(amx, params[3]));
 	int i4=*MF_GetAmxAddr(amx, params[4]);
 
 #ifdef _WIN32
