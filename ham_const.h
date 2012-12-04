@@ -424,6 +424,7 @@ enum
 	Ham_SC_CheckTimeBasedDamage,
 	Ham_SC_IsMoving,
 	Ham_SC_IsPlayerFollowing,
+	Ham_SC_StartPlayerFollowing,
 	Ham_SC_StopPlayerFollowing,
 	Ham_SC_UseSound,
 	Ham_SC_UnUseSound,
