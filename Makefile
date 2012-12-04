@@ -10,8 +10,7 @@ MM_ROOT = ../metamod/metamod
 OPT_FLAGS = -O3 -funroll-loops -s -pipe -fomit-frame-pointer -fno-strict-aliasing -DNDEBUG
 
 DEBUG_FLAGS = -g -ggdb3
-CPP = gcc-4.1
-#CPP = gcc-2.95
+CPP = gcc
 NAME = hamsandwich
 
 BIN_SUFFIX = amxx_i386.so
