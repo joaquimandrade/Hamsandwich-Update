@@ -33,6 +33,8 @@
 #include "forward.h"
 #include "Trampolines.h"
 
+#define ALIGN(ar) ((intptr_t)ar & ~(sysconf(_SC_PAGESIZE)-1))
+
 // This is just a simple container for data so I only have to add 1 extra 
 // parameter to calls that get trampolined
 
@@ -67,7 +69,8 @@ public:
 			DWORD OldFlags;
 			VirtualProtect(&ivtable[entry],sizeof(int*),PAGE_READWRITE,&OldFlags);
 #elif defined __linux__
-			mprotect(&ivtable[entry],sizeof(int*),PROT_READ|PROT_WRITE);
+			void *addr = (void *)ALIGN(&ivtable[entry]);
+			mprotect(addr,sysconf(_SC_PAGESIZE),PROT_READ|PROT_WRITE);
 #endif
 			ivtable[entry]=(int*)tramp;
 
@@ -86,7 +89,8 @@ public:
 		DWORD OldFlags;
 		VirtualProtect(&ivtable[entry],sizeof(int*),PAGE_READWRITE,&OldFlags);
 #elif defined __linux__
-		mprotect(&ivtable[entry],sizeof(int*),PROT_READ|PROT_WRITE);
+		void *addr = (void *)ALIGN(&ivtable[entry]);
+		mprotect(addr,sysconf(_SC_PAGESIZE),PROT_READ|PROT_WRITE);
 #endif
 
 		ivtable[entry]=(int *)func;
