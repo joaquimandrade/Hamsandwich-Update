@@ -59,6 +59,10 @@ const bool RT_Void_Entvar_Int = true;
 const int PC_Void_Entvar_Int = 2;
 void Hook_Void_Entvar_Int(Hook *hook, void *ptis, entvars_t *ev1, int i1);
 
+const bool RT_Void_Entvar_Entvar_Int = true;
+const int PC_Void_Entvar_Entvar_Int = 3;
+void Hook_Void_Entvar_Entvar_Int(Hook *hook, void *ptis, entvars_t *ev1, entvars_t *ev2, int i1);
+
 const bool RT_Int_Cbase = false;
 const int PC_Int_Cbase = 1;
 int  Hook_Int_Cbase(Hook *hook, void *pthis, void *cb1);

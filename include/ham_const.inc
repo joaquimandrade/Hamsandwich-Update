@@ -3531,7 +3531,15 @@ enum Ham
 	 */
 	Ham_SC_Weapon_ChangeWeaponSkin,
 
-
+    
+	/**
+	 * Description:		Normally called whenever an entity dies.
+	 * Forward params:	function(this, idinflictor, idattacker, shouldgib)
+	 * Return type:		None.
+	 * Execute params:	ExecuteHam(Ham_Killed, this, idinflictor, idattacker, shouldgib);
+	 */
+	Ham_TFC_Killed,
+    
 	/**
 	 * DONT USE ME LOL
 	 */

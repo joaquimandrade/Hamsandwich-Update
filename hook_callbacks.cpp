@@ -322,6 +322,36 @@ void Hook_Void_Entvar_Int(Hook *hook, void *pthis, entvars_t *ev1, int i1)
 	POP()
 }
 
+void Hook_Void_Entvar_Entvar_Int(Hook *hook, void *pthis, entvars_t *ev1, entvars_t *ev2, int i1)
+{
+	PUSH_VOID()
+		int iInflictor=EntvarToIndex(ev1);
+		int iAttacker=EntvarToIndex(ev2);
+
+	MAKE_VECTOR()
+
+		P_ENTVAR(ev1, iInflictor)
+		P_ENTVAR(ev2, iAttacker)
+		P_INT(i1)
+
+		PRE_START()
+		, iInflictor, iAttacker, i1
+		PRE_END()
+
+#if defined _WIN32
+		reinterpret_cast<void (__fastcall*)(void*, int, entvars_t *, entvars_t *, int)>(hook->func)(pthis, 0, ev1, ev2, i1);
+#elif defined __linux__
+		reinterpret_cast<void (*)(void*, entvars_t *, entvars_t *, int)>(hook->func)(pthis, ev1, ev2, i1);
+#endif
+
+	POST_START()
+		, iInflictor, iAttacker, i1
+		POST_END()
+
+		KILL_VECTOR()
+		POP()
+}
+
 int Hook_Int_Cbase(Hook *hook, void *pthis, void *cb1)
 {
 	int ret=0;

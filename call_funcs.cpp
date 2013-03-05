@@ -205,6 +205,28 @@ cell Call_Void_Entvar_Int(AMX *amx, cell *params)
 	return 1;
 }
 
+cell Call_Void_Entvar_Entvar_Int(AMX *amx, cell *params)
+{
+	SETUP(3);
+
+	int id3=*MF_GetAmxAddr(amx, params[3]);
+	int id4=*MF_GetAmxAddr(amx, params[4]);
+	int i5=*MF_GetAmxAddr(amx, params[5]);
+
+	CHECK_ENTITY(id3);
+	CHECK_ENTITY(id4);
+
+	entvars_t *ev3=&(INDEXENT_NEW(id3)->v);
+	entvars_t *ev4=&(INDEXENT_NEW(id4)->v);
+
+#ifdef _WIN32
+	reinterpret_cast<void (__fastcall *)(void*, int, entvars_t *, entvars_t *, int)>(__func)(pv, 0, ev3, ev4, i5);
+#elif defined __linux__
+	reinterpret_cast<void (*)(void *, entvars_t *, entvars_t *, int)>(__func)(pv, ev3, ev4, i5);
+#endif
+	return 1;
+}
+
 
 cell Call_Int_Cbase(AMX *amx, cell *params)
 {

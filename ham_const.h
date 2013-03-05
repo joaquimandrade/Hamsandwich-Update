@@ -474,6 +474,8 @@ enum
 	Ham_SC_Weapon_SetP_Model,
 	Ham_SC_Weapon_ChangeWeaponSkin,
 
+	Ham_TFC_Killed,
+
 	HAM_LAST_ENTRY_DONT_USE_ME_LOL
 };
 
