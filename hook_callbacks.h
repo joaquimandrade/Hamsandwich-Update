@@ -136,17 +136,17 @@ void *Hook_Cbase_Void(Hook *hook, void *pthis);
 //       special return values.  this is so much easier.
 const bool RT_Vector_Void = true;
 const int PC_Vector_Void = 1;
-#ifdef _WIN32
+#if defined(_WIN32)
 void Hook_Vector_Void(Hook *hook, void *pthis, Vector *out);
-#elif defined __linux__
+#elif defined(__linux__) || defined(__APPLE__)
 void Hook_Vector_Void(Hook *hook, Vector *out, void *pthis);
 #endif
 
 const bool RT_Vector_pVector = true;
 const int PC_Vector_pVector = 2;
-#ifdef _WIN32
+#if defined(_WIN32)
 void Hook_Vector_pVector(Hook *hook, void *pthis, Vector *out, Vector *v1);
-#elif defined __linux__
+#elif defined(__linux__) || defined(__APPLE__)
 void Hook_Vector_pVector(Hook *hook, Vector *out, void *pthis, Vector *v1);
 #endif
 
@@ -204,9 +204,9 @@ void Hook_Void_Float_Float_Float_Int(Hook *hook, void *pthis, float f1, float f2
 
 const bool RT_Vector_Float = true;
 const int PC_Vector_Float = 2;
-#ifdef _WIN32
+#if defined(_WIN32)
 void Hook_Vector_Float(Hook *hook, void *pthis, Vector *out, float f1);
-#elif defined __linux__
+#elif defined(__linux__) || defined(__APPLE__)
 void Hook_Vector_Float(Hook *hook, Vector *out, void *pthis, float f1);
 #endif
 
@@ -396,9 +396,9 @@ void Hook_Void_Cbase_Bool(Hook *hook, void *pthis, void *p1, bool b1);
 
 const bool RT_Vector_Vector_Vector_Vector = true;
 const int PC_Vector_Vector_Vector_Vector = 4;
-#ifdef _WIN32
+#if defined(_WIN32)
 void Hook_Vector_Vector_Vector_Vector(Hook *hook, void *pthis, Vector *out, Vector v1, Vector v2, Vector v3);
-#elif defined __linux__
+#elif defined(__linux__) || defined(__APPLE__)
 void Hook_Vector_Vector_Vector_Vector(Hook *hook, Vector *out, void *pthis, Vector v1, Vector v2, Vector v3);
 #endif
 

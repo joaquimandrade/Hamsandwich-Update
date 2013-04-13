@@ -202,7 +202,7 @@ public:
 		}
 		v[len-offs] = '\0';
 	}
-	
+
 	void trim()
 	{
 		if (!v)
@@ -244,7 +244,7 @@ public:
 
 		if (is_space(v[len-1]))
 		{
-			for (i=len-1; i>=0; i--)
+			for (i=len-1; i<len; i--)
 			{
 				if (!is_space(v[i])
 					|| (is_space(v[i]) && i==0))
@@ -315,7 +315,7 @@ public:
 
 		if (index >= len || !v)
 			return ns;
-		
+
 		if (num == npos)
 		{
 			num = len - index;
