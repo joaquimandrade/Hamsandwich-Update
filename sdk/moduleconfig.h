@@ -7,7 +7,7 @@
 
 // Module info
 #define MODULE_NAME "Ham Sandwich (updated)"
-#define MODULE_VERSION "1.3" //SVN_VERSION
+#define MODULE_VERSION "1.4" //SVN_VERSION
 #define MODULE_AUTHOR "AMX Mod X Dev Team"
 #define MODULE_URL "http://www.amxmodx.org"
 #define MODULE_LOGTAG "HAMSANDWICH"
