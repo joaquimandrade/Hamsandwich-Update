@@ -3536,7 +3536,7 @@ enum Ham
 	 * Description:		Normally called whenever an entity dies.
 	 * Forward params:	function(this, idinflictor, idattacker, shouldgib)
 	 * Return type:		None.
-	 * Execute params:	ExecuteHam(Ham_Killed, this, idinflictor, idattacker, shouldgib);
+	 * Execute params:	ExecuteHam(Ham_TFC_Killed, this, idinflictor, idattacker, shouldgib);
 	 */
 	Ham_TFC_Killed,
     
