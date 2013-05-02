@@ -3541,6 +3541,14 @@ enum Ham
 	Ham_TFC_Killed,
     
 	/**
+	 * Description:		Usually called whenever an entity gets a form of a heal.
+	 * Forward params:	function(this, Float:health, damagebits, health_cap);
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_SC_TakeHealth, this, Float:health, damagebits, health_cap);
+	 */
+	Ham_SC_TakeHealth,
+    
+	/**
 	 * DONT USE ME LOL
 	 */
 	HAM_LAST_ENTRY_DONT_USE_ME_LOL

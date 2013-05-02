@@ -292,8 +292,40 @@ int Hook_Int_Float_Int(Hook *hook, void *pthis, float f1, int i1)
 	POP()
 	CHECK_RETURN()
 	return ret;
-
 }
+
+int Hook_Int_Float_Int_Int(Hook *hook, void *pthis, float f1, int i1, int i2)
+{
+	int ret=0;
+	int origret=0;
+	PUSH_INT()
+
+	MAKE_VECTOR()
+
+	P_FLOAT(f1)
+	P_INT(i1)
+	P_INT(i2)
+
+	PRE_START()
+		, f1, i1, i2
+	PRE_END()
+
+#if defined(_WIN32)
+		origret=reinterpret_cast<int (__fastcall*)(void*, int, float, int, int)>(hook->func)(pthis, 0, f1, i1, i2);
+#elif defined(__linux__) || defined(__APPLE__)
+		origret=reinterpret_cast<int (*)(void*, float, int, int)>(hook->func)(pthis, f1, i1, i2);
+#endif
+
+	POST_START()
+		, f1, i1, i2
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
 void Hook_Void_Entvar_Int(Hook *hook, void *pthis, entvars_t *ev1, int i1)
 {
 	PUSH_VOID()

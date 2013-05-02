@@ -510,6 +510,7 @@ hook_t hooklist[] =
 	{ V("sc_weapon_changeweaponskin",Void_Short) },
 
 	{ V("tfc_killed",Void_Entvar_Entvar_Int) },
+	{ V("sc_takehealth",Int_Float_Int_Int) },
 };
 
 

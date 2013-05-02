@@ -55,6 +55,10 @@ const bool RT_Int_Float_Int = false;
 const int PC_Int_Float_Int = 2;
 int  Hook_Int_Float_Int(Hook *hook, void *pthis, float f1, int i1);
 	
+const bool RT_Int_Float_Int_Int = false;
+const int PC_Int_Float_Int_Int = 3;
+int  Hook_Int_Float_Int_Int(Hook *hook, void *pthis, float f1, int i1, int i2);
+
 const bool RT_Void_Entvar_Int = true;
 const int PC_Void_Entvar_Int = 2;
 void Hook_Void_Entvar_Int(Hook *hook, void *ptis, entvars_t *ev1, int i1);
