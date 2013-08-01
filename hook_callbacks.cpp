@@ -475,6 +475,40 @@ int Hook_Int_Int_Str_Int(Hook *hook, void *pthis, int i1, const char *sz1, int i
 	return ret;
 }
 
+int Hook_Int_Int_Str_Int_Int(Hook *hook, void *pthis, int i1, const char *sz1, int i2, int i3)
+{
+	int ret=0;
+	int origret=0;
+	PUSH_INT()
+
+	String a=sz1;
+
+	MAKE_VECTOR()
+	
+	P_INT(i1)
+	P_STR(a)
+	P_INT(i2)
+	P_INT(i3)
+
+	PRE_START()
+		,i1, a.c_str(), i2, i3
+	PRE_END()
+#if defined(_WIN32)
+	origret=reinterpret_cast<int (__fastcall*)(void*, int, int, const char *, int, int)>(hook->func)(pthis, 0, i1, a.c_str(), i2, i3);
+#elif defined(__linux__) || defined(__APPLE__)
+	origret=reinterpret_cast<int (*)(void*, int, const char *, int, int)>(hook->func)(pthis, i1, a.c_str(), i2, i3);
+#endif
+
+	POST_START()
+		,i1, a.c_str(), i2, i3
+	POST_END()
+
+	KILL_VECTOR()
+	POP()
+	CHECK_RETURN()
+	return ret;
+}
+
 int Hook_Int_Int(Hook *hook, void *pthis, int i1)
 {
 	int ret=0;

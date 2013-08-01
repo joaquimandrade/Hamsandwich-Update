@@ -226,6 +226,7 @@ enum Ham
 
 	/**
 	 * Description:		Gives ammo to the entity.
+	 *					This function is not supported by Sven-Coop 4.8+, see Ham_SC_GiveAmmo instead.
 	 * Forward params:	function(this, Amount, const Name[], Max)
 	 * Return type:		Integer.
 	 * Execute params:	ExecuteHam(Ham_GiveAmmo, this, amount, "type", max);
@@ -3531,7 +3532,11 @@ enum Ham
 	 */
 	Ham_SC_Weapon_ChangeWeaponSkin,
 
-    
+	
+	/**
+	 * LATE ADDITIONS (2013)
+	 */
+	
 	/**
 	 * Description:		Normally called whenever an entity dies.
 	 * Forward params:	function(this, idinflictor, idattacker, shouldgib)
@@ -3548,6 +3553,30 @@ enum Ham
 	 */
 	Ham_SC_TakeHealth,
     
+	/**
+	 * Description:		Gives ammo to the entity.
+	 * Forward params:	function(this, amount, const name[], max, const bool:fromPlayer)
+	 * Return type:		Integer.
+	 * Execute params:	ExecuteHam(Ham_SC_GiveAmmo, this, amount, "type", max, fromPlayer);
+	 */
+	Ham_SC_GiveAmmo,
+	
+	/**
+	 * Description:		Determines if damage should be ignored.
+	 * Forward params:	function(this, idattacker)
+	 * Return type:		Boolean.
+	 * Execute params:	ExecuteHam(Ham_SC_CheckAttacker, this, idattacker);
+	 */
+	Ham_SC_CheckAttacker,
+	
+	/**
+	 * Description:		Checks if a player is connected.
+	 * Forward params:	function(this)
+	 * Return type:		Boolean.
+	 * Execute params:	ExecuteHam(Ham_SC_Player_IsConnected, this);
+	 */
+	Ham_SC_Player_IsConnected,
+	
 	/**
 	 * DONT USE ME LOL
 	 */

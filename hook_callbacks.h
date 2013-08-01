@@ -77,8 +77,11 @@ void Hook_Void_Int_Int(Hook *hook, void *pthis, int i1, int i2);
 
 const bool RT_Int_Int_Str_Int = false;
 const int PC_Int_Int_Str_Int = 3;
-int  Hook_Int_Int_Str_Int(Hook *hook, void *pthis, int i1, const char *sz1,
-						  int i2);
+int  Hook_Int_Int_Str_Int(Hook *hook, void *pthis, int i1, const char *sz1, int i2);
+
+const bool RT_Int_Int_Str_Int_Int = false;
+const int PC_Int_Int_Str_Int_Int = 4;
+int  Hook_Int_Int_Str_Int_Int(Hook *hook, void *pthis, int i1, const char *sz1, int i2, int i3);
 
 const bool RT_Int_Int = false;
 const int PC_Int_Int = 1;

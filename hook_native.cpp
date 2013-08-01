@@ -509,8 +509,13 @@ hook_t hooklist[] =
 	{ V("sc_weapon_setp_model",		Void_Str) },
 	{ V("sc_weapon_changeweaponskin",Void_Short) },
 
+	/** New Additions (2013) **/
+
 	{ V("tfc_killed",Void_Entvar_Entvar_Int) },
 	{ V("sc_takehealth",Int_Float_Int_Int) },
+	{ V("sc_giveammo",Int_Int_Str_Int_Int) },
+	{ V("sc_checkattacker",Int_Cbase) },
+	{ V("sc_player_isconnected",Int_Void) },
 };
 
 

@@ -289,6 +289,23 @@ cell Call_Int_Int_Str_Int(AMX *amx, cell *params)
 #endif
 }
 
+cell Call_Int_Int_Str_Int_Int(AMX *amx, cell *params)
+{
+	SETUP(4);
+
+	int i3=*MF_GetAmxAddr(amx, params[3]);
+	char *sz4=MF_GetAmxString(amx, params[4], 0, NULL);
+	int i5=*MF_GetAmxAddr(amx, params[5]);
+	int i6=*MF_GetAmxAddr(amx, params[6]);
+
+#if defined(_WIN32)
+	return reinterpret_cast<int (__fastcall *)(void*, int, int, const char *, int, int)>(__func)(pv, 0, i3, sz4, i5, i6);
+#elif defined(__linux__) || defined(__APPLE__)
+	return reinterpret_cast<int (*)(void *, int, const char *, int, int)>(__func)(pv, i3, sz4, i5, i6);
+#endif
+}
+
+
 cell Call_Int_Int(AMX *amx, cell *params)
 {
 	SETUP(1);

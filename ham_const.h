@@ -474,8 +474,15 @@ enum
 	Ham_SC_Weapon_SetP_Model,
 	Ham_SC_Weapon_ChangeWeaponSkin,
 
+	//
+	// New addition - 2013
+	//
+
 	Ham_TFC_Killed,
 	Ham_SC_TakeHealth,
+	Ham_SC_GiveAmmo,
+	Ham_SC_CheckAttacker,
+	Ham_SC_Player_IsConnected,
 
 	HAM_LAST_ENTRY_DONT_USE_ME_LOL
 };

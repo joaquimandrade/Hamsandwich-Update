@@ -53,6 +53,8 @@ cell Call_Void_Int_Int(AMX *amx, cell *params);
 
 cell Call_Int_Int_Str_Int(AMX *amx, cell *params);
 
+cell Call_Int_Int_Str_Int_Int(AMX *amx, cell *params);
+
 cell Call_Int_Int(AMX *amx, cell *params);
 
 cell Call_Int_Entvar(AMX *amx, cell *params);

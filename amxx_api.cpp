@@ -76,6 +76,7 @@ void OnAmxxAttach(void)
 	assert(strcmp(hooklist[Ham_SC_MedicCallSound].name, "sc_mediccallsound")==0);
 	assert(strcmp(hooklist[Ham_SC_Player_CanTouchPlayer].name, "sc_player_cantouchplayer")==0);
 	assert(strcmp(hooklist[Ham_SC_Weapon_ChangeWeaponSkin].name, "sc_weapon_changeweaponskin")==0);
+	assert(strcmp(hooklist[Ham_SC_Player_IsConnected].name, "sc_player_isconnected")==0);
 
 	MF_AddNatives(pdata_natives_safe);
 	if (ReadConfig() > 0)
